@@ -19,7 +19,7 @@ load_dotenv()
 MODELS = [
     "google/gemma-3-4b-it",
     "nvidia/nemotron-nano-9b-v2",
-    "qwen/qwen3-14b:no-thinking",
+    "microsoft/phi-4",
 ]
 
 ZERO_LO  = 4   # pure heuristic 0 — no LLM

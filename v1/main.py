@@ -41,7 +41,7 @@ from langfuse.langchain import CallbackHandler
 MODELS = [
     "google/gemma-3-4b-it",
     "nvidia/nemotron-nano-9b-v2",
-    "qwen/qwen3-14b:no-thinking",
+    "microsoft/phi-4",
 ]
 
 

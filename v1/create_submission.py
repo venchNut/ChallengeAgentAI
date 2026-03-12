@@ -1,10 +1,12 @@
 """
-Create submission zip for one challenge level.
+Create submission zip for one challenge dataset.
 
-Usage: python create_submission.py <level>
-       python create_submission.py 1
+Usage: python create_submission.py <dataset>
+       python create_submission.py truman
+       python create_submission.py deus
+       python create_submission.py brave
 
-Packages: output_level_{level}.txt + source files + session ID file.
+Packages: output_{dataset}.txt + source files + session ID file.
 Prints the Session ID you must paste in the upload form.
 """
 
@@ -15,31 +17,32 @@ import zipfile
 from datetime import datetime
 
 
-def create_submission(level: str) -> str | None:
+def create_submission(dataset: str) -> str | None:
+    dataset = dataset.lower()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    zip_name  = f"submission_level_{level}_{timestamp}.zip"
+    zip_name  = f"submission_{dataset}_{timestamp}.zip"
 
     print(f"\n{'='*60}")
-    print(f"Creating submission for Level {level} …")
+    print(f"Creating submission for {dataset} …")
     print(f"{'='*60}")
 
     # --- Output file ---
-    output_file = f"output_level_{level}.txt"
+    output_file = f"output_{dataset}.txt"
     if not os.path.exists(output_file):
         print(f"ERROR: {output_file} not found.")
-        print(f"  Run first: python solve.py {level} eval")
+        print(f"  Run first: python solve.py {dataset} eval")
         return None
 
     # --- Find EVAL session file ---
     session_file = None
     session_id   = None
     date_str = datetime.now().strftime("%Y%m%d")
-    candidate = f"session_level_{level}_EVAL_{date_str}.txt"
+    candidate = f"session_level_{dataset.upper()}_EVAL_{date_str}.txt"
     if os.path.exists(candidate):
         session_file = candidate
     else:
-        # Fall back: any EVAL session file for this level
-        matches = sorted(glob.glob(f"session_level_{level}_EVAL_*.txt"), reverse=True)
+        # Fall back: any EVAL session file for this dataset
+        matches = sorted(glob.glob(f"session_level_{dataset.upper()}_EVAL_*.txt"), reverse=True)
         if matches:
             session_file = matches[0]
             print(f"  Note: using session file from earlier date: {session_file}")
@@ -48,14 +51,15 @@ def create_submission(level: str) -> str | None:
         with open(session_file) as f:
             session_id = f.read().strip()
     else:
-        print(f"  WARNING: no EVAL session file found for level {level}.")
-        print(f"  Make sure to run: python solve.py {level} eval")
+        print(f"  WARNING: no EVAL session file found for {dataset}.")
+        print(f"  Make sure to run: python solve.py {dataset} eval")
 
     # --- Files to zip ---
     source_files = [
         "main.py",
         "solve.py",
         "data_agent.py",
+        "audio_agent.py",
         "requirements.txt",
         "README.md",
         output_file,
@@ -95,6 +99,7 @@ def create_submission(level: str) -> str | None:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python create_submission.py <level>")
+        print("Usage: python create_submission.py <dataset>")
+        print("       Datasets: truman | deus | brave")
         sys.exit(1)
     create_submission(sys.argv[1])

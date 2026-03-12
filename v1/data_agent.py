@@ -39,7 +39,7 @@ _PHISHING_KEYWORDS = [
 class DataAgent:
     """Loads, validates, and serves all data sources for the fraud challenge."""
 
-    def __init__(self, data_dir: str = "public_lev_1/public_lev_1"):
+    def __init__(self, data_dir: str = "The+Truman+Show_train/The Truman Show_train/public"):
         self.data_dir = Path(data_dir)
         self.transactions_df: Optional[pd.DataFrame] = None
         self.users_df: Optional[pd.DataFrame] = None
@@ -233,12 +233,12 @@ class DataAgent:
 
     def _load_conversations(self) -> Dict[str, str]:
         """Load SMS threads.  Returns user_id → concatenated SMS text."""
-        for fname in ("conversations.json", "conversations.csv"):
+        for fname in ("sms.json", "conversations.json", "conversations.csv"):
             path = self.data_dir / fname
             if path.exists():
                 break
         else:
-            print("  conversations    : not found, skipping")
+            print("  sms              : not found, skipping")
             return {}
 
         with open(path, encoding="utf-8") as f:
@@ -249,22 +249,22 @@ class DataAgent:
 
         result: Dict[str, str] = {}
         for record in (data if isinstance(data, list) else [data]):
-            uid = str(record.get("UserID") or record.get("user_id") or "")
-            sms = str(record.get("SMS") or record.get("sms") or "")
+            uid = str(record.get("UserID") or record.get("user_id") or record.get("BioTag") or "")
+            sms = str(record.get("SMS") or record.get("sms") or record.get("text") or record.get("content") or "")
             if uid:
                 result[uid] = result.get(uid, "") + " " + sms
 
-        print(f"  conversations    : {len(result)} SMS threads loaded")
+        print(f"  sms              : {len(result)} threads loaded")
         return result
 
     def _load_messages(self) -> Dict[str, str]:
         """Load e-mail threads.  Returns user_id → concatenated mail text."""
-        for fname in ("messages.json", "messages.csv"):
+        for fname in ("mails.json", "messages.json", "messages.csv"):
             path = self.data_dir / fname
             if path.exists():
                 break
         else:
-            print("  messages         : not found, skipping")
+            print("  mails            : not found, skipping")
             return {}
 
         with open(path, encoding="utf-8") as f:
@@ -275,12 +275,12 @@ class DataAgent:
 
         result: Dict[str, str] = {}
         for record in (data if isinstance(data, list) else [data]):
-            uid  = str(record.get("UserID") or record.get("user_id") or "")
-            mail = str(record.get("mail")   or record.get("Mail")   or record.get("email") or "")
+            uid  = str(record.get("UserID") or record.get("user_id") or record.get("BioTag") or "")
+            mail = str(record.get("mail")   or record.get("Mail")   or record.get("email") or record.get("text") or record.get("content") or "")
             if uid:
                 result[uid] = result.get(uid, "") + " " + mail
 
-        print(f"  messages         : {len(result)} e-mail threads loaded")
+        print(f"  mails            : {len(result)} e-mail threads loaded")
         return result
 
     # ------------------------------------------------------------------

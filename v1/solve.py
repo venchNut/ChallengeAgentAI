@@ -316,18 +316,14 @@ def predict(level: str, is_eval: bool = False) -> list:
                 print("Aborted. Use the existing session file for submission.")
                 sys.exit(0)
 
-    session_id = generate_session_id(level, operation)
+    session_id = generate_session_id(level.upper(), operation)
 
     with propagate_attributes(
         session_id = session_id,
-        trace_name = f"Level_{level}_{operation}",
-        metadata   = {"level": level, "operation": operation, "is_eval": str(is_eval)},
+        trace_name = f"{level.upper()}_{operation}",
+        metadata   = {"dataset": level, "operation": operation, "is_eval": str(is_eval)},
     ):
-        dataset_path = (
-            f"public_lev_{level}_eval/public_lev_{level}"
-            if is_eval
-            else f"public_lev_{level}/public_lev_{level}"
-        )
+        dataset_path = _resolve_dataset_path(level, is_eval)
         print(f"Dataset: {dataset_path}")
 
         agent = DataAgent(dataset_path)
@@ -409,9 +405,9 @@ def predict(level: str, is_eval: bool = False) -> list:
         # Write output
         # ------------------------------------------------------------------
         output_file = (
-            f"output_level_{level}.txt"
+            f"output_{level}.txt"
             if is_eval
-            else f"output_level_{level}_train.txt"
+            else f"output_{level}_train.txt"
         )
         with open(output_file, "w", encoding="ascii") as f:
             for tid in fraud_ids:
@@ -430,11 +426,38 @@ def predict(level: str, is_eval: bool = False) -> list:
 # Entry point
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Dataset path resolver
+# ---------------------------------------------------------------------------
+
+_DATASET_MAP = {
+    "truman": "The+Truman+Show",
+    "deus":   "Deus+Ex",
+    "brave":  "Brave+New+World",
+}
+
+def _resolve_dataset_path(name: str, is_eval: bool) -> str:
+    """
+    Map a short dataset name to its actual folder path.
+      truman → The+Truman+Show_train/The Truman Show_train/public
+      deus   → Deus+Ex_train/Deus Ex_train/public
+      brave  → Brave+New+World_train/Brave New World_train/public
+    """
+    key = name.lower()
+    if key not in _DATASET_MAP:
+        raise ValueError(f"Unknown dataset '{name}'. Choose: truman, deus, brave")
+    folder = _DATASET_MAP[key]
+    suffix = "eval" if is_eval else "train"
+    folder_plain = folder.replace("+", " ")
+    return f"{folder}_{suffix}/{folder_plain}_{suffix}/public"
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python solve.py <level> [eval]")
-        print("  python solve.py 1        → TRAIN set (unlimited)")
-        print("  python solve.py 1 eval   → EVAL set  (ONE SHOT — irreversible!)")
+        print("Usage: python solve.py <dataset> [eval]")
+        print("  python solve.py truman        → TRAIN (unlimited)")
+        print("  python solve.py truman eval   → EVAL  (ONE SHOT — irreversible!)")
+        print("  Datasets: truman | deus | brave")
         sys.exit(1)
 
     level   = sys.argv[1]

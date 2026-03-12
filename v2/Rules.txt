@@ -1,0 +1,151 @@
+Reply Mirror
+12th March 2026
+Abstract
+In the futuristic digital metropolis of Reply Mirror, the financial institutions MirrorPay are synonymous of reliability and speed: cloud data
+platforms capable of processing billions of transactions for millions of customers.
+In this highly interconnected world, most transactions are monitored,
+data is widely accessible and privacy is increasingly limited. As key managers of economic activity, you guide financial flows and support trust in
+digital systems.
+As a member of The Eye, you are enrolled to intelligently, responsively
+and dynamically monitor the system. So, let’s build an autonomous intelligence able to observe, adapt and act when the system comes under
+siege.
+The mission is clear: when artificial intelligence becomes the weapon
+of fraudsters, only an even more advanced intelligence can restore balance.
+1
+REPLY MIRROR 1 PROBLEM STATEMENT
+1 Problem Statement
+It is 2087 and the digital metropolis of Reply Mirror thrives on transparency:
+almost every piece of personal data is publicly accessible. Financial institutions
+like MirrorPay not only manage the flow of economic transactions, but also hold
+vast troves of demographic and various data about their citizens. Yet in this
+data-rich world, new dangers lurk beneath the surface: fraudulent behaviour
+hides in plain sight, blending seamlessly with legitimate activity.
+Among this growing complexity, you — The Eye — take the stage. Your mission
+is vital: to detect and neutralize financial fraud, preserving the integrity of the
+system and protecting honest citizens.
+The malicious actors — the so-called Mirror Hackers — are smart, adaptive
+and relentlessly strategic. They never follow a fixed pattern; instead, they
+constantly reshape their pattern to outsmart detection systems. Their evolving
+tactics include:
+• targeting new merchants and transaction categories;
+• shifting temporal habits (e.g. moving from daytime to late-night activity);
+• operating across changing geographic regions and jurisdictions;
+• varying transaction amounts and frequency;
+• creating new, deceptive behavioural sequences.
+At the heart of the challenge lies the constant evolution of fraudulent activity
+over time. Success depends on your system’s ability to learn, adapt and generalize as the landscape changes. Static models will fail; only dynamic, continuously
+learning and strategically adaptive solutions can stay ahead in this ever-shifting
+battlefield.
+Challenge Flow The challenge unfolds in five levels. At each level, your team
+receives a training dataset representing the economic transactions between citizens of ReplyMirror. In addition to this, you are provided with additional
+datasets containing varying levels of information about citizens, their communications and their habits.
+In addition to the training data, each level also includes a corresponding evaluation dataset of comparable difficulty. These evaluation datasets are the only
+ones used to compute the official score for the level. For each evaluation dataset,
+only the first submission will be accepted and will be considered final.
+Throughout all levels, you are tasked with designing a system of cooperative
+intelligent agents capable of identifying anomalous activities in environments
+where fraudulent strategies evolve over time. Using the available data, your
+team must determine for every transaction in the dataset whether it is legitimate
+or fraudulent.
+The score for each round depends on the system’s ability to adapt to new conditions while maintaining consistent accuracy. At the end of all five levels, the
+overall leader-board will reflect the resilience and adaptability of the system of
+each team.
+2
+REPLY MIRROR 2 INPUT FORMAT
+Challenge Goal You are asked to design an agent-based system capable of:
+• detecting fraudulent behaviour that evolves over time and blends seamlessly with legitimate transactions;
+• anticipating new attack patterns by leveraging the memory of past interactions;
+• responding in real time to sudden changes without degrading performance;
+• keeping the false positive rate low, avoiding the unnecessary blocking of
+legitimate activity.
+Each incorrect decision carries an asymmetric cost:
+• blocking a legitimate transaction (false positive) incurs economic and reputational losses;
+• allowing or ignoring a fraudulent transaction (false negative) causes significant financial damage.
+The final score is calculated by combining accuracy, temporal stability and
+adaptability to structural changes in the data.
+2 Input Format
+The input consists of a series of data set with increasing complexity. You have
+access to multiple types of data set, available for download in different formats.
+In detail:
+• T ransactions.csv with T records of financial transactions, including:
+– Transaction ID: a unique identifier of the transaction;
+– Sender ID: a unique identifier of the transaction sender;
+– Recipient ID: a unique identifier of the transaction recipient;
+– Transaction Type:
+∗ bank transfer
+∗ in-person payment
+∗ e-commerce
+∗ direct debit
+∗ withdrawal
+– Amount of the occurred transaction;
+– Location (provided only for in-person payments);
+– Payment Method:
+∗ debit card
+∗ mobile device
+∗ smartwatch
+∗ GooglePay
+∗ PayPal
+– Sender IBAN (provided only for bank transfers);
+– Recipient IBAN (provided only for bank transfers);
+– Balance: remaining amount after the transaction;
+– Timestamp of the occurred transaction;
+3
+REPLY MIRROR 4 SCORING RULES
+• Locations with geo-referenced data, whereby the citizen has been located
+through GPS-based systems, irrespective of the type of activity performed,
+including:
+– BioTag: a unique identifier of the citizen;
+– Datetime: date and time of geo-referentiation;
+– Lat: latitude coordinate in degrees;
+– Lng: longitude coordinate in degrees;
+• U sers with a resume of citizen’s personal data;
+• Conversations with threads of occurred conversations, including:
+– User ID: a unique identifier of the citizen;
+– SMS: complete textual thread;
+• M essages with e-mail interactions, including:
+– mail: complete textual thread.
+3 Output Format
+The output must be an ASCII text file. Each line should be separated by newline
+character and refers to a suspected fraudulent Transaction ID.
+The format of each line is:
+t
+where:
+• t represents the suspected fraudulent Transaction ID among the T Transaction ID received in input.
+The output is considered invalid if any of the following conditions occur:
+• no transactions are reported;
+• all transactions are reported;
+• less than 15% of the fraudulent transactions are correctly identified.
+4 Scoring Rules
+The evaluation framework is built around a composite scoring model that measures performance across two key dimensions, with economic impact serving as
+the primary driver. Your goal is not to design a static, high-accuracy model,
+but to develop an AI multi-agent system that is economically sustainable, operationally efficient and capable of operating in a real-world production environment.
+Accuracy This component of the score evaluates the system’s capability to
+correctly detect fraudulent behaviour while minimizing unnecessary transaction
+blocks. The goal is to achieve a balanced trade-off between identifying fraud
+and avoiding unjustified customer impact.
+4
+REPLY MIRROR 5 EXAMPLE
+Additional Metrics Cost, speed and efficiency serve as complementary evaluation metrics. They reward the design of an optimized agent architecture
+capable of detecting fraud in real time while maintaining low operational expense.
+These dimensions emphasize the system’s ability to perform under real-world
+constraints, balancing computational resources, processing latency and infrastructure usage. In essence, they measure how effectively your AI agents can
+scale, respond and adapt without compromising economic sustainability or responsiveness.
+5 Example
+Here, you can find 3 rows from Transactions.csv file. The players suspect that
+two of these three transactions could be fraudulent. Respective Transaction IDs
+are printed in output file.
+Input Example
+4a92ab00-8a27-4623-ab1d-56ac85fcd6b0,SCHV-SVRA-7BC-COR-0,,
+e-commerce,56.63,,mobile device,IT16Y9430002300167070752952,
+IT35O1753705526805948017123071,603.37,,2025-11-17T00:35:29.446363
+8830a720-ff34-4dce-a578-e5b8006b2976,LRNT-MTTH-7BF-PAR-1,,
+prelievo,150,Turin,debit card,FR46C7104822278076244862444,
+IT39S3051166323954859019873188,142.58,,2025-11-17T14:33:28.068080
+1c6db202-22d8-443f-86e7-fb1a8df05e84,TRBU-MRTT-7C4-MUL-0,BTSWF98176,
+e-commerce,170.33,SwiftCart Marketplace,debit card,
+DE20X3656132271467727362296,IT14Q8802310964869133978727249,
+54000.24,,2027-01-04T00:00:00
+Output Example
+4a92ab00-8a27-4623-ab1d-56ac85fcd6b0
+8830a720-ff34-4dce-a578-e5b8006b2976
+5

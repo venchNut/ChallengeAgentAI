@@ -143,8 +143,8 @@ class DataAgent:
                 "amount_mean":       float(amounts.mean()),
                 "amount_std":        float(amounts.std(ddof=0)) if len(grp) > 1 else 0.0,
                 "amount_max":        float(amounts.max()),
-                "common_type":       grp["TransactionType"].mode().iloc[0] if len(grp) > 0 else "",
-                "common_method":     grp["PaymentMethod"].mode().iloc[0] if len(grp) > 0 else "",
+                "common_type":       grp["TransactionType"].mode().iloc[0] if len(grp) > 0 and len(grp["TransactionType"].mode()) > 0 else "",
+                "common_method":     grp["PaymentMethod"].mode().iloc[0]   if len(grp) > 0 and len(grp["PaymentMethod"].mode()) > 0 else "",
                 "night_rate":        float(night_mask.mean()),
                 "known_recipients":  set(grp["RecipientID"].dropna().unique()),
                 "phishing_score":    self._phishing_score(

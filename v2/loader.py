@@ -20,7 +20,7 @@ _DATASETS = {
 _TX_COLS = [
     "TransactionID","SenderID","RecipientID","TransactionType",
     "Amount","Location","PaymentMethod","SenderIBAN","RecipientIBAN",
-    "Balance","Label","Timestamp",
+    "Balance","Description","Timestamp",
 ]
 
 
@@ -94,7 +94,19 @@ def load(name: str, eval_mode: bool = False) -> dict:
         locs = locs.sort_values(["user_id","ts"]).reset_index(drop=True)
         print(f"  locs: {len(locs)}")
 
-    # sms
+    # build name → iban indexes from users (needed for sms/mail linking)
+    fname_iban: dict  = {}   # first_name.lower() → iban
+    full_iban:  dict  = {}   # "first last".lower() → iban
+    if len(users) > 0 and "iban" in users.columns:
+        for _, u in users.iterrows():
+            fn   = str(u.get("first_name") or "").strip()
+            ln   = str(u.get("last_name")  or "").strip()
+            iban = str(u.get("iban") or "")
+            if iban:
+                if fn: fname_iban[fn.lower()] = iban
+                if fn and ln: full_iban[(fn+" "+ln).lower()] = iban
+
+    # sms — keyed by iban via "Hi FirstName" parsing
     sms_map: dict = {}
     for fname in ("sms.json","conversations.json"):
         p = root / fname
@@ -103,11 +115,14 @@ def load(name: str, eval_mode: bool = False) -> dict:
             for r in (data if isinstance(data, list) else [data]):
                 uid = str(r.get("UserID") or r.get("user_id") or r.get("BioTag") or "")
                 txt = str(r.get("SMS") or r.get("sms") or r.get("text") or "")
+                if not uid and fname_iban and txt:
+                    m = re.search(r'(?:Hi|Hello|Dear)\s+([A-Z][a-z]+)', txt)
+                    if m: uid = fname_iban.get(m.group(1).lower(), "")
                 if uid: sms_map[uid] = sms_map.get(uid,"") + " " + txt
-            print(f"  sms: {len(sms_map)}")
+            print(f"  sms: {len(sms_map)} threads linked")
             break
 
-    # mails
+    # mails — keyed by iban via "To: FirstName LastName" parsing
     mail_map: dict = {}
     for fname in ("mails.json","messages.json"):
         p = root / fname
@@ -116,8 +131,11 @@ def load(name: str, eval_mode: bool = False) -> dict:
             for r in (data if isinstance(data, list) else [data]):
                 uid = str(r.get("UserID") or r.get("user_id") or r.get("BioTag") or "")
                 txt = str(r.get("mail") or r.get("Mail") or r.get("email") or r.get("text") or "")
+                if not uid and full_iban and txt:
+                    m = re.search(r'To:\s*"?([A-Z][a-z]+\s+[A-Z][a-z]+)"?', txt)
+                    if m: uid = full_iban.get(m.group(1).lower(), "")
                 if uid: mail_map[uid] = mail_map.get(uid,"") + " " + txt
-            print(f"  mails: {len(mail_map)}")
+            print(f"  mails: {len(mail_map)} threads linked")
             break
 
     return dict(tx=raw, users=users, locs=locs, sms=sms_map, mails=mail_map)
@@ -127,7 +145,10 @@ def build_profiles(tx: pd.DataFrame, sms: dict, mails: dict) -> dict:
     profiles = {}
     for sid, g in tx.groupby("SenderID"):
         amt = g["Amount"]
-        combined_text = sms.get(sid,"") + " " + mails.get(sid,"")
+        # look up communications by SenderIBAN (iban-keyed dicts)
+        iban = g["SenderIBAN"].dropna().replace("", None).dropna()
+        iban_key = str(iban.iloc[0]) if len(iban) > 0 else ""
+        combined_text = sms.get(iban_key,"") + " " + mails.get(iban_key,"")
         profiles[sid] = {
             "n":           len(g),
             "amt_mean":    float(amt.mean()),
@@ -168,4 +189,5 @@ def get_tx_context(tid: str, data: dict) -> dict:
         gps = data["locs"][mask].copy()
 
     return dict(row=row, sender=sender, history=history, gps=gps,
-                sms=data["sms"].get(sid,""), mail=data["mails"].get(sid,""))
+                sms=data["sms"].get(str(row.get("SenderIBAN") or ""), ""),
+                mail=data["mails"].get(str(row.get("SenderIBAN") or ""), ""))

@@ -9,8 +9,8 @@ Dataset availability grows with challenge level:
 
 CSV column layout (inferred from Rules + example data):
   TransactionID, SenderID, RecipientID, TransactionType, Amount,
-  Location, PaymentMethod, SenderIBAN, RecipientIBAN, Balance, [Label], Timestamp
-  (Label present only in training datasets; always empty in eval)
+  Location, PaymentMethod, SenderIBAN, RecipientIBAN, Balance, Description, Timestamp
+  (Description contains free-text transaction notes, e.g. "Salary payment Jan")
 """
 
 import json
@@ -20,11 +20,11 @@ from pathlib import Path
 from typing import Dict, Optional
 
 
-# Expected columns — the 11th slot ("Label") is optional / empty in eval
+# Expected columns — the 11th slot ("Description") can be a label in training or a text description
 _TX_COLS = [
     "TransactionID", "SenderID", "RecipientID", "TransactionType",
     "Amount", "Location", "PaymentMethod", "SenderIBAN", "RecipientIBAN",
-    "Balance", "Label", "Timestamp",
+    "Balance", "Description", "Timestamp",
 ]
 
 # Phishing / social-engineering keywords for SMS / e-mail analysis
@@ -117,8 +117,8 @@ class DataAgent:
             "sender":      sender,
             "tx_history":  tx_history,
             "gps_near":    gps_near,
-            "sms":         self.conversations.get(sender_id, ""),
-            "email":       self.messages.get(sender_id, ""),
+            "sms":         self.conversations.get(str(tx.get("SenderIBAN") or ""), ""),
+            "email":       self.messages.get(str(tx.get("SenderIBAN") or ""), ""),
         }
 
     def build_sender_profiles(self) -> Dict[str, Dict]:
@@ -140,6 +140,10 @@ class DataAgent:
         for sender_id, grp in self.transactions_df.groupby("SenderID"):
             amounts = grp["Amount"]
             night_mask = grp["Timestamp"].dt.hour.between(0, 5)
+            # look up communications by SenderIBAN (dicts are iban-keyed)
+            iban_vals = grp["SenderIBAN"].dropna().replace("", None).dropna()
+            iban_key  = str(iban_vals.iloc[0]) if len(iban_vals) > 0 else ""
+            combined_text = self.conversations.get(iban_key, "") + " " + self.messages.get(iban_key, "")
             profiles[sender_id] = {
                 "tx_count":          len(grp),
                 "amount_mean":       float(amounts.mean()),
@@ -149,10 +153,7 @@ class DataAgent:
                 "common_method":     grp["PaymentMethod"].mode().iloc[0]   if len(grp) > 0 and len(grp["PaymentMethod"].mode()) > 0 else "",
                 "night_rate":        float(night_mask.mean()),
                 "known_recipients":  set(grp["RecipientID"].dropna().unique()),
-                "phishing_score":    self._phishing_score(
-                    self.conversations.get(sender_id, "") +
-                    " " + self.messages.get(sender_id, "")
-                ),
+                "phishing_score":    self._phishing_score(combined_text),
             }
 
         self._sender_profiles = profiles
@@ -234,7 +235,11 @@ class DataAgent:
         return df
 
     def _load_conversations(self) -> Dict[str, str]:
-        """Load SMS threads.  Returns user_id → concatenated SMS text."""
+        """Load SMS threads. Returns iban -> concatenated SMS text.
+        Since sms.json has no user ID field, we parse the first name from
+        the 'Hi <name>' greeting and match against users by first_name.
+        Key is users.iban so it can be looked up via tx.SenderIBAN.
+        """
         for fname in ("sms.json", "conversations.json", "conversations.csv"):
             path = self.data_dir / fname
             if path.exists():
@@ -249,18 +254,35 @@ class DataAgent:
             else:
                 data = json.loads(pd.read_csv(path).to_json(orient="records"))
 
+        # Build first_name (lower) -> iban index from users
+        fname_iban: Dict[str, str] = {}
+        if self.users_df is not None and len(self.users_df) > 0:
+            for _, u in self.users_df.iterrows():
+                fn = str(u.get("first_name") or "").strip().lower()
+                if fn and "iban" in u.index:
+                    fname_iban[fn] = str(u["iban"])
+
         result: Dict[str, str] = {}
         for record in (data if isinstance(data, list) else [data]):
+            # Try explicit ID fields first (future-proof)
             uid = str(record.get("UserID") or record.get("user_id") or record.get("BioTag") or "")
-            sms = str(record.get("SMS") or record.get("sms") or record.get("text") or record.get("content") or "")
+            text = str(record.get("SMS") or record.get("sms") or record.get("text") or record.get("content") or "")
+            # If no uid, parse 'Hi FirstName' from message body
+            if not uid and fname_iban and text:
+                m = re.search(r'(?:Hi|Hello|Dear)\s+([A-Z][a-z]+)', text)
+                if m:
+                    uid = fname_iban.get(m.group(1).lower(), "")
             if uid:
-                result[uid] = result.get(uid, "") + " " + sms
+                result[uid] = result.get(uid, "") + " " + text
 
-        print(f"  sms              : {len(result)} threads loaded")
+        print(f"  sms              : {len(result)} threads linked")
         return result
 
     def _load_messages(self) -> Dict[str, str]:
-        """Load e-mail threads.  Returns user_id → concatenated mail text."""
+        """Load e-mail threads. Returns iban -> concatenated mail text.
+        Parses 'To: "FirstName LastName"' from mail headers to find the user.
+        Key is users.iban so it can be looked up via tx.SenderIBAN.
+        """
         for fname in ("mails.json", "messages.json", "messages.csv"):
             path = self.data_dir / fname
             if path.exists():
@@ -275,14 +297,29 @@ class DataAgent:
             else:
                 data = json.loads(pd.read_csv(path).to_json(orient="records"))
 
+        # Build fullname (lower) -> iban index from users
+        fullname_iban: Dict[str, str] = {}
+        if self.users_df is not None and len(self.users_df) > 0:
+            for _, u in self.users_df.iterrows():
+                fn = str(u.get("first_name") or "").strip()
+                ln = str(u.get("last_name")  or "").strip()
+                full = (fn + " " + ln).strip().lower()
+                if full and "iban" in u.index:
+                    fullname_iban[full] = str(u["iban"])
+
         result: Dict[str, str] = {}
         for record in (data if isinstance(data, list) else [data]):
             uid  = str(record.get("UserID") or record.get("user_id") or record.get("BioTag") or "")
-            mail = str(record.get("mail")   or record.get("Mail")   or record.get("email") or record.get("text") or record.get("content") or "")
+            mail = str(record.get("mail") or record.get("Mail") or record.get("email") or record.get("text") or record.get("content") or "")
+            # If no uid, extract 'To: "FirstName LastName"' from headers
+            if not uid and fullname_iban and mail:
+                m = re.search(r'To:\s*"?([A-Z][a-z]+\s+[A-Z][a-z]+)"?', mail)
+                if m:
+                    uid = fullname_iban.get(m.group(1).lower(), "")
             if uid:
                 result[uid] = result.get(uid, "") + " " + mail
 
-        print(f"  mails            : {len(result)} e-mail threads loaded")
+        print(f"  mails            : {len(result)} threads linked")
         return result
 
     # ------------------------------------------------------------------
@@ -314,8 +351,10 @@ def _looks_like_id(s: str) -> bool:
 
 if __name__ == "__main__":
     import sys
-    level = sys.argv[1] if len(sys.argv) > 1 else "1"
-    agent = DataAgent(f"public_lev_{level}/public_lev_{level}")
+    name = sys.argv[1] if len(sys.argv) > 1 else "truman"
+    from solve import _resolve_dataset_path
+    path = _resolve_dataset_path(name, False)
+    agent = DataAgent(path)
     data  = agent.load_all_data()
     tx    = data["transactions"]
     print(f"\nTransactions : {len(tx)}")

@@ -53,13 +53,9 @@ class ChallengeSystem:
       Coop path      (risk in uncertain zone):          2 independent calls + 1 decision
     """
 
-    # Zero-LLM zone: pure heuristic, no API call at all (saves tokens)
-    ZERO_LO   = 4    # risk ≤ this  → definitely legit   → return 0 (no call)
-    ZERO_HI   = 15   # risk ≥ this  → definitely fraud   → return 1 (no call)
-    # Everything else: exactly 1 LLM call — no cooperative path
-    # (3-call coop path eliminated: saves ~70% of LLM budget on ambiguous cases)
-    FAST_LOW  = 14   # effectively covers entire non-zero range
-    FAST_HIGH = 5    # effectively covers entire non-zero range
+    ZERO_LO = 4   # risk ≤ this → legit, no LLM call
+    ZERO_HI = 15  # risk ≥ this → fraud, no LLM call
+    # everything else → exactly 1 LLM call
 
     def __init__(self):
         load_dotenv()
@@ -130,106 +126,28 @@ class ChallengeSystem:
                     break
         raise RuntimeError(f"All models exhausted for {agent_name}. Last: {last_error}")
 
-    # ------------------------------------------------------------------
-    # Agent A — TransactionAgent  (independent, parallel-safe)
-    # ------------------------------------------------------------------
-
-    def transaction_agent(
-        self,
-        session_id   : str,
-        features     : dict,
-        pop_stats    : dict = None,
-    ) -> str:
-        """
-        Assesses the transaction itself: amount anomaly, timing, balance impact.
-        Does NOT see sender profile or communications — fully independent lens.
-        """
-        pop_ctx = ""
-        if pop_stats:
-            pop_ctx = (
-                f"Population context: mean amount={pop_stats['amount_mean']:.2f}, "
-                f"std={pop_stats['amount_std']:.2f}, "
-                f"night-transaction rate={pop_stats['night_rate']:.2%}.\n"
-            )
-        system = (
-            "MirrorPay fraud analyst. Analyze ONLY the transaction metrics. "
-            "2 sentences max. Identify red flags (large amount, night/weekend, new recipient, negative balance). "
-            "No verdict."
-        )
-        user = (
-            f"{pop_ctx}"
-            f"type={features.get('tx_type','')} amt={features.get('amount',0):.0f} "
-            f"z={features.get('amount_zscore',0):.1f} "
-            f"(avg={features.get('sender_amount_mean',0):.0f}) "
-            f"bal={features.get('balance_after',0):.0f}(neg:{features.get('balance_negative',0)}) "
-            f"hour={features.get('hour',0)} night={features.get('is_night',0)} wknd={features.get('is_weekend',0)} "
-            f"method={features.get('payment_method','')} unusual_method={features.get('unusual_method',0)} "
-            f"new_rec={features.get('recipient_new',0)} tx_count={features.get('sender_tx_count',0)}"
-        )
-        return self.call_with_fallback(session_id, system, user, "TransactionAgent")
-
-    # ------------------------------------------------------------------
-    # Agent B — ContextAgent  (independent, parallel-safe)
-    # ------------------------------------------------------------------
-
-    def context_agent(
-        self,
-        session_id   : str,
-        features     : dict,
-    ) -> str:
-        """
-        Assesses sender context: user profile, GPS consistency, communication signals.
-        Does NOT see transaction amount or timing — fully independent lens.
-        """
-        system = (
-            "MirrorPay context analyst. Analyze sender profile + communications only. "
-            "2 sentences max. Flag GPS mismatches, phishing SMS/email, suspicious profile. No verdict."
-        )
-        user = (
-            f"age={features.get('sender_age','?')} city={features.get('sender_city','')} "
-            f"gps={features.get('gps_match','?')} dist_km={features.get('gps_distance_km',0)} "
-            f"phish_sms={features.get('phishing_sms',0)}/3 phish_email={features.get('phishing_email',0)}/3 "
-            f"sms={features.get('sms_snippet','')[:150]} "
-            f"email={features.get('email_snippet','')[:150]}"
-        )
-        return self.call_with_fallback(session_id, system, user, "ContextAgent")
-
-    # ------------------------------------------------------------------
-    # Agent C — DecisionAgent  (always sync, after A+B or alone)
-    # ------------------------------------------------------------------
-
     def decision_agent(
         self,
-        session_id      : str,
-        risk_score      : int,
-        tx_analysis     : str = "",
-        context_analysis: str = "",
-        pop_context     : str = "",
-        features        : dict = None,
+        session_id  : str,
+        risk_score  : int,
+        features    : dict,
+        pop_context : str = "",
     ) -> int:
-        """
-        Final binary decision: 1 = fraudulent, 0 = legitimate.
-        Single call with all available signals. FN >> FP.
-        """
         system = (
             "MirrorPay fraud adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
             "FN >> FP. When uncertain → 1. 0 only when clearly legit."
         )
-        f = features or {}
-        parts = [f"risk={risk_score}/20"]
-        if pop_context:
-            parts.append(pop_context)
-        if f:
-            parts.append(
-                f"type={f.get('tx_type','')} amt={f.get('amount',0):.0f} z={f.get('amount_zscore',0):.1f} "
-                f"bal={f.get('balance_after',0):.0f}(neg:{f.get('balance_negative',0)}) "
-                f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
-                f"gps={f.get('gps_match','?')} dist_km={f.get('gps_distance_km',0)} "
-                f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
-                f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)}"
-            )
-        parts.append("1 or 0:")
-        user = " | ".join(parts)
+        f = features
+        pop = f" | {pop_context}" if pop_context else ""
+        user = (
+            f"risk={risk_score}/20{pop} | "
+            f"type={f.get('tx_type','')} amt={f.get('amount',0):.0f} z={f.get('amount_zscore',0):.1f} "
+            f"bal={f.get('balance_after',0):.0f}(neg:{f.get('balance_negative',0)}) "
+            f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
+            f"gps={f.get('gps_match','?')} dist_km={f.get('gps_distance_km',0)} "
+            f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
+            f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)} | 1 or 0:"
+        )
         raw  = self.call_with_fallback(session_id, system, user, "DecisionAgent")
 
         # Parse: first digit found wins
@@ -248,33 +166,16 @@ class ChallengeSystem:
 
     def assess_transaction(
         self,
-        session_id   : str,
-        features     : dict,
-        risk_score   : int,
-        pop_stats    : dict = None,
-        pop_context  : str  = "",
+        session_id  : str,
+        features    : dict,
+        risk_score  : int,
+        pop_context : str = "",
     ) -> int:
-        """
-        Dispatch:
-          risk ≤ ZERO_LO   → return 0 immediately (no LLM call)
-          risk ≥ ZERO_HI   → return 1 immediately (no LLM call)
-          risk in fast zone → 1 LLM call
-          otherwise        → cooperative path (3 LLM calls)
-
-        Returns 0 (legitimate) or 1 (fraudulent).
-        """
-        # Zero-LLM zone — pure heuristic, saves tokens
         if risk_score <= self.ZERO_LO:
             return 0
         if risk_score >= self.ZERO_HI:
             return 1
-
-        # Single LLM call — all features in one shot, no cooperative path
-        return self.decision_agent(
-            session_id, risk_score,
-            pop_context = pop_context,
-            features    = features,
-        )
+        return self.decision_agent(session_id, risk_score, features, pop_context)
 
 
 # ---------------------------------------------------------------------------

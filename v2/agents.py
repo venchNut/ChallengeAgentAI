@@ -67,40 +67,6 @@ def _run(session_id: str, system: str, user: str, tag: str) -> str:
 
 # ── Agents ───────────────────────────────────────────────────────────────────
 
-def reasoner(session_id: str, features: dict, pop_ctx: str = "") -> str:
-    sys = "MirrorPay fraud analyst. 2 sentences max — all signals suspicious+legit. No verdict."
-    ctx = (f"Pop context: {pop_ctx}\n" if pop_ctx else "")
-    usr = ctx + _features_block(features)
-    return _run(session_id, sys, usr, "Reasoner")
-
-
-def sceptic(session_id: str, features: dict, reasoning: str) -> str:
-    sys = "MirrorPay sceptic. 2 sentences: challenge or amplify colleague's analysis. No verdict."
-    usr = f"Analysis:\n{reasoning}\n\nData:\n{_features_block(features)}"
-    return _run(session_id, sys, usr, "Sceptic")
-
-
-def verdict(session_id: str, risk: int, reasoning: str, challenge: str) -> int:
-    sys = (
-        "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
-        "FN>>FP. Flag when uncertain. 0 only if clearly legit. Risk≥8+red flag→1."
-    )
-    usr = (
-        f"Heuristic risk score: {risk}/20\n\n"
-        f"Analysis:\n{reasoning}\n\n"
-        f"Counter-analysis:\n{challenge}\n\n"
-        "Decision (1 or 0):"
-    )
-    raw = _run(session_id, sys, usr, "Verdict")
-    for ch in raw.strip():
-        if ch in ("1","0"):
-            return int(ch)
-    lo = raw.lower()
-    if any(w in lo for w in ("fraud","suspicious","flag","yes","1")):
-        return 1
-    return 0
-
-
 def fast_verdict(session_id: str, risk: int, features: dict) -> int:
     sys = (
         "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
@@ -124,34 +90,12 @@ def fast_verdict(session_id: str, risk: int, features: dict) -> int:
     return 1 if risk > 9 else 0
 
 
-def assess(session_id: str, features: dict, risk: int, pop_ctx: str = "") -> int:
-    # Zero-LLM zone — pure heuristic, 0 API calls
+def assess(session_id: str, features: dict, risk: int) -> int:
     if risk <= ZERO_LO:
         return 0
     if risk >= ZERO_HI:
         return 1
-    # Always 1 call — cooperative path eliminated (saves ~70% LLM budget)
     return fast_verdict(session_id, risk, features)
-
-
-# ── Feature block formatter ───────────────────────────────────────────────────
-
-def _features_block(f: dict) -> str:
-    lines = [
-        f"TX type        : {f.get('tx_type','')}",
-        f"Amount         : {f.get('amount',0):.2f}  (sender avg {f.get('amt_mean',0):.2f} ± {f.get('amt_std',0):.2f}, z={f.get('z',0):.2f})",
-        f"Balance after  : {f.get('balance',0):.2f}  (negative: {f.get('neg_bal',0)})",
-        f"Time           : {f.get('hour',0):02d}:xx  night={f.get('night',0)}  weekend={f.get('wknd',0)}",
-        f"Payment method : {f.get('method','')}  (unusual for sender: {f.get('unusual_method',0)})",
-        f"Recipient new  : {f.get('new_rec',0)}  sender tx_count={f.get('n_tx',0)}",
-        f"Sender age     : {f.get('age','N/A')}  city={f.get('city','')}",
-        f"GPS vs home    : {f.get('gps_match','N/A')}  dist_km={f.get('gps_km',0)}",
-        f"Phish SMS      : {f.get('phish_sms',0)}/3",
-        f"Phish mail     : {f.get('phish_mail',0)}/3",
-        f"SMS sample     : {str(f.get('sms_snip',''))[:200]}",
-        f"Mail sample    : {str(f.get('mail_snip',''))[:200]}",
-    ]
-    return "\n".join(lines)
 
 
 # ── Langfuse client (module-level) ────────────────────────────────────────────

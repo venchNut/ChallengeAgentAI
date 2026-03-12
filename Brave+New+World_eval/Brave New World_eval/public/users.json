@@ -1,0 +1,212 @@
+[
+  {
+    "first_name": "Niccolò",
+    "last_name": "Paolucci",
+    "birth_year": 2045,
+    "salary": 74700,
+    "job": "Business Manager",
+    "iban": "IT81E1941360300122748889568",
+    "residence": {
+      "city": "Ladispoli",
+      "lat": "41.9544",
+      "lng": "12.0742"
+    },
+    "description": "Niccolò Paolucci, nato nel 2045, ha 42 anni e vive a Ladispoli: Business Manager pragmatico che guadagna circa 74.700 euro l'anno e passa gran parte del tempo a coordinare squadre, clienti e partner; fa in media quattro trasferte all'anno — da incontri in paesini di poche migliaia di abitanti fino a trattative in metropoli da decine di milioni e voli che possono superare i 15.000 km —, viaggia leggero ma organizzato, preferisce l'efficienza dei programmi di fidelizzazione e le mattine iniziano spesso con un caffè sul lungomare prima del treno per Roma; sul lavoro è deciso e pratico, ma tende a fidarsi delle comunicazioni digitali più del dovuto, e ogni tanto cade in offerte troppo lucide, il che lo porta a imparare per esperienza qualche regola di sicurezza informatica."
+  },
+  {
+    "first_name": "Danielle",
+    "last_name": "Taylor",
+    "birth_year": 2061,
+    "salary": 10900,
+    "job": "Student",
+    "iban": "GB28Z6864006541111535457719",
+    "residence": {
+      "city": "Alton",
+      "lat": "51.1498",
+      "lng": "-0.9769"
+    },
+    "description": "Danielle Taylor, born in 2061 and now 26, is a university student who lives in Alton and gets by on a modest annual income of about £10,900 from part-time work and small stipends; she knows the town’s quiet streets and market stalls well but keeps a restless curiosity for the wider world, making a single longer trip about once a year that can take her anywhere from nearby British towns to destinations thousands of kilometres away. She balances lectures and late-night study sessions with shifts that pay the bills, keeps a practical, unfussy flat in town, and prefers spending on essentials rather than luxuries. Online she’s easygoing and sometimes too trusting of convenient offers, which has meant a few missteps with dubious links, but she’s learning to be more careful as she manages budgets and paperwork for university life. Quietly determined, she navigates the routines of study and small-town living while saving and planning the occasional trip that satisfies her need to see how other places live."
+  },
+  {
+    "first_name": "Lorraine",
+    "last_name": "Griffiths",
+    "birth_year": 2053,
+    "salary": 30700,
+    "job": "Administrative Assistant",
+    "iban": "GB63Q9268060241917380391110",
+    "residence": {
+      "city": "Winchester",
+      "lat": "51.0632",
+      "lng": "-1.3080"
+    },
+    "description": "Lorraine Griffiths, born in 2053, is a 34-year-old Administrative Assistant based in Winchester who lives a steady, modest life on a £30,700 salary, keeping the office running with quiet efficiency—managing schedules, filing reports and smoothing other people's problems—while taking about two trips a year that range from nearby market towns to the occasional long-haul visit to a far-flung metropolis; she enjoys the measured calm of Winchester's old streets and cathedral, prefers practical routines to risk, and is personable but slightly trusting online, often asking a colleague to double-check anything that looks a bit off."
+  },
+  {
+    "first_name": "Joanne",
+    "last_name": "Evans",
+    "birth_year": 2061,
+    "salary": 11500,
+    "job": "Student",
+    "iban": "GB87B7881538214027319276565",
+    "residence": {
+      "city": "Failsworth",
+      "lat": "53.5102",
+      "lng": "-2.1575"
+    },
+    "description": "Joanne Evans, born in 2061, is a 26-year-old university student living in Failsworth on the edge of Manchester; she divides her days between lectures and a small part-time job that brings in about £11,500 a year, enough to cover rent and the occasional night out but not much else, and she knows the town’s converted mills and tram routes as well as anyone, commuting into the city when she needs campus resources. She travels roughly once a year, happy equally in quiet towns and vast urban centres and willing to go as far as 15,000 km for research, friends or a festival, and at home she’s practical and no-nonsense but a little impulsive online—she’s been caught by phishing traps more than once—so she’s learning to be sharper with her devices while getting on with studies and the ordinary business of building a future."
+  },
+  {
+    "first_name": "Dominique",
+    "last_name": "Chevalier",
+    "birth_year": 2041,
+    "salary": 34300,
+    "job": "Office Clerk",
+    "iban": "FR88P4907860725832131680577",
+    "residence": {
+      "city": "Bordeaux",
+      "lat": "44.8400",
+      "lng": "-0.5800"
+    },
+    "description": "Dominique Chevalier, né en 2041 et installé à Bordeaux, est un employé de bureau au profil classique: consciencieux et attaché à la routine, il gagne 34 300 € par an et organise ses priorités autour du travail, du logement et des petits plaisirs de quartier; ses journées se passent entre dossiers, tableaux et relations de bureau, et il voyage en moyenne deux fois par an — parfois pour une courte escapade régionale, parfois pour des séjours lointains pouvant atteindre 15 000 km, explorant aussi bien des bourgs d'un millier d'habitants que des mégapoles de plusieurs dizaines de millions —, tandis que, côté numérique, il reste plutôt confiant et se laisse environ une fois sur deux attirer par une sollicitation en ligne qui paraît légitime, un point faible qui tranche avec sa prudence dans la vie quotidienne."
+  },
+  {
+    "first_name": "Valentin",
+    "last_name": "Ziegert",
+    "birth_year": 2061,
+    "salary": 19900,
+    "job": "Delivery Worker",
+    "iban": "DE60E5371397216471428544768",
+    "residence": {
+      "city": "Westerkappeln",
+      "lat": "52.3806",
+      "lng": "7.6000"
+    },
+    "description": "Valentin Ziegert, Jahrgang 2061, ist ein 26‑jähriger freiberuflicher Lieferfahrer aus Westerkappeln, der mit Plattformaufträgen rund 19.900 € im Jahr verdient; sein Alltag sind frühe Schichten, enge Zeitfenster und das Jonglieren mit kleinen Reparaturen und Spritkosten, dazu kommen etwa zwei größere Reisen pro Jahr — von kurzen Ortsfahrten bis zu seltenen Fernläufen mit Entfernungen bis zu 15.000 km und Zielen, die von Dörfern mit ein paar tausend bis zu Metropolen mit Millionen Einwohnern reichen; er verlässt sich auf sein Smartphone und die Routen-App, was ihm zwar das Leben erleichtert, aber ihn auch verwundbar macht: unter Zeitdruck klickt er öfter unvorsichtig auf verdächtige Nachrichten (etwa 48 % Wahrscheinlichkeit), und trotzdem bleibt er pragmatisch, spart, wenn möglich, und nimmt jeden neuen Auftrag an, um über die Runden zu kommen."
+  },
+  {
+    "first_name": "Tracey",
+    "last_name": "Kirby",
+    "birth_year": 2056,
+    "salary": 45900,
+    "job": "Administrative Assistant",
+    "iban": "GB07S3557597626572771944338",
+    "residence": {
+      "city": "Kidlington",
+      "lat": "51.8231",
+      "lng": "-1.2903"
+    },
+    "description": "Born in 2056, Tracey Kirby is an Administrative Assistant living in Kidlington who earns £45,900 and keeps a steady, practical routine: she manages schedules, paperwork and the office inbox with quiet efficiency, takes about three trips a year—ranging from short local outings to long-haul journeys up to 15,000 km visiting places from small towns to megacities—and admits she’s not immune to the occasional online mistake, with a roughly 48% chance of clicking a suspicious email, a personal blind spot that sits oddly alongside a dependable work ethic and a preference for straightforward, no-nonsense solutions."
+  },
+  {
+    "first_name": "Margaret",
+    "last_name": "Delannoy",
+    "birth_year": 2060,
+    "salary": 27200,
+    "job": "Delivery Worker",
+    "iban": "FR04N0227119390023539959895",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "En 2087, Margaret Delannoy, née en 2060, a 27 ans et vit à Paris où elle travaille comme livreuse indépendante, enchaînant courses et créneaux dictés par une application qui répartit les commandes; elle circule surtout en scooter électrique dans les rues saturées et capteurs de la capitale et gagne autour de 27 200 € par an, somme qui lui permet une vie modeste et des choix pragmatiques — logement compact, repas rapides, réparations au besoin. Sa routine est réglée par la plateforme: matinée et soir sont les heures fortes, les rues sont bruyantes, les consignes strictes, et la relation avec son employeur numérique est à la fois indispensable et précaire. Elle voyage rarement, une fois par an, parfois assez loin quand il s'agit de voir la famille ou de décrocher un break qui l'éloigne jusqu'à plusieurs milliers de kilomètres; malgré sa prudence habituelle, elle a tendance à faire confiance aux notifications et aux offres d'apps, ce qui l'a déjà exposée à des faux messages et lui impose désormais une vigilance numérique constante."
+  },
+  {
+    "first_name": "Constance",
+    "last_name": "Gimenez",
+    "birth_year": 2053,
+    "salary": 34700,
+    "job": "Office Clerk",
+    "iban": "FR13E7351763480267560550523",
+    "residence": {
+      "city": "Plaisance-du-Touch",
+      "lat": "43.5667",
+      "lng": "1.2972"
+    },
+    "description": "Constance Gimenez, née en 2053, vit à Plaisance-du-Touch et travaille comme employée de bureau ; elle gagne environ 34 700 € par an et mène une vie organisée ponctuée d'environ quatre voyages par an, parfois de courtes escapades locales, parfois des sauts allant jusqu'à 15 000 km vers des lieux allant de petites communes d'un millier d'habitants à des mégapoles de 45 millions ; au travail elle est pragmatique et méthodique, curieuse des nouvelles technologies mais parfois un peu imprudente en ligne — sa propension aux tentatives de phishing est d'environ 50 % —, et à la maison elle apprécie la simplicité et les petites libertés que son revenu lui permet."
+  },
+  {
+    "first_name": "Erika",
+    "last_name": "Franscini",
+    "birth_year": 2048,
+    "salary": 38000,
+    "job": "Administrative Assistant",
+    "iban": "IT05M7900475411042543734469",
+    "residence": {
+      "city": "Pontassieve",
+      "lat": "43.7750",
+      "lng": "11.4375"
+    },
+    "description": "Erika Franscini, nata nel 2048 e residente a Pontassieve, ha 39 anni e conduce una vita ordinata da assistente amministrativa: lo stipendio di circa 38.000 € l'anno le permette una stabilità modesta ma concreta, sufficiente per un appartamento vicino al centro e per i piccoli piaceri della città sul Valdarno; al lavoro è metodica, passa le giornate a gestire pratiche digitali e scadenze per uffici locali, conciliando la burocrazia cartacea che sopravvive ancora con le interfacce di sistema del 2087, e quando la posta elettronica si ingarbuglia è capace di risolvere quasi ogni problema, anche se a volte una comunicazione troppo elegante la spinge a cliccare prima di riflettere. Nel tempo libero predilige passeggiate lungo l'Arno, cene tranquille con amici di lunga data e una fuga l'anno, che può portarla da un borgo poco popolato a una metropoli lontana: viaggia poco ma quando lo fa sceglie destinazioni varie, dalle località sotto casa alle città affollate, preferendo esperienze concrete e programmi ben organizzati più che l'improvvisazione."
+  },
+  {
+    "first_name": "Hartwig",
+    "last_name": "Graf",
+    "birth_year": 2010,
+    "salary": 25200,
+    "job": "Retired",
+    "iban": "DE90A8289840276358459335700",
+    "residence": {
+      "city": "Hamburg",
+      "lat": "53.5500",
+      "lng": "10.0000"
+    },
+    "description": "Hartwig Graf, geboren 2010 und als pensionierter Hausmann in Hamburg zu Hause, führt ein schlichtes, verlässliches Leben: seine Rente von rund 25.200 Euro im Jahr reicht für die gepflegte Wohnung, das gemeinsame Kochen mit der Nachbarin und die Kleingartenarbeit am Wochenende, und trotzdem plant er etwa drei Reisen pro Jahr — mal ein kurzer Abstecher an die Nordsee oder in ein friesisches Dorf, mal eine Stippvisite in ferne Metropolen bis zu tausenden Kilometern Entfernung; er schätzt sowohl stille Orte mit wenigen Einwohnern als auch das Gedränge großer Städte, kennt die Ecken und Märkte seiner Heimatstadt, bewahrt alte Rezepte, kümmert sich gewissenhaft um den Haushalt und geht mit dem Netz eher vorsichtig um, ohne immer alle digitalen Fallen zu erkennen, sodass seine Tage von Routine, kleinen Freuden und der Fähigkeit geprägt sind, mit wenigen Mitteln ein warmes, ordentliches Zuhause zu schaffen."
+  },
+  {
+    "first_name": "Kate",
+    "last_name": "Hall",
+    "birth_year": 2056,
+    "salary": 28800,
+    "job": "Ride-share Driver",
+    "iban": "GB59N6178141529802215745148",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Kate Hall, born in 2056, is a thirty-one-year-old ride-share driver in London who scrapes together a modest wage—about £28,800 a year—by threading the city's neon-damp streets and answering the platform's constant dispatches; she knows boroughs by the smell of their food stalls and the time their street speakers go quiet, and she ferries everyone from lone commuters to festival crowds, rarely leaving the city except for the one trip she takes each year, sometimes a long haul within a 15,000 km radius to see family or grab a week of real quiet. Algorithmic surge alerts shape her days and the platform takes its cut; she's grown practical and wary of the slick in‑app offers—yet under pressure she still taps dubious promos now and then to hit a bonus and keep the rent paid. Unshowy and resilient, Kate keeps a small flat and a well-used vehicle, trading steady benefits for the flexibility and precarious autonomy the gig economy gives her."
+  },
+  {
+    "first_name": "Nicole",
+    "last_name": "Gonzalez",
+    "birth_year": 2063,
+    "salary": 15000,
+    "job": "Student",
+    "iban": "US24P8266446259168690330185",
+    "residence": {
+      "city": "Logan",
+      "lat": "41.7399",
+      "lng": "-111.8422"
+    },
+    "description": "Nicole Gonzalez, born in 2063, is a 24-year-old university student living in Logan, Utah, in 2087; she balances classes with part-time work that brings in about $15,000 a year, enough to cover rent and basics in the tight post-collapse economy. She keeps her life anchored in Logan but travels only once a year — sometimes not at all, sometimes up to 15,000 km to places that range from small towns to sprawling megacities. Online she’s capable but not invulnerable: assessments put her likelihood of clicking a phishing link at about 49%, a reminder that practical habits and occasional impulsiveness coexist in her day-to-day. Practical and focused, she uses Logan as a base to finish her degree and figure out what comes next."
+  },
+  {
+    "first_name": "Rosita",
+    "last_name": "Boucsein",
+    "birth_year": 2007,
+    "salary": 41900,
+    "job": "Retired",
+    "iban": "DE26E3376043104892265318325",
+    "residence": {
+      "city": "Stuttgart",
+      "lat": "48.7775",
+      "lng": "9.1800"
+    },
+    "description": "Rosita Boucsein, geboren 2007 und damit 80 Jahre alt, lebt in Stuttgart und ist als ehemalige Hausfrau nun Rentnerin; mit einer Jahresrente von rund 41.900 Euro führt sie einen ruhigen, eigenständigen Haushalt. Sie reist gern und etwa fünfmal im Jahr, mal auf kurze Ausflüge in die Region, mal auf Fernreisen bis zu 15.000 Kilometern, ihre Ziele reichen von kleinen Ortschaften bis zu großen Metropolen. Ihr Alltag ist geprägt vom Haushalt, Treffen mit Nachbarinnen und Freunden und kurzen Spaziergängen in den Parks der Stadt; sie nutzt digitale Dienste für Nachrichten und Buchungen, dabei ist sie grundsätzlich vorsichtig, aber nicht unangreifbar gegenüber schlau gestalteten Onlineangeboten. In Stuttgart fühlt sie sich verwurzelt: die kurzen Wege, die bekannten Straßenzüge und die vertrauten Treffpunkte geben ihrem Leben Struktur und Geborgenheit."
+  },
+  {
+    "first_name": "Alex",
+    "last_name": "Barth",
+    "birth_year": 2049,
+    "salary": 13900,
+    "job": "Delivery Worker",
+    "iban": "DE28C0268493457125763876494",
+    "residence": {
+      "city": "Heilbronn",
+      "lat": "49.1500",
+      "lng": "9.2167"
+    },
+    "description": "Alex Barth, geboren 2049 und damit 38 Jahre alt, lebt in Heilbronn und arbeitet als Plattform-Lieferfahrer; er verdient 13.900 und kennt die Stadt und ihre improvisierten Ladezonen aus dem Effeff, nimmt Aufträge per App an, jongliert Zeitfenster und versucht Leerfahrten zu vermeiden. Etwa viermal im Jahr macht er längere Touren, manchmal bis zu 15.000 Kilometer, zu Zielen von kleinen Orten mit rund 1.000 Einwohnern bis hin zu Megastädten mit bis zu 45 Millionen Bewohnern. Sein Alltag ist geprägt von automatisierten Kontrollstellen, Ladebuchten und Verkehrsadern der Lieferlogistik, sein Hab und Gut ist zweckmäßig, das Geld knapp, weshalb er jede Gelegenheit zum Zubrot nutzt. Im Netz ist er praktisch, aber nicht besonders misstrauisch: bei etwa jeder zweiten verdächtigen Nachricht klickt er, was ihm gelegentlich Probleme bereitet. In der Fahrergemeinschaft von Heilbronn gilt er als zuverlässig und pragmatisch, jemand, der weiß, wo die nächste Schnellladestation steht und wie man mit schwierigen Auftraggebern klarkommt."
+  }
+]

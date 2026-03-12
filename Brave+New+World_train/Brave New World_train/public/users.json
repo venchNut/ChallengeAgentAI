@@ -1,0 +1,212 @@
+[
+  {
+    "first_name": "Zacharie",
+    "last_name": "Collet",
+    "birth_year": 2042,
+    "salary": 69500,
+    "job": "Restaurant Owner",
+    "iban": "FR67H1015963463086100916903",
+    "residence": {
+      "city": "Rueil-Malmaison",
+      "lat": "48.8760",
+      "lng": "2.1810"
+    },
+    "description": "Zacharie Collet, né en 2042 et installé à Rueil-Malmaison, a 45 ans et tient depuis plusieurs années un restaurant du quartier qui fait sa réputation d'entrepreneur local; avec un salaire annuel d'environ 69 500 € il gère l'établissement au quotidien, tient sa comptabilité sur un compte IBAN FR67H1015963463086100916903 et voyage rarement — une fois par an en moyenne, parfois jusqu'à 15 000 km pour trouver fournisseurs ou inspirations, ses destinations allant de communes de 1 000 habitants à de vastes métropoles de 45 millions —; pragmatique dans le commerce et connu pour son sens du terrain, il reste pourtant parfois imprudent en ligne, avec près d'une chance sur deux de cliquer sur un lien de phishing, ce qui l'expose aux tracas numériques de notre époque."
+  },
+  {
+    "first_name": "Gerald",
+    "last_name": "Willis",
+    "birth_year": 2061,
+    "salary": 7500,
+    "job": "Student",
+    "iban": "US07W0776386552476388012076",
+    "residence": {
+      "city": "Concord",
+      "lat": "35.3933",
+      "lng": "-80.6369"
+    },
+    "description": "Gerald Willis is a 26-year-old university student living in Concord who supports himself on an income of $7,500 while juggling classes and part-time work; he travels about five times a year—comfortable hopping from towns of a few thousand to megacities of tens of millions and willing to go as far as fifteen thousand miles for a change of scene—and off campus he's practical and curious but a little careless online, prone to clicking questionable links until a friend points out the risk, a steady, unflashy young man quietly figuring out where he wants to land."
+  },
+  {
+    "first_name": "Antoine",
+    "last_name": "Lebreton",
+    "birth_year": 2047,
+    "salary": 54300,
+    "job": "Freelance Designer",
+    "iban": "FR88N7641970690041568904999",
+    "residence": {
+      "city": "Roissy-en-Brie",
+      "lat": "48.7906",
+      "lng": "2.6519"
+    },
+    "description": "Antoine Lebreton, né en 2047, est un designer freelance de 40 ans installé à Roissy‑en‑Brie; il gagne environ 54 300 € par an et passe ses journées à concevoir identités visuelles et interfaces pour start‑ups et agences, alternant esquisses analogiques et rendus augmentés dans son atelier modeste à deux pas de la gare. Habitué aux missions courtes, il voyage en moyenne trois fois par an, de bourgades d'à peine un millier d'habitants jusqu'à des métropoles de l'ordre de 45 millions, parfois à seulement quelques dizaines de kilomètres, parfois à plus de 15 000 km, ce qui nourrit son goût pour les ambiances contrastées et les palettes inattendues. Indépendant et méthodique dans son travail, il gère lui‑même la relation client et la facturation, mais avoue se laisser parfois tenter par des courriels trop alléchants, ce qui rend sa vigilance numérique perfectible. À Roissy‑en‑Brie il est apprécié pour ses expos éphémères au café du coin et sa capacité à transformer un brief flou en une proposition claire et immédiatement exploitable."
+  },
+  {
+    "first_name": "Jean",
+    "last_name": "Robinson",
+    "birth_year": 2048,
+    "salary": 39900,
+    "job": "Administrative Assistant",
+    "iban": "GB43J5902960469097258275024",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Jean Robinson, born in 2048, is a 39-year-old administrative assistant living and working in London who earns about £39,900 a year and keeps a small office running by scheduling meetings, filing approvals and smoothing the everyday frictions that let others get on with their jobs; he lives in a modest flat inside the city's ever-changing skyline, commutes by whatever transit still works and only takes one trip a year—sometimes a short escape, sometimes a long haul up to 15,000 km—to visit family or attend a conference—he's practical online but not overly suspicious (about a one-in-two tendency to click a dubious link), so convenience and urgency often win out, and in a city of drones, biometric kiosks and corporate zones he values steady routines, a predictable paycheck and the quiet comfort of small, reliable tasks."
+  },
+  {
+    "first_name": "Crystal",
+    "last_name": "Davis",
+    "birth_year": 2039,
+    "salary": 65400,
+    "job": "Retail Entrepreneur",
+    "iban": "US25P1094664569521193066150",
+    "residence": {
+      "city": "Chicago",
+      "lat": "41.8375",
+      "lng": "-87.6866"
+    },
+    "description": "Born in 2039, Crystal Davis is a 48-year-old retail entrepreneur who lives and works in Chicago, running a small but steady retail operation that brings in roughly $65,400 a year and keeps her tied to the city's neighborhoods and its shifting foot traffic; pragmatic and hands-on, she curates inventory, negotiates with suppliers and relies on six trips a year—anything from a quick local run to sourcing runs that stretch up to 15,000 km—to find both niche makers in small towns and product lines from megacities, and while she leans on digital tools to run payments and promotions she admits to being a little too trusting online (her estimated phishing click tendency is about 51%), a habit she's had to manage after a few costly missteps in the past, so she moves through Chicago's concrete and neon with a mix of street-level know-how and hard-earned caution."
+  },
+  {
+    "first_name": "Marcel",
+    "last_name": "Rocher",
+    "birth_year": 2051,
+    "salary": 22300,
+    "job": "Ride-share Driver",
+    "iban": "FR81V6059962021111878623359",
+    "residence": {
+      "city": "Lyon",
+      "lat": "45.7600",
+      "lng": "4.8400"
+    },
+    "description": "Marcel Rocher, né en 2051 et installé à Lyon, est un conducteur de plateforme qui vit au rythme des courses et des algorithmes: à 36 ans il gagne environ 22 300 € par an, conduit jour et nuit pour arrondir les fins de mois et connaît chaque artère de la ville, des pentes de la Croix-Rousse aux façades du Vieux-Lyon; son travail lui laisse une liberté relative mais peu de sécurité, et il accepte des trajets très variés — la plupart restent locaux, mais il part en moyenne six fois par an pour des déplacements qui vont de simples liaisons vers de petites communes à de longs sauts allant jusqu'à 15 000 km, entre villages et métropoles surpeuplées; pragmatique et peu enclin à la complication, il gère ses paiements via un compte bancaire français, se fie aux notifications de l'application et, malgré la méfiance ambiante, clique encore assez souvent sur des offres ou des messages suspects (à peu près une fois sur deux), ce qui lui coûte parfois du temps et de l'énergie, mais n'entame pas sa routine: trouver des clients, choisir la meilleure route, et garder la radio allumée pour ne pas entendre le silence de la cabine."
+  },
+  {
+    "first_name": "Matthew",
+    "last_name": "Simmons",
+    "birth_year": 2041,
+    "salary": 220500,
+    "job": "Investor",
+    "iban": "GB98O9422549416522873343957",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Matthew Simmons, born in 2041, is a 46-year-old London-based investor and top-tier entrepreneur who has carved a practical, results-focused reputation in the city's financial and start-up circles; he earns roughly £220,500 a year and treats risk the way he treats meetings—calculated but decisive. He lives in London and travels about three times a year, from quick domestic hops to intercontinental trips up to 15,000 km, usually to cities that range from small regional hubs to sprawling megacities; those journeys keep him connected to deals and talent across very different markets. Despite his professional caution, his relationship with digital security is uneven—his measured business instincts coexist with a near-50% tendency to misjudge suspicious messages, a quirk that has taught him costly lessons and made him more selective about who he trusts."
+  },
+  {
+    "first_name": "Susan",
+    "last_name": "Bonnin",
+    "birth_year": 2056,
+    "salary": 3300,
+    "job": "Student",
+    "iban": "FR16V7834052673691749031285",
+    "residence": {
+      "city": "Rennes",
+      "lat": "48.1147",
+      "lng": "-1.6794"
+    },
+    "description": "Susan Bonnin, née en 2056 et âgée de trente et un ans, est étudiante à Rennes; elle partage ses journées entre cours et petits boulots qui lui rapportent 3 300 € et lui permettent de payer son logement et de voyager à l'occasion. Curieuse et très connectée, elle révise dans les cafés de la ville et se déplace à vélo électrique quand le temps breton le permet; elle voyage environ deux fois par an, parfois pour des séjours tranquilles près de petites communautés, parfois sur de longues distances — jusqu'à quinze mille kilomètres — pour rejoindre de grandes métropoles ou des contrées isolées. Pragmatique mais parfois distraite, elle admet cliquer trop vite sur des liens en ligne, ce qui l'oblige à rester vigilante avec ses comptes et ses données; à Rennes on la reconnaît pour sa ténacité et son goût pour les lieux où l'on peut travailler entouré d'activité."
+  },
+  {
+    "first_name": "Nico",
+    "last_name": "Turrini",
+    "birth_year": 1997,
+    "salary": 30200,
+    "job": "Retired",
+    "iban": "IT39D9328500076177654639569",
+    "residence": {
+      "city": "Monteforte d'Alpone",
+      "lat": "45.4167",
+      "lng": "11.2833"
+    },
+    "description": "Nel 2087 Nico Turrini, nato nel 1997 e oggi novantenne, vive a Monteforte d'Alpone come pensionato casalingo: una vita scandita dalle faccende di casa, dalla cura del giardino e dalle relazioni di vicinato, sostenuta da una pensione intorno ai 30.200 euro annui; viaggia in media sei volte l'anno, alternando gite brevi dentro la provincia a spostamenti che possono arrivare fino a 15.000 km, per visitare tanto borghi di poche migliaia di abitanti quanto piazze affollate di metropoli da decine di milioni, e affronta la tecnologia con una certa familiarità ma anche una fiducia che lo rende talvolta vulnerabile alle trappole digitali, preferendo comunque i ritmi concreti del paese al caos del mondo esterno."
+  },
+  {
+    "first_name": "Lisa",
+    "last_name": "Green",
+    "birth_year": 2056,
+    "salary": 18300,
+    "job": "Delivery Worker",
+    "iban": "GB02I2893635347413173388345",
+    "residence": {
+      "city": "Manchester",
+      "lat": "53.4790",
+      "lng": "-2.2452"
+    },
+    "description": "Lisa Green, born in 2056 and now 31, works as a delivery driver in Manchester and lives by the city's pulses: early runs through rain-slick terraces, lunch-hour dashes around the Arndale, and late drops by the canals; she earns about £18,300 a year doing flexible gig shifts, relies on a stack of apps and secondhand kit to keep the income coming, and has learned the streets and traffic flows by habit rather than maps. Pragmatic more than cautious, she will click through platform messages or tempting offers—roughly a coin‑flip chance of answering something risky—because chasing one more job often means keeping the bills paid. She travels around four times a year, sometimes staying local and sometimes taking long hauls up to 15,000 km to pick up goods or meet a client, moving between small market towns and megacities of millions; the work is tight and repetitive but steady, and her days are measured in pickups, drop-offs and the small, practical victories that keep her afloat in a city that still runs on hustle."
+  },
+  {
+    "first_name": "Jennifer",
+    "last_name": "Austin",
+    "birth_year": 2046,
+    "salary": 36100,
+    "job": "Freelance Designer",
+    "iban": "US08I3725946942963200957287",
+    "residence": {
+      "city": "Riverbank",
+      "lat": "37.7260",
+      "lng": "-120.9433"
+    },
+    "description": "Jennifer Austin, born in 2046, is a 41-year-old freelance designer based in Riverbank, California; in 2087 she ekes out a living on about $36,100 a year, working from a compact studio where she balances client briefs, late-night rendering on unreliable power and hands-on commissions for local businesses. She travels about four times a year, sometimes staying close to home, sometimes crossing up to 15,000 km to meet clients or scout inspiration in places that range from sleepy towns of a few thousand to sprawling megacities of tens of millions. Her work life is a patchwork of digital contracts, barter and short gigs that pay just enough to keep her afloat; she’s technically competent but pragmatic, and admits she still occasionally clicks risky links—a habit that’s cost her time and data backups more than once—so she builds redundancies into her workflow. In Riverbank she’s known for clean, functional designs and a stubborn independence: she prefers the unpredictability of freelancing to steady employment, keeps a small circle of collaborators, and takes the long trips that will sometimes pay off and sometimes just keep her afloat."
+  },
+  {
+    "first_name": "Logan",
+    "last_name": "Rush",
+    "birth_year": 2056,
+    "salary": 17700,
+    "job": "Delivery Worker",
+    "iban": "US83L5300093046693901464750",
+    "residence": {
+      "city": "Milwaukee",
+      "lat": "43.0642",
+      "lng": "-87.9675"
+    },
+    "description": "Logan Rush, born in 2056, is a 31-year-old gig delivery driver in Milwaukee who lives modestly on about $17,700 a year, rents a small apartment near the river, and spends long shifts behind the wheel mastering the city's streets and delivery rhythms; he rarely leaves—maybe one yearly trip to see family or chase a higher-paying run—has learned to read traffic drones and avoid choke points, budgets tightly, and manages his online life with pragmatic caution (he's wary of scams but not immune to a tempting promo), steady and practical in a city that still runs because people like him keep the last-mile moving."
+  },
+  {
+    "first_name": "Ellinor",
+    "last_name": "Krein",
+    "birth_year": 2046,
+    "salary": 29700,
+    "job": "Administrative Assistant",
+    "iban": "DE33G3014440247163761738035",
+    "residence": {
+      "city": "Duisburg",
+      "lat": "51.4347",
+      "lng": "6.7625"
+    },
+    "description": "Ellinor Krein, geboren 2046, arbeitet in Duisburg als Verwaltungsassistentin und verdient 29.700 Euro im Jahr; sie wohnt in einer schlichten Wohnung nahe dem alten Binnenhafen, ihr Alltag ist geprägt von Akten, digitalen Registern und einem Arbeitsweg durch Industrieästhetik und Lieferdrohnen, die über die Ruhr säumen; mit 41 Jahren hat sie gelernt, mit knappem Budget zu haushalten, kleine Genüsse zu suchen und Freundschaften zu pflegen, die das Leben außerhalb der Schichtpläne tragen; sie reist etwa zweimal jährlich — mal eine kurze Fahrt in die Umgebung, mal eine lange Strecke, bis zu 15.000 Kilometer, zu Zielen, die von tausend bis zu 45 Millionen Einwohnern reichen — und nimmt diese Ausbrüche als notwendige Atempausen; online ist sie pragmatisch und antwortet schnell auf Anfragen, was sie gelegentlich anfällig für digitale Täuschungen macht; insgesamt ist sie nüchtern, anpassungsfähig und findet Stabilität in Routinen, die in einer lauten, geschäftigen Stadt wie Duisburg verlässlich bleiben."
+  },
+  {
+    "first_name": "Gustavo",
+    "last_name": "Moneta",
+    "birth_year": 2044,
+    "salary": 50500,
+    "job": "Retail Entrepreneur",
+    "iban": "IT90D3866691906001163971695",
+    "residence": {
+      "city": "Fano",
+      "lat": "43.8425",
+      "lng": "13.0136"
+    },
+    "description": "Gustavo Moneta, nato nel 2044 e oggi residente a Fano, è un imprenditore locale che gestisce attività di vendita al dettaglio adattata alle esigenze del 2087; con un reddito annuo intorno ai 50.500 euro mantiene il negozio e una fitta rete di fornitori che visita di persona una volta all'anno, talvolta spostandosi fino a grandi metropoli o appena fuori le piccole comunità della costa per rifornimenti e fiere. In una città che convive con mercati antichi e piattaforme commerciali sovraccariche, preferisce il contatto diretto con la clientela ma non disdegna gli strumenti digitali: la sua curiosità lo porta comunque a cadere qualche volta in offerte ingannevoli, più per impulsività che per ingenuità. Pragmatico e concreto, conosce le abitudini dei fanesi, alterna metodi analogici e tecnologie residuali per tenere a galla l'attività e conta sulla reputazione di quartiere più che sulle promesse degli algoritmi; sa che, in quest'epoca incerta, la tenacia e la rete di relazioni valgono più di ogni grande piano aziendale."
+  },
+  {
+    "first_name": "Ranieri",
+    "last_name": "Morrocco",
+    "birth_year": 1999,
+    "salary": 36800,
+    "job": "Retired",
+    "iban": "IT68L3889004864648271533200",
+    "residence": {
+      "city": "Noicattaro",
+      "lat": "41.0333",
+      "lng": "16.9833"
+    },
+    "description": "Ranieri Morrocco, classe 1999, ha 88 anni nel 2087 e vive a Noicattaro, dove la routine domestica è il suo regno: pensionato e casalingo, tiene in ordine l'appartamento, cura un terrazzino di ulivi e pomodori e prepara i pasti con ingredienti presi al mercato sotto il portico; la sua pensione, intorno a 36.800 all'anno, gli concede una certa serenità e quattro viaggi l'anno, che possono essere brevi fughe nei borghi della Puglia o trasferte che lo portano fino a 15.000 chilometri per visitare grandi metropoli; conosciuto in paese per la passeggiata serale in piazza e per il caffè con i vicini, è pratico nelle commissioni e nella contabilità domestica, usa gli schermi per prenotare e parlare con chi è lontano, ma non è del tutto impermeabile alle insidie digitali: qualche messaggio troppo convincente gli è già costato tempo, per fortuna sempre recuperabile con l'aiuto dei figli o del vicino più giovane."
+  }
+]

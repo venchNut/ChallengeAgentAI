@@ -1,0 +1,72 @@
+[
+  {
+    "first_name": "Franck",
+    "last_name": "Schneider",
+    "birth_year": 2066,
+    "salary": 8600,
+    "job": "Student",
+    "iban": "FR05M5465363260150693247867",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Franck Schneider, né en 2066 et âgé de 21 ans, est étudiant à Paris; il vit dans la capitale, perçoit un salaire de 8600 et gère ses finances via l'IBAN FR05M5465363260150693247867; curieux et connecté, il fait un seul voyage par an — parfois jusqu'à 15 000 km, vers des lieux allant de villages d'un millier d'habitants à des mégapoles de 45 millions — et, côté numérique, il n'a pas encore une méfiance totale : près d'une chance sur deux il clique encore sur des liens douteux."
+  },
+  {
+    "first_name": "Océane",
+    "last_name": "Brunet",
+    "birth_year": 2066,
+    "salary": 14400,
+    "job": "Student",
+    "iban": "FR41F5996999349759454045045",
+    "residence": {
+      "city": "Wattignies",
+      "lat": "50.5856",
+      "lng": "3.0439"
+    },
+    "description": "Océane Brunet, née en 2066 et donc âgée de 21 ans en 2087, est une étudiante universitaire installée à Wattignies, en périphérie de Lille ; avec des revenus annuels modestes de 14 400 crédits elle partage ses journées entre cours et projets numériques, se déplace en vélo électrique dans les rues grises de sa ville et réserve une part de son budget à trois voyages par an, parfois courts et proches, parfois très lointains — jusqu’à 15 000 km vers des mégapoles de plusieurs millions d’habitants —; curieuse et très connectée, elle a tendance à cliquer sur des liens inconnus à peu près une fois sur deux, ce qui la rend vulnérable aux arnaques numériques, mais elle apprend vite, ajuste son prudence en ligne et continue de jongler entre études, petits boulots et rêves d’horizons plus vastes."
+  },
+  {
+    "first_name": "André",
+    "last_name": "Durand",
+    "birth_year": 2000,
+    "salary": 33400,
+    "job": "Retired",
+    "iban": "FR97K4055582752904559582416",
+    "residence": {
+      "city": "Perpignan",
+      "lat": "42.6986",
+      "lng": "2.8956"
+    },
+    "description": "André Durand, né en 2000 et installé à Perpignan, est un retraité qui a longtemps tenu la maison et qui, à 87 ans, garde des gestes de maître de foyer — il cuisine pour le quartier, entretient les plantes sur son balcon qui regarde parfois le Canigou et va chaque matin au marché pour bavarder avec les commerçants; sa retraite tourne autour de 33 400 € par an, ce qui lui permet de partir trois fois par an, des escapades locales aux voyages lointains jusqu'à 15 000 km, dans des destinations qui vont du village tranquille aux grandes métropoles; sociable mais parfois trop confiant face aux sollicitations numériques, il a tendance à cliquer sur des courriels suspects; il aime la lumière du Roussillon, les terrasses des cafés et les promenades au bord de la Méditerranée, et préfère les plaisirs simples d'une vie bien ménagée à Perpignan."
+  },
+  {
+    "first_name": "Gianfranco",
+    "last_name": "Greggio",
+    "birth_year": 2060,
+    "salary": 1500,
+    "job": "Student",
+    "iban": "IT45V4057955443661694963499",
+    "residence": {
+      "city": "Udine",
+      "lat": "46.0667",
+      "lng": "13.2333"
+    },
+    "description": "Gianfranco Greggio, nato nel 2060, è uno studente universitario che vive a Udine e si mantiene con un salario di circa 1.500 euro; divide le giornate tra lezioni, biblioteca e i caffè in città, si concede un viaggio l'anno — a volte una breve fuga nei dintorni, altre volte un volo che può raggiungere i 15.000 km verso destinazioni che vanno dai piccoli borghi di poco più di mille abitanti fino a metropoli da decine di milioni — e poi torna alle sue abitudini cittadine; pratico e abituato a vivere con risorse limitate, è però ancora poco guardingo online: tende a cliccare link sospetti con una probabilità intorno al 51%, un limite che si ripromette di imparare a gestire con l'esperienza."
+  },
+  {
+    "first_name": "Abbie",
+    "last_name": "Gray",
+    "birth_year": 2037,
+    "salary": 61000,
+    "job": "Restaurant Owner",
+    "iban": "GB23M8240730297090457182795",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Abbie Gray, born in 2037 and now fifty, runs a neighbourhood restaurant in London and has built a steady life around cooking, staff management and the practicalities of keeping a small business afloat in 2087; she brings in about £61,000 a year, still turns up before dawn to check supplies from nearby markets and stays late to manage service, hires locally and judges success by repeat customers rather than press pieces, travels once a year—sometimes as far as 15,000 km—to gather ideas and ingredients from other big cities, and balances familiarity with new tech in the kitchen and front of house while remaining only moderately wary of digital scams (she’s about a 49% chance to click a clever phishing link when rushed), pragmatic, hands-on and rooted in the daily life of a changing London."
+  }
+]

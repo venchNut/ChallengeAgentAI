@@ -1,0 +1,422 @@
+[
+  {
+    "first_name": "Stephanie",
+    "last_name": "Watson",
+    "birth_year": 2053,
+    "salary": 32100,
+    "job": "Administrative Assistant",
+    "iban": "US67X0999318002113785493175",
+    "residence": {
+      "city": "Jacksonville",
+      "lat": "30.3322",
+      "lng": "-81.6749"
+    },
+    "description": "Stephanie Watson, born in 2053, is a 34-year-old administrative assistant in Jacksonville who keeps a modest household on a $32,100 salary; her workdays are steady—scheduling, filing, answering a constant stream of messages—and she’s valued for being reliable even if she admits she can be a little too trusting of unexpected emails; she travels only once a year, alternating between small towns and far-off cities with destinations that range from a few thousand residents to megacities, and she manages her finances carefully through a single familiar bank account while fitting into Jacksonville’s practical, down-to-earth rhythm."
+  },
+  {
+    "first_name": "Peter",
+    "last_name": "Jäkel",
+    "birth_year": 2056,
+    "salary": 12000,
+    "job": "Student",
+    "iban": "DE17L5880709795204819331243",
+    "residence": {
+      "city": "Villingen-Schwenningen",
+      "lat": "48.0603",
+      "lng": "8.4586"
+    },
+    "description": "Peter Jäkel, geboren 2056, ist ein 31‑jähriger Student aus Villingen‑Schwenningen, der sein Leben zwischen Studium und gelegentlichen Fluchten in die Ferne organisiert; mit einem Einkommen von 12.000 kann er sich die kleine Wohnung in der Stadt und die jährlichen Reisen leisten. Etwa drei Mal im Jahr verlässt er die vertraute Umgebung — manchmal bleibt er in Dörfern oder Kleinstädten, manchmal reist er bis zu 15.000 km weit und sucht das Gedränge riesiger Metropolen mit bis zu Millionen Einwohnern. Er kennt die Wälder und Flusstäler rund um Villingen‑Schwenningen und schätzt ihre Ruhe, doch gerade diese Ruhe macht den Reiz entfernten Trubels erst aus. Digital präsent, ist er pragmatisch, aber mit einer nicht zu unterschätzenden Neigung, auf Phishing zu klicken (Wahrscheinlichkeit 48 %), was ihn langsam dazu bringt, seine Online‑Gewohnheiten besser zu schützen."
+  },
+  {
+    "first_name": "Alyssa",
+    "last_name": "Osborne",
+    "birth_year": 2052,
+    "salary": 37300,
+    "job": "Administrative Assistant",
+    "iban": "US61E9385927844123724789080",
+    "residence": {
+      "city": "Mesquite",
+      "lat": "32.7602",
+      "lng": "-96.5865"
+    },
+    "description": "Alyssa Osborne, born in 2052, is a 35-year-old administrative assistant living in Mesquite, Texas, earning about $37,300 a year; she keeps a modest routine—commuting to an office that runs on schedules and digital forms, traveling roughly five times a year from quick regional trips to journeys that can stretch up to 15,000 kilometers and land her in places ranging from small towns to vast megacities—and while she's practical and reliable at keeping an office afloat, she can be a little too trusting online (roughly a fifty-fifty chance of clicking a suspicious link), which makes her quietly determined to learn better digital habits while stretching each paycheck for the simple comforts that steady life in the eastern Dallas suburbs still affords."
+  },
+  {
+    "first_name": "Kathryn",
+    "last_name": "Knowles",
+    "birth_year": 2037,
+    "salary": 149800,
+    "job": "Investor",
+    "iban": "GB26Z9651893054874546662802",
+    "residence": {
+      "city": "Grimsby",
+      "lat": "53.5675",
+      "lng": "-0.0800"
+    },
+    "description": "Kathryn Knowles, born in 2037 and now fifty, is a Grimsby-based investor and former top entrepreneur who turned dockside know‑how and regional ventures into a comfortable salary of £149,800; she runs a compact syndicate that prefers hard, pragmatic deals, travels about twice a year — from short trips across the Humber to long-haul journeys up to 15,000 km for factory inspections and merger talks — visiting places that range from thousand-people market towns to megacities of some 45 million, and while she prizes due diligence she still has a roughly fifty-percent tendency to be intrigued by flashy digital pitches that can sometimes blur into phishing."
+  },
+  {
+    "first_name": "Audrey",
+    "last_name": "Mendès",
+    "birth_year": 2004,
+    "salary": 37400,
+    "job": "Retired",
+    "iban": "FR52W5089558664531760794926",
+    "residence": {
+      "city": "Vence",
+      "lat": "43.7236",
+      "lng": "7.1142"
+    },
+    "description": "Audrey Mendès, née en 2004 et âgée de 83 ans, est une retraitée qui a fait de la maison son travail : elle vit à Vence, tient son intérieur, entretient quelques plantes sur le balcon, va au marché et voit régulièrement des voisins et amis; sa pension tourne autour de 37 400 € par an et est gérée depuis un compte français, elle part en voyage une fois par an — parfois pour une courte escapade locale, parfois pour des trajets beaucoup plus lointains (jusqu'à 15 000 km), vers des destinations qui vont de petites communes à de grandes métropoles — et, côté numérique, elle reste assez confiante en ligne, au point d'être vulnérable aux sollicitations douteuses presque une fois sur deux."
+  },
+  {
+    "first_name": "David",
+    "last_name": "Jackson",
+    "birth_year": 2036,
+    "salary": 56400,
+    "job": "Retail Entrepreneur",
+    "iban": "US39D6240672264874455453641",
+    "residence": {
+      "city": "Pomona",
+      "lat": "34.0585",
+      "lng": "-117.7626"
+    },
+    "description": "David Jackson, born in 2036 and now 51, runs a modest retail business in Pomona, California, bringing in about $56,400 a year from storefront sales and carefully chosen inventory; he travels roughly twice a year—sometimes to nearby suppliers, sometimes as far as 15,000 kilometers to big trade hubs or to market towns of only a thousand people—sourcing goods that appeal to his local customers, and though practical and hands-on he has a tendency to trust online offers (he'll click unfamiliar links about half the time), preferring steady local roots over risky gambles."
+  },
+  {
+    "first_name": "Guglielmo",
+    "last_name": "Caboto",
+    "birth_year": 2056,
+    "salary": 26100,
+    "job": "Digital Creator",
+    "iban": "IT58C6889053335760483236310",
+    "residence": {
+      "city": "Turin",
+      "lat": "45.0792",
+      "lng": "7.6761"
+    },
+    "description": "Guglielmo Caboto, nato nel 2056 e trentunenne nel 2087, è un Digital Creator freelance che vive a Torino in un loft ricavato da un'ex officina, lavora di notte tra commissioni per marchi e microstorie immersive per piattaforme d'arte e intrattenimento; con un reddito modesto di circa 26.100 crediti all'anno mantiene uno stile di vita essenziale ma creativo, gira la città alla ricerca di immagini tra il Po e la Mole, passa il tempo a sperimentare realtà aumentata e micro-ambienti sonori, viaggia solo una volta l'anno — e può arrivare fino a 15.000 chilometri per cercare ispirazione in metropoli affollate o borghi poco popolati —, è abile con gli strumenti digitali ma per natura curioso e talvolta un po' ingenuo online, tanto che qualche trappola informatica lo ha già sorpreso; pragmatico e testardo, costruisce la sua carriera pezzo dopo pezzo, vendendo contenuti, scambiando know-how con colleghi e adattandosi a una Torino che è insieme laboratorio e mercato."
+  },
+  {
+    "first_name": "Fedele",
+    "last_name": "Piccio",
+    "birth_year": 2047,
+    "salary": 45800,
+    "job": "Office Clerk",
+    "iban": "IT72A1214946593613056146390",
+    "residence": {
+      "city": "Catanzaro",
+      "lat": "38.9100",
+      "lng": "16.5875"
+    },
+    "description": "Fedele Piccio, 40 anni, vive e lavora a Catanzaro come impiegato d'ufficio: la mattina prende il caffè veloce vicino all'ufficio, smista pratiche e numeri con una precisione che gli permette di mantenere un tenore di vita tranquillo con uno stipendio annuo di 45.800 euro che arriva sul suo conto (IBAN IT72A1214946593613056146390); è di quelli abitudinari ma non chiusi al mondo: quattro viaggi l'anno lo portano ora a brevi fughe sulla costa o in borghi vicini, ora in trasferte più lunghe fino a 15.000 km, verso metropoli affollate o località quasi deserte, perché ama alternare la calma del Sud ai ritmi più veloci che incontra in viaggio; con la tecnologia è pratico ma non privo di distrazioni — tende a fidarsi abbastanza delle comunicazioni che arrivano via rete e ogni tanto si lascia ingannare da offerte troppo invitanti — e nella quotidianità a Catanzaro tiene i piedi piantati nella realtà: case modeste, cene con amici nel centro storico e la soddisfazione di fare il suo lavoro con cura."
+  },
+  {
+    "first_name": "Christelle",
+    "last_name": "Gautier",
+    "birth_year": 2062,
+    "salary": 7900,
+    "job": "Student",
+    "iban": "FR52N2210713125891337133809",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Christelle Gautier, née en 2062, est une étudiante universitaire qui vit et étudie à Paris en 2087; elle combine cours et petits boulots pour se payer un niveau de vie confortable — elle perçoit 7 900 — et profite de cette marge pour voyager quatre fois par an, des escapades dans des bourgs d'à peine mille habitants jusqu'à des séjours dans des mégapoles à 15 000 km, alternant amphithéâtres, cafés et quais de la Seine; curieuse mais parfois imprudente en ligne, elle a près d'une chance sur deux de se laisser piéger par un phishing, ce qui l'oblige à apprendre vite les règles de sécurité numérique dans une ville où tout bouge."
+  },
+  {
+    "first_name": "Louise",
+    "last_name": "Pascal",
+    "birth_year": 2048,
+    "salary": 46500,
+    "job": "Digital Creator",
+    "iban": "FR03Y9236247563991589121096",
+    "residence": {
+      "city": "Elbeuf",
+      "lat": "49.2900",
+      "lng": "1.0100"
+    },
+    "description": "Louise Pascal, née en 2048 et aujourd'hui âgée de 39 ans, vit à Elbeuf où elle travaille comme créatrice digitale indépendante; elle gagne environ 46 500 € par an et passe ses journées à concevoir contenus et campagnes pour marques locales et plateformes, alternant sessions en café-lab et montages dans son petit atelier réaménagé, et ne prend la route qu'une fois par an — parfois pour un festival, parfois pour un contrat lointain pouvant aller jusqu'à 15 000 km — ce qui l'amène à fréquenter aussi bien petites communes qu'immenses métropoles; technophile pragmatique, elle maîtrise les outils du net mais n'est pas totalement à l'abri des arnaques numériques, ce qui la rend prudente sans pour autant freiner sa curiosité créative."
+  },
+  {
+    "first_name": "Felicia",
+    "last_name": "Small",
+    "birth_year": 2009,
+    "salary": 27500,
+    "job": "Retired",
+    "iban": "US61O4562051516518493437354",
+    "residence": {
+      "city": "Boston",
+      "lat": "42.3188",
+      "lng": "-71.0852"
+    },
+    "description": "Felicia Small, born in 2009, is a 78-year-old retired homemaker living in Boston who keeps a steady, modest life on a pension of about $27,500 a year; she treats her small apartment like a well-run workshop—meals, plants and practical routines rule her days—yet she still packs a suitcase twice a year, sometimes for short trips to quiet New England towns and other times for long-haul visits to distant megacities, enjoying both intimate streets and the rush of big urban centers; comfortable enough with everyday tech to read news and keep in touch, she can be rather trusting online and occasionally needs help spotting scams, so she leans on neighborhood friends and the library’s tech volunteers to manage accounts and paperwork, moving through Boston with the pragmatic calm of someone who has made homemaking into a practiced, self-reliant life."
+  },
+  {
+    "first_name": "Nuray",
+    "last_name": "Sontag",
+    "birth_year": 2050,
+    "salary": 41100,
+    "job": "Freelance Designer",
+    "iban": "DE69J7512083450117996779668",
+    "residence": {
+      "city": "Finnentrop",
+      "lat": "51.1667",
+      "lng": "7.9667"
+    },
+    "description": "Nuray Sontag, geboren 2050, lebt in Finnentrop und arbeitet dort als freiberufliche Designerin; sie verdient etwa 41.100 im Jahr und führt ein ruhiges, handwerklich geprägtes Leben zwischen dem kleinen Atelier in ihrem Apartment und den Auftraggebern, die sie überwiegend aus der Ferne betreut. Sie ist pragmatisch und detailorientiert, skizziert Entwürfe auf Papier, finalisiert sie digital und verkauft Konzepte für Marken und Interfaces — ihr Arbeitstag ist eine Folge von Kundengesprächen, Prototyp-Iterationen und Rechnungswesen, das sie akribisch selbst verwaltet. Einmal im Jahr gönnt sie sich eine Reise: manchmal reicht das bis zu 15.000 Kilometer, je nach Auftrag oder dem Bedürfnis, eine andere Stadt oder ein kleines Dorf zu besuchen; ihre Ziele reichen von Orten mit kaum tausend Einwohnern bis zu Megastädten mit vielen Millionen Menschen. Im Netz ist sie routiniert, zugleich aber nicht unfehlbar; die Daten zeigen eine fast fünfzigprozentige Neigung, auf fragwürdige Links zu klicken, ein Umstand, der sie wachsam gegenüber Betrugsversuchen hält. Trotz der raueren Weltlage von 2087 meistert Nuray den Spagat zwischen lokalem Alltag in Finnentrop und der globalen, digitalen Kundschaft mit nüchterner Kreativität und Alltagstüchtigkeit."
+  },
+  {
+    "first_name": "Dieter",
+    "last_name": "Gnatz",
+    "birth_year": 2066,
+    "salary": 15000,
+    "job": "Student",
+    "iban": "DE52T0769059814935199413695",
+    "residence": {
+      "city": "Mulheim",
+      "lat": "51.4275",
+      "lng": "6.8825"
+    },
+    "description": "Dieter Gnatz, geboren 2066, ist ein 21-jähriger Student aus Mülheim, der Studium und Nebenjob balanciert und mit einem Einkommen von 15.000 auskommt; er reist etwa viermal im Jahr, mal zu kurzen Zielen in der Nähe, mal bis zu 15.000 km weit, seine Reiseziele reichen von Orten mit rund tausend Einwohnern bis hin zu Metropolen mit bis zu 45 Millionen, und online zeigt er eine gewisse Unvorsichtigkeit gegenüber Betrugsversuchen — statistisch klickt er etwa in der Hälfte der Fälle auf Phishing-Angebote, was ihm gelegentlich Probleme bereitet, während er ansonsten als ehrlicher, pragmatischer junger Mann durchs Leben geht."
+  },
+  {
+    "first_name": "Kara",
+    "last_name": "Wong",
+    "birth_year": 2063,
+    "salary": 4100,
+    "job": "Student",
+    "iban": "US50F8400905873062796395274",
+    "residence": {
+      "city": "Providence",
+      "lat": "41.8230",
+      "lng": "-71.4187"
+    },
+    "description": "Kara Wong, born in 2063, is a university student in Providence, Rhode Island, who gets by on a modest $4,100 income, travels roughly twice a year — from nearby New England towns to journeys as far as 15,000 km that land her in places from tiny communities to sprawling megacities — and, practical but curious online, has about a fifty-percent tendency to click suspicious links that arrive in her inbox."
+  },
+  {
+    "first_name": "Paul",
+    "last_name": "Roberts",
+    "birth_year": 2048,
+    "salary": 36100,
+    "job": "Administrative Assistant",
+    "iban": "US37T6269069827350652208329",
+    "residence": {
+      "city": "Philadelphia",
+      "lat": "40.0077",
+      "lng": "-75.1339"
+    },
+    "description": "Paul Roberts, born in 2048, is a 39-year-old administrative assistant living in Philadelphia who brings home about $36,100 a year; his days are spent behind a tidy desk handling schedules, forms and the small urgencies that keep an office running, commuting the familiar route through the city and finding comfort in steady routines and modest pleasures. He takes just one trip a year—sometimes a short escape, sometimes a long haul of up to 15,000 kilometers—to visit family or recharge, and his destinations can be anywhere from quiet towns to sprawling metropolises. Not especially paranoid about technology, he can be trusting online—roughly half the time a convincing message will get him to click—so he balances openness with a few hard-earned precautions. Philadelphia’s rhythms suit him: reliable, practical, content with small freedoms and the occasional yearly reset."
+  },
+  {
+    "first_name": "Stuart",
+    "last_name": "Howard",
+    "birth_year": 2049,
+    "salary": 37200,
+    "job": "Freelance Designer",
+    "iban": "GB96G5911971829050640431306",
+    "residence": {
+      "city": "Horley",
+      "lat": "51.1740",
+      "lng": "-0.1720"
+    },
+    "description": "Stuart Howard, born in 2049, is a 38-year-old freelance designer living in Horley; he brings in about £37,200 a year, runs a modest studio and balances local commissions with occasional long-haul contracts, making roughly four trips a year that can range from nearby towns to opposite‑hemisphere megacities, and—practical and precise in his work yet sometimes tempted by quick fixes—he's about as likely as not to click a slick phishing link when it promises speed or extra pay."
+  },
+  {
+    "first_name": "Jacqueline",
+    "last_name": "Bourgeois",
+    "birth_year": 2055,
+    "salary": 14000,
+    "job": "Delivery Worker",
+    "iban": "FR88C7607935209719673323710",
+    "residence": {
+      "city": "Bordeaux",
+      "lat": "44.8400",
+      "lng": "-0.5800"
+    },
+    "description": "Jacqueline Bourgeois, née en 2055, habite Bordeaux et gagne sa vie comme livreuse pour des plateformes : à bord d'une camionnette rétrofitée ou d'un vélo-assisté motorisé elle arpente les quais et les zones industrielles, avec un salaire de 14 000 qui paye à peine loyers et réparations; elle fait deux déplacements longue distance par an, parfois jusqu'à 15 000 km vers de vastes agglomérations, mais la plupart de ses journées se jouent sur des trajets courts et des courses à cadence serrée; pragmatique et résolue, elle reste malgré tout assez confiante en ligne — une propension moyenne aux pièges numériques lui a coûté quelques sommes — et gère ses rentrées sur le compte IBAN FR88C7607935209719673323710; à 32 ans son visage porte les traces de nuits trop courtes et de routes mouillées, mais elle connaît chaque ruelle de sa ville et sait livrer même quand la ville elle-même semble avoir changé."
+  },
+  {
+    "first_name": "Patrick",
+    "last_name": "Guillaume",
+    "birth_year": 2054,
+    "salary": 25800,
+    "job": "Freelance Designer",
+    "iban": "FR13X9697060056485109683549",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Patrick Guillaume, né en 2054 et âgé de 33 ans, est un designer freelance installé à Paris qui gagne environ 25 800 € par an et organise sa vie professionnelle entre commandes locales et missions à l'étranger; il travaille depuis un petit atelier et des cafés, fréquente les espaces de coworking et accepte les projets qui demandent des prototypes rapides et des identités visuelles sensibles aux textures urbaines. Il voyage en moyenne sept fois par an — parfois pour des week-ends à quelques heures de train, parfois jusqu'à 15 000 km — et collabore avec des lieux aussi variés que des villages de mille habitants et des mégapoles de 45 millions, ce qui nourrit autant son inspiration que son carnet d'adresses. Connecté et sociable, il sait vendre ses idées lors de pitchs concis, mais il n'est pas totalement méfiant en ligne : sa propension à cliquer sur des offres trop attractives est notable (probabilité d'environ 48 %), ce qui occasionne parfois des retards ou des mésaventures administratives; malgré ces accrocs, sa présence continue à Paris et son réseau professionnel lui assurent une clientèle fidèle et des flux de travail réguliers."
+  },
+  {
+    "first_name": "Lawrence",
+    "last_name": "Hamilton",
+    "birth_year": 2015,
+    "salary": 32600,
+    "job": "Retired",
+    "iban": "US41D1555688129516676221071",
+    "residence": {
+      "city": "Charleston",
+      "lat": "32.8168",
+      "lng": "-79.9687"
+    },
+    "description": "Lawrence Hamilton, born in 2015, is a 72-year-old retired homemaker who keeps a steady, familiar life in Charleston, where mornings begin with coffee on the porch and afternoons are spent tending a small kitchen garden and keeping the house in order. His modest retirement income of about $32,600 a year means he budgets carefully, but that budgeting hasn’t stopped him from being an avid traveler: he takes roughly seven trips a year, from quick drives to nearby Lowcountry towns to long-haul journeys that can span up to 15,000 miles, visiting places that range from thousand-person villages to mega-cities around the world. Practical and warm with neighbors, Lawrence is nevertheless a bit trusting online, so his grandchildren check his email and help him avoid scams; he likes to stay connected, cook for friends, and bring back small souvenirs that remind him of the places he’s been."
+  },
+  {
+    "first_name": "Manon",
+    "last_name": "Letellier",
+    "birth_year": 2051,
+    "salary": 30800,
+    "job": "Freelance Designer",
+    "iban": "FR36L2685770102211391468012",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Manon Letellier, née en 2051, a trente-six ans et vit à Paris, où elle travaille comme freelance designer; son quotidien oscille entre un petit atelier lumineux proche du canal Saint‑Martin, des réunions virtuelles avec des clients dispersés et des promenades dans les marchés et passages de la ville pour chercher matière et inspiration. Avec un revenu annuel d'environ 30 800 €, elle garde l'indépendance mais doit composer avec des choix budgétaires serrés, privilégiant les projets qui nourrissent sa curiosité plutôt que ceux qui paient le plus. Quatre fois par an elle voyage — parfois de courtes missions en province, parfois des déplacements jusqu'à 15 000 km pour résidences, commandes ou conférences — récoltant textures, visages et usages qui viendront alimenter ses propositions. Elle assemble carnets et encres traditionnels avec couches numériques et outils augmentés, aimant les palettes désaturées et les surfaces brutes qui renvoient au Paris qu'elle habite; pragmatique et curieuse, Manon sait négocier délais et contrats dans un monde où l'autonomie est devenue un luxe, et elle continue de choisir la liberté créative malgré les contraintes."
+  },
+  {
+    "first_name": "Louise",
+    "last_name": "Godard",
+    "birth_year": 2052,
+    "salary": 41100,
+    "job": "Office Clerk",
+    "iban": "FR85Q8140594518554586002046",
+    "residence": {
+      "city": "Barentin",
+      "lat": "49.5500",
+      "lng": "0.9500"
+    },
+    "description": "Louise Godard, née en 2052 et âgée de 35 ans, vit à Barentin et travaille comme employée de bureau; sa journée est faite de dossiers bien classés, de réunions calmes et d'une routine qui la rassure, avec un salaire de 41 100 € versé sur l'IBAN FR85Q8140594518554586002046. Elle aime la simplicité de la vie normande — les rues tranquilles, le marché du coin et la proximité de Rouen — et ne voyage qu'une fois par an, parfois pour quelques centaines de kilomètres, parfois pour des destinations bien plus lointaines, des bourgs de quelques milliers d'habitants jusqu'aux grandes métropoles. Pragmatique et organisée au bureau, Louise reste toutefois parfois distraite face aux sollicitations numériques : son taux de clic sur des mails d'hameçonnage est évalué autour de 51 %, ce qui la pousse à demander conseil quand un message lui semble douteux. Ses collègues la décrivent comme fiable, discrète et fidèle à une routine qui lui permet de garder un équilibre entre sécurité matérielle et petites aspirations personnelles."
+  },
+  {
+    "first_name": "Tina",
+    "last_name": "Houghton",
+    "birth_year": 2046,
+    "salary": 51600,
+    "job": "Restaurant Owner",
+    "iban": "GB66R9299911804372054142840",
+    "residence": {
+      "city": "Derby",
+      "lat": "52.9247",
+      "lng": "-1.4780"
+    },
+    "description": "In Derby in 2087, Tina Houghton (born 2046) runs a compact but busy neighbourhood restaurant she owns; at 41 she takes home about £51,600 a year and reinvests much of it into staff and suppliers, balancing midday services and late shifts while making three trips a year—anything from local runs to markets up to long‑haul journeys of as much as 15,000 km, visiting places that can be tiny towns of a thousand people or sprawling megacities of tens of millions—she's known for a hands‑on, no‑nonsense management style, rooted in the Derby community, sociable with regulars, and pragmatic online though a bit too trusting at times, occasionally clicking dubious links when pressed for time."
+  },
+  {
+    "first_name": "Mariano",
+    "last_name": "Garibaldi",
+    "birth_year": 2056,
+    "salary": 52000,
+    "job": "Freelance Designer",
+    "iban": "IT49J6397545646054135973807",
+    "residence": {
+      "city": "Prato",
+      "lat": "43.8808",
+      "lng": "11.0966"
+    },
+    "description": "Mariano Garibaldi, nato nel 2056 e oggi trentunenne, vive a Prato e si mantiene come freelance designer in un 2087 dove la tradizione tessile della città convive con materiali rigenerati e interfacce estetiche; guadagna 52.000 all'anno e ha trasformato un vecchio magazzino in uno studio aperto dove lavora per marchi locali e startup lontane tramite contratti digitali. Viaggia soltanto una volta l'anno: a volte resta nei dintorni, altre percorre fino a 15.000 km per una residenza creativa o una commessa, scegliendo luoghi che possono essere borghi di mille abitanti o metropoli da decine di milioni; è rapido nel consegnare concept che mescolano tagli puliti e patch tecnologiche sui tessuti, e in città lo riconoscono per un gusto sobrio e pratico. Non è sempre cautissimo con le comunicazioni digitali — tende a cliccare offerte e proposte quasi la metà delle volte — ma questa fiducia nella rete gli porta clienti imprevedibili e il tipo di lavoro che ama: flessibile, visivo e sempre in cerca di un nuovo dettaglio da reinterpretare."
+  },
+  {
+    "first_name": "Victor",
+    "last_name": "Charpentier",
+    "birth_year": 2006,
+    "salary": 50000,
+    "job": "Retired",
+    "iban": "FR23P5973437263151700634665",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Victor Charpentier, né en 2006 et installé à Paris, est un retraité qui a consacré sa vie au foyer: il tient son appartement, prépare les repas, entretient ses habitudes de quartier et s'appuie sur une retraite d'environ 50 000 par an pour vivre confortablement; il voyage deux fois par an, tantôt pour de courtes escapades proches, tantôt pour des longs trajets pouvant atteindre 15 000 km vers des destinations très variées, et reste très ancré dans la vie parisienne, fréquentant marchés et cafés, tout en étant parfois un peu vulnérable au numérique — sa propension à cliquer sur des messages suspects est notable — ce qui l'incite à demander conseil à des amis ou voisins quand un courriel l'intrigue."
+  },
+  {
+    "first_name": "Capucine",
+    "last_name": "Vallet",
+    "birth_year": 2057,
+    "salary": 27200,
+    "job": "Ride-share Driver",
+    "iban": "FR61L6373380576881014528658",
+    "residence": {
+      "city": "Tourcoing",
+      "lat": "50.7239",
+      "lng": "3.1612"
+    },
+    "description": "Capucine Vallet, née en 2057 et donc âgée de trente ans, est conductrice pour une plateforme de covoiturage basée à Tourcoing; elle gagne environ 27 200 € par an et passe ses journées à naviguer entre les rues étroites de la ville, les plages horaires imprévisibles et les demandes d'une clientèle hétéroclite, jonglant avec l'application, l'entretien du véhicule et les petites réparations qui grèvent son budget. Elle fait en moyenne quatre voyages par an: la plupart sont de courtes escapades dans la région ou des trajets interurbains, mais il lui arrive aussi d'accepter des courses exceptionnellement longues, parfois jusqu'à 15 000 km, vers des destinations très diverses — de villages de mille âmes à des agglomérations de plusieurs dizaines de millions d'habitants. Numériquement, elle n'est pas paranoïaque mais pas complètement prudente non plus — son profil signale une probabilité d'environ 47 % de cliquer sur un lien douteux, ce qui lui a valu quelques mauvaises surprises administratives; malgré cela, Capucine reste pragmatique et résiliente, attentive aux petites économies, bavarde avec les habitués et déterminée à se forger une stabilité modeste dans la ville qui l'a vue grandir."
+  },
+  {
+    "first_name": "Damon",
+    "last_name": "Campbell",
+    "birth_year": 2012,
+    "salary": 36000,
+    "job": "Retired",
+    "iban": "US72W2005618677913886894819",
+    "residence": {
+      "city": "Houston",
+      "lat": "29.7860",
+      "lng": "-95.3885"
+    },
+    "description": "Damon Campbell, born in 2012 and now 75, is a retired homemaker living in Houston who manages a modest annual income of about $36,000 and has learned to make a comfortable life out of routine, family visits and small domestic projects; he still makes about three trips a year—sometimes short runs to nearby towns, sometimes longer journeys that can stretch up to 15,000 miles—visiting places that range from quiet communities to sprawling cities. He keeps to a steady rhythm: mornings spent on household chores and phone calls to relatives, afternoons at a local market or on a bench by the bayou watching the city move, and evenings reading or folding laundry. Not the most confident with the latest apps, he pays bills and answers messages but can be prone to clicking a suspicious link, so his children help keep an eye on his inbox. Steady, plainspoken and quietly sociable, Damon is the kind of neighbor who brings over a casserole and remembers everyone’s birthday."
+  },
+  {
+    "first_name": "Adélaïde",
+    "last_name": "Evrard",
+    "birth_year": 2046,
+    "salary": 223200,
+    "job": "Company Owner",
+    "iban": "FR07D9372732192687880275683",
+    "residence": {
+      "city": "Givors",
+      "lat": "45.5914",
+      "lng": "4.7694"
+    },
+    "description": "Adélaïde Evrard, née en 2046 et âgée de 41 ans en 2087, est une cheffe d'entreprise installée à Givors; propriétaire d'une société qui lui assure un revenu annuel de 223 200 €, elle partage son temps entre la gestion quotidienne depuis sa base rhodanienne et cinq déplacements par an, parfois courts et parfois des vols long-courriers jusqu'à 15 000 km vers des destinations aussi bien de petites communes d'un millier d'habitants que de mégapoles de plusieurs dizaines de millions, connue pour son sens pratique et son exigence professionnelle, elle reste cependant inégale sur le plan numérique et peut parfois se laisser avoir par des messages ou des liens douteux."
+  },
+  {
+    "first_name": "Deborah",
+    "last_name": "Day",
+    "birth_year": 2055,
+    "salary": 19000,
+    "job": "Ride-share Driver",
+    "iban": "GB21F8708212446765187575629",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Deborah Day, born in 2055, is a 32-year-old ride-share driver who knows London by memory and muscle: she earns about £19,000 a year working irregular shifts that thread her through early-morning commutes along the river, late-night runs from the theatres to outer borough flats and the slow, jagged traffic of rebuilding zones, and she has a dry, practical sense of the city that comes from years of listening to passengers' stories while the city flickers past; her work is low-margin and high-demand, so she treats her cab as both office and refuge, keeping a reliable charger, a thermos, and a tin of spare change for road tolls, and she plans only one real trip a year — a rare break that might be a quiet coastal village or a distant metropolis, anywhere from small towns to megacities within a long-range fifteen-thousand-kilometre possibility — partly because the gig leaves little room for long absences; she trusts technology enough to earn a living from it but admits she's not immune to slick offers and targeted pitches on her phone, a reminder that in a city like London being alert is part of the job, and despite the fatigue and low pay she remains steady, wry and attentive, the sort of driver people remember for the way she steadies a tense journey with a clear route and a short, honest comment."
+  },
+  {
+    "first_name": "Amy",
+    "last_name": "Davies",
+    "birth_year": 2007,
+    "salary": 30800,
+    "job": "Retired",
+    "iban": "GB78L2600594007008734752584",
+    "residence": {
+      "city": "Abertawe",
+      "lat": "51.6167",
+      "lng": "-3.9500"
+    },
+    "description": "Amy Davies, born in 2007, is an 80-year-old retired homemaker living in Abertawe who keeps a tidy household on a modest income of about £30,800 a year; she still loves to travel — roughly four trips a year that range from short local outings to long journeys up to 15,000 km, visiting everything from small towns to vast metropolises — and while she approaches the digital world with reasonable caution, she can sometimes be persuaded by tempting online offers."
+  },
+  {
+    "first_name": "Graeme",
+    "last_name": "Parsons",
+    "birth_year": 2064,
+    "salary": 8700,
+    "job": "Student",
+    "iban": "GB60R3049367510922658600162",
+    "residence": {
+      "city": "Penistone",
+      "lat": "53.5250",
+      "lng": "-1.6290"
+    },
+    "description": "Graeme Parsons, born in 2064, is a 23-year-old university student living in Penistone, South Yorkshire; he gets by on a modest declared income of £8,700 and manages a small bank account (IBAN GB60R3049…0162), splitting his days between lectures, part-time work and study, and he travels about three times a year—sometimes staying local, sometimes taking long-haul trips up to 15,000 km and moving easily between quiet towns and sprawling megacities—at home he knows the rhythms of the Pennines, but online he’s still learning caution, with about a coin-flip tendency to click dubious links, so he navigates life with practical adaptability and a low-key restlessness that pushes him to see more of the world while holding down the small, careful routines of student life."
+  }
+]

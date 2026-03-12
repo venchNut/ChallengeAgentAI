@@ -1,0 +1,10 @@
+# Reply Mirror — Fraud Detection Challenge
+# Python 3.10–3.13  (avoid 3.14 — Langfuse incompatibility)
+
+python-dotenv>=1.0.0
+ulid-py>=1.1.0
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-core>=0.1.0
+langfuse>=2.0.0
+pandas>=2.0.0

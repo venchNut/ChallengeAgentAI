@@ -17,9 +17,9 @@ from langfuse.langchain import CallbackHandler
 load_dotenv()
 
 MODELS = [
-    "qwen/qwen3-14b",                # $0.06/M — primary
-    "google/gemma-3-12b-it",         # $0.04/M — fallback
-    "microsoft/phi-4",               # $0.06/M — last resort
+    "google/gemma-3-4b-it",
+    "nvidia/nemotron-nano-9b-v2",
+    "qwen/qwen3-14b:no-thinking",
 ]
 
 ZERO_LO  = 4   # pure heuristic 0 — no LLM

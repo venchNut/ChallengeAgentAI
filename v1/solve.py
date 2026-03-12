@@ -30,6 +30,9 @@ from datetime import datetime
 from data_agent import DataAgent
 from main import ChallengeSystem
 
+# Module-level phishing scorer (avoids repeated import inside extract_features)
+_phishing_score = DataAgent._phishing_score
+
 load_dotenv()
 
 langfuse_client = Langfuse(
@@ -139,10 +142,11 @@ def extract_features(tx_data: dict, profile: dict) -> dict:
     f["audio_snippet"]  = audio.get("snippet", "")[:300]
     f["audio_phishing"] = audio.get("phishing_score", 0)
     f["audio_calls"]    = audio.get("call_count", 0)
-    # Phishing email independent score
-    if email:
-        from data_agent import DataAgent as _DA
-        f["phishing_email"] = _DA._phishing_score(email)
+    # Phishing email: use pre-computed value from profile to avoid re-scan
+    if profile:
+        f["phishing_email"] = profile.get("phishing_email", 0)
+    elif email:
+        f["phishing_email"] = _phishing_score(email)
 
     # --- GPS consistency ---
     if gps_df is not None and len(gps_df) > 0 and sender is not None:
@@ -202,18 +206,27 @@ def calculate_risk_score(features: dict) -> int:
 
     # Amount anomaly relative to sender's history
     z = features.get("amount_zscore", 0)
-    if z > 5:
-        risk += 5
-    elif z > 3:
-        risk += 3
-    elif z > 2:
+    if z > 6:
+        risk += 6
+    elif z > 4:
+        risk += 4
+    elif z > 2.5:
+        risk += 2
+    elif z > 1.5:
+        risk += 1
+
+    # Amount is enormous even in absolute terms (population outlier)
+    amt = features.get("amount", 0)
+    if amt > 5000:
         risk += 1
 
     # Balance impact
     if features.get("balance_negative", 0):
         risk += 3
-    elif features.get("balance_ratio", 0) > 0.9:
+    elif features.get("balance_ratio", 0) > 0.95:
         risk += 2
+    elif features.get("balance_ratio", 0) > 0.80:
+        risk += 1
 
     # Timing
     if features.get("is_night", 0):
@@ -231,23 +244,45 @@ def calculate_risk_score(features: dict) -> int:
     if features.get("unusual_method", 0):
         risk += 1
 
-    # Communication phishing signals
-    phishing = features.get("phishing_sms", 0) + features.get("phishing_email", 0)
-    if phishing >= 4:
-        risk += 3
-    elif phishing >= 2:
-        risk += 2
-    elif phishing >= 1:
+    # Suspicious payment method at night → amplified signal
+    if features.get("payment_method", "") in ("mobile device", "smartwatch") and features.get("is_night", 0):
         risk += 1
 
-    # Audio call phishing signals (new for levels 4+)
-    audio_phish = features.get("audio_phishing", 0)
-    if audio_phish >= 3:
+    # Empty description on bank transfer is suspicious
+    if features.get("tx_type", "") == "bank transfer" and not features.get("desc_snippet", "").strip():
+        risk += 1
+
+    # SMS phishing signals
+    phishing_sms = features.get("phishing_sms", 0)
+    if phishing_sms >= 3:
         risk += 3
+    elif phishing_sms >= 2:
+        risk += 2
+    elif phishing_sms >= 1:
+        risk += 1
+
+    # Email phishing signals (independent)
+    phishing_email = features.get("phishing_email", 0)
+    if phishing_email >= 3:
+        risk += 2
+    elif phishing_email >= 1:
+        risk += 1
+
+    # Audio call phishing signals (levels 4+) — strongest signal available
+    audio_phish = features.get("audio_phishing", 0)
+    if audio_phish >= 4:
+        risk += 5
+    elif audio_phish >= 3:
+        risk += 4
     elif audio_phish >= 2:
         risk += 2
     elif audio_phish >= 1:
         risk += 1
+
+    # Combined comms pressure: phishing across multiple channels
+    total_phish = phishing_sms + phishing_email + audio_phish
+    if total_phish >= 5:
+        risk += 2
 
     # GPS inconsistency
     if features.get("gps_match") == "NO":

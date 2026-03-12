@@ -210,7 +210,7 @@ def run(dataset: str, eval_mode: bool = False):
             all_risks.append((tid, r))
 
             try:
-                dec = agents.assess(sid, f, r, pop_ctx)
+                dec = agents.assess(sid, f, r)
                 if dec == 1:
                     fraud.append(tid)
                 tag = "FRAUD" if dec else "legit"

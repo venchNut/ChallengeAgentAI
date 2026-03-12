@@ -371,7 +371,7 @@ def predict(level: str, is_eval: bool = False) -> list:
             try:
                 decision = system.assess_transaction(
                     session_id, features, risk_score,
-                    pop_stats=pop_stats, pop_context=pop_context,
+                    pop_context=pop_context,
                 )
                 if decision == 1:
                     fraud_ids.append(tid)

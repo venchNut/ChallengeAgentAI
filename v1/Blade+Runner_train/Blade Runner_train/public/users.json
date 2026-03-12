@@ -1,0 +1,282 @@
+[
+  {
+    "first_name": "Adrian",
+    "last_name": "Sinclair",
+    "birth_year": 2011,
+    "salary": 28500,
+    "job": "Retired",
+    "iban": "GB57S5807600523773734846643",
+    "residence": {
+      "city": "Newport",
+      "lat": "51.5886",
+      "lng": "-2.9978"
+    },
+    "description": "Adrian Sinclair, born in 2011 and now 76, is a retired homemaker who has made a steady life for himself in Newport; his days revolve around the routines of the household—cooking, mending, managing bills on a modest pension of £28,500 and tending a small balcony hydroponic patch that keeps the kitchen stocked—while he volunteers at the local community centre by the river and keeps an eye on the old Transporter Bridge as a landmark of continuity in a city that has changed a great deal since his youth. He still travels about five times a year, ranging from short trips to nearby market towns to the occasional long haul across oceans to crowded megacities where old friends or distant relatives cluster, preferring to travel light and to bring back small goods and stories. In 2087 he’s learned to make do with patched appliances and municipal rationing, and though he approaches new overlays and corporate updates with skepticism he uses older devices and is humanly fallible—he will sometimes click a convincing message if it comes from someone he trusts—yet neighbours respect him for being practical, steady and quietly resourceful."
+  },
+  {
+    "first_name": "Jennifer",
+    "last_name": "Andrade",
+    "birth_year": 2052,
+    "salary": 29200,
+    "job": "Administrative Assistant",
+    "iban": "US30M1372126760215375515018",
+    "residence": {
+      "city": "Atlanta",
+      "lat": "33.7628",
+      "lng": "-84.4220"
+    },
+    "description": "In 2087, Jennifer Andrade, born in 2052, is an Administrative Assistant in Atlanta who lives on a modest $29,200 a year and manages her finances through a single account (IBAN US30M1372126760215375515018); she brings steady, practical order to a small office, takes about four trips a year—sometimes just across the metro, sometimes as far as 15,000 away—to destinations that can be as quiet as towns of a thousand or as overwhelming as megacities of 45 million, and in a brittle, always-online city she tends to trust incoming messages, clicking questionable links a little more than half the time, which keeps her cautious but determined as she navigates everyday life."
+  },
+  {
+    "first_name": "Robert",
+    "last_name": "Mülichen",
+    "birth_year": 2003,
+    "salary": 43600,
+    "job": "Retired",
+    "iban": "DE64Q6073036137874713310093",
+    "residence": {
+      "city": "Munster",
+      "lat": "51.9625",
+      "lng": "7.6256"
+    },
+    "description": "Robert Mülichen, 84 Jahre alt und wohnhaft in Münster, ist ein ruhiger, zurückgezogener Rentner, der sein Zuhause mit der Präzision eines gewohnten Hausherrn führt: er kocht, versorgt die Zimmerpflanzen, organisiert die Haushaltskasse und kennt die besten Bänke am Aasee; nach Jahrzehnten im Arbeitsleben genießt er jetzt die alltäglichen Routinen und ein überschaubares soziales Netz aus Nachbarn und alten Freundschaften. Seine jährliche Rente liegt bei etwa 43.600 €, genug für einen komfortablen, aber bedachten Lebensstil; er reist rund zwei Mal im Jahr, mal für kurze Ausflüge in die nähere Umgebung, mal für Fernreisen, die bis zu 15.000 Kilometer reichen und Ziele von kleinen Orten mit nur wenigen tausend Einwohnern bis hin zu riesigen Metropolen umfassen können. Digital ist Robert neugierig, aber nicht besonders vorsichtig: bei E-Mails und Nachrichten klickt er bisweilen auf fragwürdige Links (die Wahrscheinlichkeit liegt bei knapp 49 %), weshalb seine Kinder ihm ab und zu über die Schulter sehen; ansonsten verbringt er die Tage mit Kochen, Zeitunglesen, Spaziergängen durch die Altstadt und gelegentlichen Treffen im Café – ein Leben, das von kleinen Freuden und sorgfältiger Ordnung geprägt ist."
+  },
+  {
+    "first_name": "Stéphanie",
+    "last_name": "Ruiz",
+    "birth_year": 2050,
+    "salary": 33900,
+    "job": "Office Clerk",
+    "iban": "FR71I3352838962099407249980",
+    "residence": {
+      "city": "Villefranche-sur-Saone",
+      "lat": "45.9833",
+      "lng": "4.7167"
+    },
+    "description": "Stéphanie Ruiz, née en 2050 et âgée de 37 ans en 2087, habite Villefranche-sur-Saône et travaille comme employée de bureau: un poste administratif qui structure ses journées entre dossiers numériques, rendez-vous et tâches répétitives; elle gagne 33 900 € par an et mène une vie modeste, loyers et prélèvements gérés au cordeau — son IBAN (FR71I3352838962099407249980) figure sur tous les formulaires —, trouve ses plaisirs dans les dimanches au marché local et le café pris vite avant le tram; elle voyage en moyenne deux fois par an, parfois pour de courtes escapades à quelques dizaines de kilomètres, parfois pour des liaisons beaucoup plus longues jusqu'à 15 000 km, avec des destinations allant de petits bourgs à des mégapoles de plusieurs dizaines de millions d'habitants; dans le paysage hiérarchisé et numérisé de 2087, elle reste pragmatique mais un peu exposée aux risques en ligne — son profil montre une propension à cliquer sur près d'un message frauduleux sur deux — ce qui l'oblige à demander conseil aux collègues et à renforcer ses précautions au quotidien."
+  },
+  {
+    "first_name": "Théodore",
+    "last_name": "Daniel",
+    "birth_year": 2051,
+    "salary": 33000,
+    "job": "Office Clerk",
+    "iban": "FR13A6770256706231426213229",
+    "residence": {
+      "city": "Choisy-le-Roi",
+      "lat": "48.7630",
+      "lng": "2.4090"
+    },
+    "description": "Théodore Daniel, né en 2051 et âgé de 36 ans, vit à Choisy-le-Roi, en banlieue du Grand Paris, et mène une vie réglée de commis de bureau: il touche 33 000 € par an, fait la navette chaque matin vers un plateau administratif où il trie dossiers et courriels sur des écrans fatigués sous les panneaux publicitaires et la surveillance omniprésente du Paris de 2087, loge dans un modeste appartement riverain et s'accorde deux voyages par an — parfois de courtes échappées vers des bourgs de quelques milliers d'habitants, parfois des sauts plus lointains jusqu'à des mégapoles de plusieurs dizaines de millions, pouvant atteindre 15 000 km — et, pragmatique mais parfois distrait par ses appareils, il a tendance à cliquer trop souvent sur des messages douteux, presque une fois sur deux, ce qui lui rappelle que sa routine tient encore plus d'un équilibre fragile que d'une sécurité assurée."
+  },
+  {
+    "first_name": "Ercan",
+    "last_name": "Butte",
+    "birth_year": 2045,
+    "salary": 30100,
+    "job": "Office Clerk",
+    "iban": "DE26T9469517794167088061515",
+    "residence": {
+      "city": "Hannover",
+      "lat": "52.3667",
+      "lng": "9.7167"
+    },
+    "description": "Ercan Butte, 2045 geboren und damit 42 Jahre alt, arbeitet als Büroangestellter in Hannover und führt mit einem Jahresgehalt von rund 30.100 Euro einen bescheidenen, strukturierten Alltag: er kümmert sich um Akten und Korrespondenz, wohnt in der Stadt und verwaltet seine Finanzen unter der IBAN DE26T9469517794167088061515; Reisen gehören selten, aber geplant dazu — etwa zwei Mal im Jahr, mal kurze Fahrten in die Nähe, mal Fernstrecken bis zu 15.000 km zu Zielen, die von Dörfern mit rund 1.000 Einwohnern bis zu Metropolen mit mehreren zehn Millionen reichen — und im digitalen Alltag ist Ercan nicht übermäßig misstrauisch: seine Wahrscheinlichkeit, auf Phishing-Links zu klicken, liegt bei etwa 49%, was ihm gelegentlich Probleme macht."
+  },
+  {
+    "first_name": "Colleen",
+    "last_name": "Gordon",
+    "birth_year": 2051,
+    "salary": 20600,
+    "job": "Delivery Worker",
+    "iban": "US36J4329302774039104098189",
+    "residence": {
+      "city": "Apopka",
+      "lat": "28.7015",
+      "lng": "-81.5316"
+    },
+    "description": "Colleen Gordon, born in 2051, is a 36-year-old gig delivery driver based in Apopka, Florida, who ekes out a living on roughly $20,600 a year running parcels and food across suburban streets and the patchwork of lakes and orange groves around the city; she knows the back roads and the shortcuts the apps don't suggest, works long, irregular shifts behind the wheel of whatever car meets a platform's checks, takes only one leisure trip a year—often a short break but sometimes a long interstate run that can stretch across states—and navigates the hum of the digital platforms that sustain her with a mixture of caution and occasional lapses into clicking on tempting messages, pragmatic and steady in a place that still remembers old Florida even as the gig economy reshapes everyday life."
+  },
+  {
+    "first_name": "Darren",
+    "last_name": "Spencer",
+    "birth_year": 2032,
+    "salary": 258100,
+    "job": "Company Owner",
+    "iban": "GB66M5253813324196276239780",
+    "residence": {
+      "city": "Loughton",
+      "lat": "51.6494",
+      "lng": "0.0735"
+    },
+    "description": "Darren Spencer, born in 2032, is a 55-year-old company owner living in Loughton, Essex; he runs his business with a hands-on, results-driven approach and earns about £258,100 a year, travelling roughly four times a year — from nearby weekend retreats to long-haul trips up to 15,000 km and visits that range from small towns to vast megacities — and handles regular international banking (IBAN GB66M5253813324196276239780); pragmatic and decisive in meetings, he can be unexpectedly trusting online, quick to open messages and about as likely as not to click a dubious link, a small but real blind spot in an otherwise seasoned operator."
+  },
+  {
+    "first_name": "Kristie",
+    "last_name": "Evans",
+    "birth_year": 2050,
+    "salary": 15500,
+    "job": "Freelance Designer",
+    "iban": "US85I5938854492021939781363",
+    "residence": {
+      "city": "Washington",
+      "lat": "38.9047",
+      "lng": "-77.0163"
+    },
+    "description": "Kristie Evans, born in 2050, is a 37-year-old freelance designer based in Washington, D.C.; she earns about $15,500 a year and supports her practice with commissions and small campaigns, keeping a tidy studio and a network of steady clients, travels roughly twice a year—ranging from towns of a thousand people to megacities of up to 45 million and journeys as far as 15,000 miles—and is refreshingly pragmatic about work and life in the capital, though she admits she's about equally likely to click a questionable link as to ignore it, a small blind spot she offsets with straightforward routines and a preference for projects that fit a modest, mobile lifestyle."
+  },
+  {
+    "first_name": "Mercedes",
+    "last_name": "Disdero",
+    "birth_year": 2042,
+    "salary": 29300,
+    "job": "Administrative Assistant",
+    "iban": "IT09U3953591696175178791983",
+    "residence": {
+      "city": "Rozzano",
+      "lat": "45.3833",
+      "lng": "9.1500"
+    },
+    "description": "Mercedes Disdero, nata nel 2042, vive a Rozzano e lavora come impiegata amministrativa: minuta nelle scadenze e nelle pratiche, passa le giornate a mettere ordine tra fogli, scadenze e numeri con la pazienza di chi conosce il valore della routine; il suo stipendio, intorno ai 29.300 euro l'anno, le permette una vita tranquilla senza eccessi, con attenzione ai conti ma senza ossessioni; viaggia circa due volte l'anno — talvolta brevi fughe in paesini più raccolti, talvolta voli lunghi che la portano a metropoli lontane fino a migliaia di chilometri — e ama ritrovare nelle trasferte spunti per cambiare prospettiva; socialmente riservata ma affidabile sul lavoro, non è una esperta di sicurezza informatica: tende a fidarsi delle comunicazioni che sembrano ufficiali e per questo qualche volta clicca link sospetti, un'abitudine che vorrebbe correggere; a casa cura il piccolo appartamento con lo stesso senso pratico che applica in ufficio, coltivando relazioni stabili e un gusto per le cose semplici della vita cittadina."
+  },
+  {
+    "first_name": "Rosmarie",
+    "last_name": "Hornich",
+    "birth_year": 2046,
+    "salary": 17700,
+    "job": "Ride-share Driver",
+    "iban": "DE10H5749339134537144182645",
+    "residence": {
+      "city": "Herne",
+      "lat": "51.5500",
+      "lng": "7.2167"
+    },
+    "description": "Rosmarie Hornich, geboren 2046, lebt in Herne und verdient ihren Lebensunterhalt als Ride‑Share‑Fahrerin; mit einem Jahreseinkommen von etwa 17.700 Euro kennt sie jede Abkürzung im Ruhrgebiet, die Stoßzeiten vor den Einkaufszentren und die nächtlichen Schleichwege zu den Ausfallstraßen. Ihr Alltag ist geprägt von wechselnden Schichten und kurzen Kundenfahrten, aber sie unternimmt auch rund fünf längere Reisen pro Jahr — von nahen Orten mit ein paar Tausend Einwohnern bis hin zu Fahrten, die sie bis in ferne Ballungsräume führen können, manchmal Strecken von bis zu 15.000 km. Pragmatikerin genug, um das Leben an der Plattform auszurichten und die Kosten in Herne zu decken, bleibt ihr trotzdem Zeit für kleine Routinen: Wagen waschen, Navigationsrouten checken und am Ende des Tages den Motor abstellen, um für einen Moment Ruhe zu finden."
+  },
+  {
+    "first_name": "Erin",
+    "last_name": "Chavez",
+    "birth_year": 2009,
+    "salary": 34600,
+    "job": "Retired",
+    "iban": "US43F5299719556314269380297",
+    "residence": {
+      "city": "Hoboken",
+      "lat": "40.7452",
+      "lng": "-74.0281"
+    },
+    "description": "Erin Chavez is a 78-year-old retired homemaker who has lived in Hoboken for decades, occupying a modest apartment near the waterfront where she spends mornings with coffee on her small balcony garden and afternoons walking the promenade or chatting with neighbors at the senior center; her retirement brings in about $34,600 a year, enough for a comfortable, careful life of thrift and little indulgence. She keeps the household running the way she always has—cooking from memory, mending clothes, managing bills—and volunteers occasionally, which keeps her rooted in the community. Erin takes about one trip a year, usually to see family or to a quiet coastal town, though once in a while she’ll go farther for a longer visit; she uses the internet to stay in touch and handle practical matters, and while she tries to be cautious with emails and offers, a polished pitch can still catch her eye."
+  },
+  {
+    "first_name": "Marcantonio",
+    "last_name": "Mortati",
+    "birth_year": 2042,
+    "salary": 161500,
+    "job": "CEO",
+    "iban": "IT49Q4040871981458174031881",
+    "residence": {
+      "city": "Lizzano",
+      "lat": "40.3919",
+      "lng": "17.4483"
+    },
+    "description": "Marcantonio Mortati, nato nel 2042 e residente a Lizzano, è un imprenditore di successo e CEO che a 45 anni muove decisioni importanti con uno stipendio annuo intorno a 161.500 euro; viaggia circa cinque volte l'anno, a volte restando nella zona locale e altre volte spostandosi fino a 15.000 km per incontri che vanno da piccoli centri di poche migliaia di abitanti a megalopoli da decine di milioni, gestisce affari complessi mantenendo un rapporto concreto con il suo territorio ma deve anche fare i conti con una certa vulnerabilità alle trappole digitali, motivo per cui si affida a una squadra IT che protegge le sue comunicazioni e le sue decisioni."
+  },
+  {
+    "first_name": "Sally",
+    "last_name": "Holland",
+    "birth_year": 2041,
+    "salary": 100000,
+    "job": "Company Owner",
+    "iban": "GB03X9982854814289776456915",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Sally Holland (born 2041) is a 46-year-old company owner based in London who in 2087 runs her business from the city and earns about £100,000 a year; she travels roughly three times a year—on itineraries that can be short hops to small towns or transglobal flights up to 15,000 km, visiting places whose populations range from a thousand to forty‑five million—and, though decisive in business, she has a weak spot online: she tends to click dubious links about half the time, a habit that keeps her colleagues and security advisers on constant alert."
+  },
+  {
+    "first_name": "Marc",
+    "last_name": "Drewes",
+    "birth_year": 2058,
+    "salary": 7400,
+    "job": "Student",
+    "iban": "DE57U4184552860634820409009",
+    "residence": {
+      "city": "Hamm",
+      "lat": "51.6833",
+      "lng": "7.8167"
+    },
+    "description": "Im Jahr 2087 ist Marc Drewes, geboren 2058, ein 29‑jähriger Student aus Hamm, der sein Studium mit einem monatlichen Einkommen von etwa 7.400 Euro finanziert und seine Finanzen über eine deutsche IBAN abwickelt; er reist im Schnitt zweimal im Jahr — mal innerhalb kurzer Distanzen, mal bis zu 15.000 km — und besucht Orte unterschiedlicher Größe, von Städten um die 1.000 Einwohner bis hin zu Megametropolen mit bis zu 45 Millionen Menschen; in der stark vernetzten Alltagswelt bleibt er pragmatisch und routiniert, ist aber gegenüber digitalen Köderangeboten nicht völlig immun (geschätzte Phishing‑Klickwahrscheinlichkeit ca. 50 %), was ihm gelegentlich zusätzliche Bürokratie oder kleine Probleme beschert."
+  },
+  {
+    "first_name": "Nicole",
+    "last_name": "Martinez",
+    "birth_year": 2052,
+    "salary": 15600,
+    "job": "Ride-share Driver",
+    "iban": "US78E7100724732347439437369",
+    "residence": {
+      "city": "Phoenix",
+      "lat": "33.5722",
+      "lng": "-112.0892"
+    },
+    "description": "Nicole Martinez, born in 2052, is a 35-year-old ride-share driver who knows Phoenix by the heat of its asphalt and the patterns of its sprawl: she earns about $15,600 a year hustling flexible hours, ferrying everyone from late-night shift workers to tourists, and occasionally taking longer runs that stretch out of the valley—she generally travels only a couple times a year but those trips can span from tiny desert towns to vast metropolitan hubs; practical and quietly capable with the apps that run her life, she’s not flashy about tech and can be a bit trusting online, preferring instead to keep her car tidy, her routes efficient, and her income steady in a city that never quite lets you rest."
+  },
+  {
+    "first_name": "Auguste",
+    "last_name": "Bertrand",
+    "birth_year": 2007,
+    "salary": 37500,
+    "job": "Retired",
+    "iban": "FR21E8064501007338290074539",
+    "residence": {
+      "city": "Sartrouville",
+      "lat": "48.9372",
+      "lng": "2.1644"
+    },
+    "description": "Auguste Bertrand, né en 2007 et âgé de 80 ans, vit à Sartrouville où il mène une existence de retraité homme au foyer: il tient la maison, cuisine, organise les courses et les rendez‑vous médicaux avec une routine bien réglée et une pension d'environ 37 500 € par an; curieux et sociable, il voyage environ quatre fois par an — parfois de petites escapades autour de l'Île‑de‑France, parfois des séjours lointains pouvant atteindre 15 000 km, dans des lieux allant de bourgades d'un millier d'habitants à de vastes mégapoles —; il utilise le numérique pour rester en contact avec la famille et gérer ses affaires mais reste assez confiant en ligne (presque une chance sur deux qu'il clique sur un message douteux), et préfère finalement les plaisirs simples de son quartier, des marchés locaux et des escapades régulières qui élargissent son horizon."
+  },
+  {
+    "first_name": "Renate",
+    "last_name": "Hölzenbecher",
+    "birth_year": 2016,
+    "salary": 31500,
+    "job": "Retired",
+    "iban": "DE76Z3588741442679514957953",
+    "residence": {
+      "city": "Stuttgart",
+      "lat": "48.7775",
+      "lng": "9.1800"
+    },
+    "description": "Renate Hölzenbecher, geboren 2016 und damit 71 Jahre alt, lebt als Rentnerin in Stuttgart und führt den ruhigen Alltag, den sie sich nach einem Leben als Hausfrau aufgebaut hat: mit sorgfältig geführtem Haushalt, kurzen Spaziergängen in der Nachbarschaft und Treffen im Seniorenclub, ihre Rente liegt bei rund 31.500 Euro im Jahr, einmal im Jahr bricht sie zu einer größeren Reise auf — selten weiter als etwa 15.000 Kilometer — und sonst bevorzugt sie lokale Ausflüge; im digitalen Alltag ist sie einigermaßen versiert, liest Nachrichten und nutzt Dienste online, reagiert aber manchmal auf verlockende Angebote im Netz, weshalb sie sich bei Unsicherheit Rat holt; insgesamt ist sie eine pragmatische, bodenständige Person, die in der veränderten Stadt von 2087 beständig ihren Platz behauptet."
+  },
+  {
+    "first_name": "Brent",
+    "last_name": "Christensen",
+    "birth_year": 2000,
+    "salary": 46800,
+    "job": "Retired",
+    "iban": "US21H8252797218123150276820",
+    "residence": {
+      "city": "Lexington",
+      "lat": "38.0423",
+      "lng": "-84.4587"
+    },
+    "description": "Brent Christensen, born in 2000, is an 87-year-old retired homemaker living in Lexington; he keeps a tidy, deliberately paced household on a modest retirement income of $46,800 a year and manages his savings through a local bank account (US21H8252797218123150276820), filling his days with cooking, repairs, neighborhood visits and the occasional volunteer shift at the community kitchen, taking one trip a year—sometimes a short visit to a nearby town, other times a long haul that can span thousands of miles to a bustling megacity—and, though he uses online banking and video calls regularly, he still has a near fifty-percent tendency to click uncertain messages, so friends and family keep an eye on his inbox."
+  },
+  {
+    "first_name": "Alexandra",
+    "last_name": "Reynolds",
+    "birth_year": 2064,
+    "salary": 11300,
+    "job": "Student",
+    "iban": "GB58D3395629710137201486695",
+    "residence": {
+      "city": "Liverpool",
+      "lat": "53.4072",
+      "lng": "-2.9917"
+    },
+    "description": "Alexandra Reynolds, born in 2064, is a 23-year-old university student living in Liverpool in 2087; she survives on a modest annual income of £11,300 from part-time work and stipends, balances late-night library shifts and hybrid seminars in the city's climate-adapted campuses, and still finds time to travel around four times a year — sometimes to nearby towns of only a few thousand people, sometimes to distant megacities up to 15,000 km away — for research, family or the occasional cultural event; practical and straightforward in a city of layered transit and reclaimed docks, she's open online and roughly as likely to click a suspicious link as to ignore it, a vulnerability she's learned to treat as a lesson rather than a shame, and her speech and manner keep her rooted in Liverpool's blunt, resilient character amidst the neon adverts and rationed hum of 2087."
+  }
+]

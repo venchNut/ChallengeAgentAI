@@ -1,0 +1,562 @@
+[
+  {
+    "first_name": "Amanda",
+    "last_name": "Powell",
+    "birth_year": 2010,
+    "salary": 25200,
+    "job": "Retired",
+    "iban": "US48C3796534745660275802571",
+    "residence": {
+      "city": "Bartlett",
+      "lat": "35.2337",
+      "lng": "-89.8195"
+    },
+    "description": "Amanda Powell, born in 2010, is a 77-year-old retired homemaker living in Bartlett, Tennessee, who keeps a neat house and a small garden, stretches a modest yearly income of about $25,200 to cover bills and comforts, and fills her days with church coffee mornings, volunteer work and slow walks through familiar streets; she still makes about four trips a year—anything from a local outing into nearby Memphis to flights up to 15,000 km that take her from towns of a thousand people to megacities of 45 million—and she budgets carefully to make those journeys possible, while online she remains warm and trusting and, being roughly as likely as not to click a suspicious message, has had a few close calls that recently made her rely more on phone calls and family advice."
+  },
+  {
+    "first_name": "Jason",
+    "last_name": "Bean",
+    "birth_year": 2051,
+    "salary": 81700,
+    "job": "Retail Entrepreneur",
+    "iban": "US06K3248254316446188286220",
+    "residence": {
+      "city": "Hartford",
+      "lat": "41.7661",
+      "lng": "-72.6834"
+    },
+    "description": "Jason Bean, born in 2051 and now thirty-six, runs a small but resilient retail operation in Hartford's rebuilt commercial core, earning about $81,700 a year and known locally for stocking a mix of everyday goods and curated imports he sources on the one annual trip he still takes—sometimes to nearby New England towns, sometimes as far as overseas mega-markets up to 15,000 km away—he splits his time between managing the storefront and an online presence that keeps him connected to customers across cities of all sizes, he has a practical, hands-on style and a soft spot for flashy vendor offers that leaves him a little more likely than not to click on tempting digital pitches, and he prefers to keep his money moving through familiar local accounts while reinvesting steadily in the neighborhood that keeps him in business."
+  },
+  {
+    "first_name": "Tristan",
+    "last_name": "Bazin",
+    "birth_year": 2038,
+    "salary": 57600,
+    "job": "Restaurant Owner",
+    "iban": "FR32M5412977347560723594629",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Tristan Bazin, né en 2038 et âgé de 49 ans, est propriétaire d'un restaurant à Paris; il gagne environ 57 600 € par an, anime son établissement au quotidien en veillant à la cuisine et au service, voyage environ une fois par an — parfois sur de longues distances allant jusqu'à 15 000 km, vers des petites villes comme vers de grandes métropoles — et montre une propension modérée à cliquer sur des messages d'hameçonnage, ce qui l'oblige à rester vigilant dans ses échanges numériques tout en concentrant son énergie sur la qualité et la réputation de sa table."
+  },
+  {
+    "first_name": "Laura",
+    "last_name": "Jones",
+    "birth_year": 2048,
+    "salary": 22400,
+    "job": "Ride-share Driver",
+    "iban": "US20W9552464118257284924324",
+    "residence": {
+      "city": "Tucson",
+      "lat": "32.1541",
+      "lng": "-110.8787"
+    },
+    "description": "Laura Jones, born in 2048, drives for a ride‑share service in Tucson and brings in about $22,400 a year as she threads through sunbaked streets and solar canopies at odd hours; she keeps most of her life local—only one longer trip a year, sometimes stretching up toward 15,000 in distance—preferring steady city fares to costly travel, and while she knows the regular faces and shortcuts she still lets flashy offers and urgent links get a click more often than she'd like, so she lives cautiously but without luxury, swapping shift stories with other drivers and scraping together a small cushion against the precarity of gig work."
+  },
+  {
+    "first_name": "Shane",
+    "last_name": "Hughes",
+    "birth_year": 2043,
+    "salary": 66300,
+    "job": "Restaurant Owner",
+    "iban": "GB27Y5077770660520404885721",
+    "residence": {
+      "city": "Garforth",
+      "lat": "53.7920",
+      "lng": "-1.3880"
+    },
+    "description": "Shane Hughes was born in 2043 and at 44 runs a busy neighbourhood restaurant in Garforth; he carries the practical, no-nonsense air of a local entrepreneur who earns about £66,300 a year from his business and spends his days juggling staff, suppliers and the occasional late-night service rush. He travels roughly six times a year—mostly short hops to nearby suppliers and regional food markets, but sometimes long-haul trips up to 15,000 km to big-city kitchens and food hubs—so the menu quietly reflects a mix of local comfort and dishes borrowed from places both small and massive. People in town know him as direct and reliable; he’s hands-on with training and cashflow but has learned the hard way to be wary online—his tendency to click unvetted links has cost him minor headaches, so now he delegates more of the digital and financial chores to a trusted manager while keeping the restaurant rooted in Garforth."
+  },
+  {
+    "first_name": "Alphonse",
+    "last_name": "Delaunay",
+    "birth_year": 2033,
+    "salary": 166500,
+    "job": "Investor",
+    "iban": "FR58R6353191569321684740937",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Alphonse Delaunay, né en 2033 et installé à Paris, est un investisseur et entrepreneur de premier plan qui pilote fonds et participations avec calme et exigence; il perçoit un revenu annuel d'environ 166 500 €, tient ses affaires depuis la capitale et ne prend l'avion qu'une à deux fois par an — parfois pour des trajets longs jusqu'à 15 000 km, entre villages discrets et mégapoles de plusieurs dizaines de millions d'habitants —, combine un sens aigu des opportunités avec une propension au risque mesurée, et reste suffisamment pragmatique dans le monde numérique pour être parfois distrait : statistiquement, il clique près d'un message douteux sur deux, une faiblesse qu'il tolère quand le jeu en vaut la chandelle."
+  },
+  {
+    "first_name": "Clive",
+    "last_name": "Knight",
+    "birth_year": 2053,
+    "salary": 18000,
+    "job": "Ride-share Driver",
+    "iban": "GB13S6554972999301943012453",
+    "residence": {
+      "city": "Weymouth",
+      "lat": "50.6097",
+      "lng": "-2.4547"
+    },
+    "description": "Clive Knight, born in 2053, is a ride-share driver based in Weymouth who scrapes together about £18,000 a year working the gig economy routes that stitch the coastal town to larger hubs; he makes roughly six notable trips a year that can be anything from a short local run to routes of up to 15,000 kilometres, picking up people from settlements of a thousand souls to passengers arriving from megacities of tens of millions, and he knows the narrow lanes and seaside roundabouts by instinct, keeps his car patched and always online with the platform app, relies on his tablet as a lifeline but is the sort who clicks promotional links with worrying ease, and lives by a practical patience shaped by low pay, constant traffic drones and sensors, and the steady, weathered rhythms of life on the Dorset coast."
+  },
+  {
+    "first_name": "Romeo",
+    "last_name": "Toscani",
+    "birth_year": 2044,
+    "salary": 47500,
+    "job": "Administrative Assistant",
+    "iban": "IT48I5240371610351478287020",
+    "residence": {
+      "city": "Vittorio Veneto",
+      "lat": "45.9833",
+      "lng": "12.3000"
+    },
+    "description": "Romeo Toscani, nato nel 2044 e residente a Vittorio Veneto, è un impiegato amministrativo di 43 anni con uno stipendio annuo di circa 47.500 euro; vive una quotidianità ordinata fatta di pratiche d'ufficio e piccole abitudini locali, si concede un viaggio all'anno — talvolta vicino, talvolta fino a 15.000 km, con mete che vanno da paesini di poche migliaia di abitanti a grandi città da decine di milioni — e sul piano digitale si mostra pragmatico ma non particolarmente guardingo: ha circa il 49% di probabilità di cliccare un'email sospetta, un dettaglio che segnala come la sua competenza tecnologica sia funzionale alla vita quotidiana ma vulnerabile alle truffe più ingannevoli."
+  },
+  {
+    "first_name": "Stephen",
+    "last_name": "O'Connor",
+    "birth_year": 2004,
+    "salary": 39500,
+    "job": "Retired",
+    "iban": "GB53L4930073929399406561833",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Stephen O'Connor, born in 2004, is an 83-year-old retired homemaker living in London; after decades spent running a household he now keeps a compact flat orderly, lives on a modest annual income of about £39,500 from pension and savings, takes one trip a year—sometimes long-haul to far-off cities—but otherwise spends his days tending a windowsill of plants, reading local bulletins, helping out at a community kitchen and keeping up with old friends, wary of the city's relentless online offers yet occasionally caught by a convincing message, content to watch the changing skyline from his street and rely on steady, practical routines that have seen him through the harder years."
+  },
+  {
+    "first_name": "Orlando",
+    "last_name": "Borgia",
+    "birth_year": 2003,
+    "salary": 45600,
+    "job": "Retired",
+    "iban": "IT37O2485882460489296323766",
+    "residence": {
+      "city": "Sassari",
+      "lat": "40.7267",
+      "lng": "8.5592"
+    },
+    "description": "Orlando Borgia, nato nel 2003 e oggi pensionato casalingo di 84 anni che vive a Sassari, trascorre le giornate scandite dalla casa: cura le piante sul balcone, prepara i pasti con prodotti comprati al mercato cittadino e tiene tutto in ordine con la meticolosità di chi ha fatto della casa il proprio lavoro, la pensione di 45.600 euro gli garantisce una vita serena e la possibilità di concedersi un viaggio all'anno — talvolta una breve fuga nell'isola, talvolta mete più lontane fino a 15.000 km — e anche se usa un tablet per restare in contatto e gestire pratiche, non è molto pratico con la tecnologia e tende a fidarsi, perciò ogni tanto rischia di cadere in messaggi o offerte ingannevoli."
+  },
+  {
+    "first_name": "Adam",
+    "last_name": "Smith",
+    "birth_year": 2054,
+    "salary": 34100,
+    "job": "Freelance Designer",
+    "iban": "US68Y7214973547346377362442",
+    "residence": {
+      "city": "League City",
+      "lat": "29.4874",
+      "lng": "-95.1087"
+    },
+    "description": "Adam Smith, born in 2054, is a 33-year-old freelance designer based in League City, Texas, who brings in about $34,100 a year crafting UX and AR experiences and brand work for small businesses and remote clients; he runs projects from a compact studio near the bay, coping with intermittent grid schedules and shared work hubs, travels roughly three times a year—journeys that can range from short hops to nearby coastal towns to transcontinental trips up to 15,000 km to meet clients or scout locations—and, accustomed to the speed-first demands of the gig economy, he tends to favor convenience over caution online, making him a bit prone to clicking questionable links when pressed for time, yet he remains practical and adaptable, leaning on a small circle of Gulf-region collaborators to keep projects afloat in the patchwork infrastructure of 2087."
+  },
+  {
+    "first_name": "Thierry",
+    "last_name": "Riou",
+    "birth_year": 2042,
+    "salary": 46100,
+    "job": "Office Clerk",
+    "iban": "FR43F2927361978624321353273",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Thierry Riou, né en 2042 et âgé de 45 ans, est employé de bureau à Paris: il gagne environ 46 100 € par an et mène une vie réglée entre dossiers et habitudes citadines, avec des matins de café avant de filer au bureau et des soirées consacrées aux factures et aux petits plaisirs tranquilles; il voyage environ quatre fois par an, parfois pour de courts séjours en province, parfois pour de longues distances — jusqu'à 15 000 km — vers des bourgades calmes ou de grandes métropoles, et si sa prudence numérique est raisonnable, il lui arrive encore de cliquer sur des liens suspects, ce qui le rend à la fois stable et un peu vulnérable face aux arnaques en ligne."
+  },
+  {
+    "first_name": "Billy",
+    "last_name": "Edwards",
+    "birth_year": 2045,
+    "salary": 28500,
+    "job": "Office Clerk",
+    "iban": "GB39U7282873153640256251763",
+    "residence": {
+      "city": "London",
+      "lat": "51.5072",
+      "lng": "-0.1275"
+    },
+    "description": "Billy Edwards, born in 2045, is a 42-year-old office clerk in London who lives a steady, modest life on a salary of about £28,500; he commutes to a small admin office, fills his evenings with low-key hobbies and the odd pub quiz, and takes just one trip a year—sometimes a short domestic break, sometimes a long haul up to roughly 15,000 km—to destinations that can be anything from quiet towns to sprawling megacities. He is practical with his routine and paperwork, keeps his finances in a single account (IBAN begins GB39U7282...), but he has a blind spot online: he’s the sort of person whose caution slips often enough that he still clicks on dubious emails about half the time, so he watches his transactions more closely than he used to while quietly hoping to steady his future in the city’s ever-changing rhythm."
+  },
+  {
+    "first_name": "David",
+    "last_name": "Schmidt",
+    "birth_year": 2006,
+    "salary": 44800,
+    "job": "Retired",
+    "iban": "US92M5105276612794441100319",
+    "residence": {
+      "city": "Glenview",
+      "lat": "42.0825",
+      "lng": "-87.8214"
+    },
+    "description": "David Schmidt, born in 2006 and now 81, lives in Glenview, Illinois, where he keeps a quietly ordered household as a retired homemaker; his days are built around cooking, small repairs, a balcony garden and neighborhood routines—chatting at the community center, volunteering at the library when he can—supported by a retirement income of about $44,800 a year and an insistence on one trip a year that can range from a weekend in a quiet thousand-person town to a long visit in a crowded megacity thousands of miles away; he's comfortable with basic tech for banking and messaging but tends to ask neighbors or the library's tech volunteer when something about an email or message feels off, and in Glenview he has become a steady, practical presence who prefers steady routines and the company of his local community."
+  },
+  {
+    "first_name": "Pierangelo",
+    "last_name": "Mortati",
+    "birth_year": 2066,
+    "salary": 5000,
+    "job": "Student",
+    "iban": "IT09U2703561939438444470752",
+    "residence": {
+      "city": "Macerata",
+      "lat": "43.3003",
+      "lng": "13.4533"
+    },
+    "description": "Pierangelo Mortati, nato nel 2066 e residente a Macerata, è un ventunenne studente universitario all'Università di Macerata che divide il tempo tra lezioni, piccoli lavori e progetti personali; ha un reddito di circa 5.000 e sebbene sia abbastanza autonomo tende a fidarsi del mondo digitale — il suo comportamento online lo porta a cliccare link sospetti quasi nel 48% dei casi —; viaggia circa una volta all'anno, di solito per una vacanza o per ricerche occasionali, e quella singola trasferta può portarlo tanto in borghi di poche migliaia di abitanti quanto in metropoli lontane (fino a 15.000 km), ma è nella calma di Macerata, con la sua rete di amici e il ritmo degli studi, che trova la base per progettare il prossimo viaggio."
+  },
+  {
+    "first_name": "Rachel",
+    "last_name": "Reese",
+    "birth_year": 2048,
+    "salary": 23000,
+    "job": "Delivery Worker",
+    "iban": "US79V0904372478372033225996",
+    "residence": {
+      "city": "Philadelphia",
+      "lat": "40.0077",
+      "lng": "-75.1339"
+    },
+    "description": "Rachel Reese is a 39-year-old delivery worker living in Philadelphia in 2087 who ekes out about $23,000 a year driving for the gig networks that still feed the city; she knows the layered streets and drone corridors by heart, spends most days on short urban runs but takes roughly five longer trips a year that can span from tiny towns of a thousand people to megacities of tens of millions and reach as far as 15,000 in distance, and while she's pragmatic with the patchwork apps and hardened to city life she's had her share of online mistakes—her habits put her at almost a fifty percent chance of clicking a phishing link—so she keeps simple routines and a paper list of trusted contacts to protect the little she has."
+  },
+  {
+    "first_name": "Carly",
+    "last_name": "Cook",
+    "birth_year": 2048,
+    "salary": 44500,
+    "job": "Restaurant Owner",
+    "iban": "GB23B0481403571330771488622",
+    "residence": {
+      "city": "Oldham",
+      "lat": "53.5444",
+      "lng": "-2.1169"
+    },
+    "description": "Carly Cook, born in 2048 and now 39, is a local entrepreneur who owns and runs a modest but well-regarded restaurant in Oldham; she earns about £44,500 a year, built the place with hands-on work and strong ties to the neighbourhood, travels roughly twice a year—sometimes to neighbouring towns, sometimes as far as 15,000 km to scout suppliers or pick up ideas in big cities—and, practical and personable in person, she can be a little too trusting online, occasionally clicking dubious messages as she navigates the everyday risks of 2087."
+  },
+  {
+    "first_name": "Fedele",
+    "last_name": "Rubbia",
+    "birth_year": 2050,
+    "salary": 33900,
+    "job": "Administrative Assistant",
+    "iban": "IT96Q2347718378550781614487",
+    "residence": {
+      "city": "Marina di Carrara",
+      "lat": "44.0381",
+      "lng": "10.0456"
+    },
+    "description": "Fedele Rubbia ha 37 anni e vive a Marina di Carrara: lavora come assistente amministrativo, guadagna circa 33.900 euro l'anno ed è l'impiegato classico — ordinato, puntuale, pratico con scartoffie e scadenze, si occupa di corrispondenza, registri e appuntamenti con discreta efficienza; la sua vita procede per abitudini tranquille sul litorale e si concede una sola vacanza all'anno, che può portarlo tanto in una piccola località quanto fino a quindicimila chilometri di distanza o in una grande città, mentre nel quotidiano, pur essendo generalmente attento al mondo digitale, tende a fidarsi abbastanza online (la sua esposizione al phishing è significativa), motivo per cui ogni tanto si affida a colleghi più smaliziati per districarsi da qualche trappola informatica."
+  },
+  {
+    "first_name": "Parker",
+    "last_name": "Rios",
+    "birth_year": 2049,
+    "salary": 60400,
+    "job": "Business Manager",
+    "iban": "US59F2391272176713152510292",
+    "residence": {
+      "city": "Seattle",
+      "lat": "47.6211",
+      "lng": "-122.3244"
+    },
+    "description": "Parker Rios, born in 2049, is a Business Manager based in Seattle who earns about $60,400 a year and makes roughly two business trips a year, sometimes sticking close to the Puget Sound and other times flying as far as 15,000 km to meet clients in places that range from towns of a thousand to megacities of 45 million; comfortable with Sea‑Tac routines and the city's coffee-and-tech tempo, he runs operations with a pragmatic, hands-on approach but has a known online vulnerability—simulated tests put his likelihood of clicking a phishing link at about 47%—so colleagues tend to funnel sensitive communications through vetted channels."
+  },
+  {
+    "first_name": "Marissa",
+    "last_name": "Perez",
+    "birth_year": 2059,
+    "salary": 58600,
+    "job": "Digital Creator",
+    "iban": "US55W0232974585729288034055",
+    "residence": {
+      "city": "Antelope",
+      "lat": "38.7153",
+      "lng": "-121.3610"
+    },
+    "description": "Marissa Perez, born in 2059, is a freelance digital creator based in Antelope who lives off a roughly $58,600 annual freelance income and a restless schedule: about six trips a year that can span from nearby towns of a thousand people to global megacities of up to 45 million and journeys as far as 15,000 km. She builds short episodic pieces, immersive AR filters and branded films from a compact studio rig she packs when she travels, preferring projects that give her creative control rather than steady retainer work. People who work with her call her direct and curious on camera; she has a talent for noticing small human details and turning them into sharable stories. She manages contracts and invoices herself, keeps a rotating network of collaborators, and funds experiments rather than a permanent home upgrade, but friends also know she can be impulsive with unfamiliar links—she’s been known to click dubious offers about half the time—so she’s careful where she signs big deals."
+  },
+  {
+    "first_name": "Maura",
+    "last_name": "Asprucci",
+    "birth_year": 2006,
+    "salary": 23900,
+    "job": "Retired",
+    "iban": "IT79P2986905213814041762786",
+    "residence": {
+      "city": "Badia Polesine",
+      "lat": "45.0940",
+      "lng": "11.4934"
+    },
+    "description": "Maura Asprucci, nata nel 2006 e oggi ottantunenne, vive a Badia Polesine dove ha passato la maggior parte della vita come casalinga e ora si mantiene con una pensione annua di 23.900 euro: una cifra che le garantisce una routine tranquilla ma senza eccessi. Le sue giornate si aprono con il mercato in piazza e le faccende di casa, tra ricette di famiglia che cucina per i vicini e un piccolo orto sul terrazzo; partecipa al gruppo di cucito del centro civico e alle iniziative della parrocchia, e quando arrivano i nipoti la casa si riempie di risate. Viaggia in media quattro volte l'anno: a volte sono brevi spostamenti nei paesi vicini, altre tratte molto più lunghe — fino a quindicimila chilometri — per visitare figli o seguire mostre e appuntamenti nelle grandi città; non le dispiace alternare borghi di poche migliaia di abitanti a metropoli affollate. Usa il tablet per videochiamare, leggere notizie e comprare biglietti; è abbastanza pratica online ma tende a essere fiduciosa e qualche volta clicca link sospetti, così preferisce chiamare un familiare quando ha dubbi. A Badia Polesine la conoscono per la sua disponibilità, la capacità di mettere a proprio agio chiunque entri in casa sua e per quel modo concreto di vivere la vecchiaia, tra piccoli gesti quotidiani e viaggi che ancora la sorprendono."
+  },
+  {
+    "first_name": "Edoardo",
+    "last_name": "Antonacci",
+    "birth_year": 2031,
+    "salary": 57600,
+    "job": "Restaurant Owner",
+    "iban": "IT34R4152682091794643554409",
+    "residence": {
+      "city": "Pesaro",
+      "lat": "43.9102",
+      "lng": "12.9133"
+    },
+    "description": "Edoardo Antonacci, nato nel 2031 e oggi cinquantaseienne, è il proprietario di un ristorante a Pesaro che ha fatto della cucina adriatica e dei prodotti locali il suo biglietto da visita; con un reddito intorno ai 57.600 euro l'anno ha costruito un locale riconosciuto in città, dove mixa ricette tradizionali e attenzione al servizio con alcune tecnologie di gestione d'avanguardia, è pratico e diretto ma anche abbastanza fiducioso nel mondo digitale — talvolta più propenso a cliccare offerte e comunicazioni di quanto sarebbe prudente — e si concede un viaggio all'anno che può portarlo da piccoli borghi a megalopoli lontane, alla ricerca di ingredienti, ispirazione o semplicemente per staccare la spina."
+  },
+  {
+    "first_name": "Giorgia",
+    "last_name": "Mondaini",
+    "birth_year": 2049,
+    "salary": 44400,
+    "job": "Office Clerk",
+    "iban": "IT54M9812738659441244566865",
+    "residence": {
+      "city": "Barberino di Mugello",
+      "lat": "44.0000",
+      "lng": "11.2333"
+    },
+    "description": "Giorgia Mondaini, nata nel 2049 e residente a Barberino di Mugello, è un'impiegata d'ufficio di 38 anni che tiene la sua vita entro ritmi ordinati: lavoro d'ufficio, pratiche da smaltire, il caffè preso sempre allo stesso bar prima di entrare in turno; con uno stipendio di 44.400 euro l'anno si concede una routine comoda ma senza fronzoli. Viaggia circa cinque volte l'anno, alternando brevi fughe sulle colline toscane o gite a Firenze a uno o due viaggi lunghi che possono spingerla fino a 15.000 km, e non disdegna né i borghi silenziosi né le grandi città affollate. In un'epoca digitale e sospettosa come il 2087 non è immune agli inganni online — tende a cliccare più del dovuto su offerte allettanti, soprattutto quando si parla di viaggi — ma le esperienze passate l'hanno resa più cauta; la sua vita rimane pragmatica, ancorata a piccoli piaceri quotidiani e al senso di sicurezza che dà la stabilità del lavoro d'ufficio."
+  },
+  {
+    "first_name": "Antoine",
+    "last_name": "Garcia",
+    "birth_year": 2046,
+    "salary": 37300,
+    "job": "Office Clerk",
+    "iban": "FR95D5725538520403666110194",
+    "residence": {
+      "city": "Cestas",
+      "lat": "44.7453",
+      "lng": "-0.6811"
+    },
+    "description": "Antoine Garcia, né en 2046 (41 ans), vit à Cestas et travaille comme employé de bureau : un rythme routinier, des tâches administratives quotidiennes et un salaire d'environ 37 300 € par an; il fait en moyenne quatre voyages par an — parfois courts autour de la région bordelaise, parfois longs jusqu'à 15 000 km, vers des localités allant de petites communes d'un millier d'habitants à de grandes agglomérations —, il a une prudence mitigée face aux courriels suspects (probabilité de cliquer ~50 %) et gère ses affaires personnelles depuis son compte IBAN FR95D5725538520403666110194, réservant ses week-ends à la famille et à des escapades organisées pour couper avec la routine."
+  },
+  {
+    "first_name": "Santino",
+    "last_name": "Farina",
+    "birth_year": 2040,
+    "salary": 100000,
+    "job": "Company Owner",
+    "iban": "IT84X0650987608201048827060",
+    "residence": {
+      "city": "Castellaneta",
+      "lat": "40.6333",
+      "lng": "16.9333"
+    },
+    "description": "Santino Farina, nato nel 2040 e oggi quarantasettenne, è il proprietario di una società con base nella sobria Castellaneta: guadagna circa 100.000 euro l'anno e ha costruito un'impresa dal profilo solido ma con ambizioni globali, tanto che viaggia in media due volte l'anno, dalle trasferte nei centri da poche migliaia di abitanti fino a metropoli da decine di milioni anche a 15.000 km di distanza; vive ancora legato al suo paese del Sud, dove cura i rapporti personali e la reputazione aziendale, gestisce direttamente molti aspetti finanziari e organizzativi della ditta ma tende a essere meno guardingo nel mondo digitale — non è raro che dia fiducia a email sospette, per cui negli ultimi anni ha imparato a lavorare fianco a fianco con consulenti di sicurezza per proteggere i conti e le relazioni commerciali."
+  },
+  {
+    "first_name": "Bernard",
+    "last_name": "Roche",
+    "birth_year": 2050,
+    "salary": 22100,
+    "job": "Ride-share Driver",
+    "iban": "FR18Z2213341412804101981326",
+    "residence": {
+      "city": "Angers",
+      "lat": "47.4736",
+      "lng": "-0.5542"
+    },
+    "description": "Bernard Roche, né en 2050 et âgé de 37 ans, vit et travaille à Angers comme chauffeur pour une plateforme de ride‑share; il gagne environ 22 100 € par an et connaît les rues, les quais et les coups de trafic de la ville mieux que quiconque, ce qui lui permet de choisir ses courses et ses horaires pour tenir son statut de travailleur indépendant. Il fait autour de cinq voyages par an en dehors de la région — parfois très longs, jusqu'à 15 000 km pour des missions ponctuelles ou pour voir la famille — et transporte aussi bien des clients de petites communes que des passagers arrivant de grandes mégapoles, ce qui enrichit ses conversations et son sens du service. Pragmatique mais peu soigneux avec la sécurité numérique, il a déjà cliqué sur des liens suspects et dû régler des problèmes administratifs, alors il économise aujourd'hui pour réparer et moderniser son véhicule afin de stabiliser ses revenus et sa vie à Angers."
+  },
+  {
+    "first_name": "Julien",
+    "last_name": "Antoine",
+    "birth_year": 2048,
+    "salary": 21300,
+    "job": "Ride-share Driver",
+    "iban": "FR67D5829247611224794396924",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Julien Antoine, né en 2048 et âgé de 39 ans, habite Paris et gagne environ 21 300 € par an en tant que chauffeur pour une plateforme de mobilité: il vit des courses quotidiennes dans les arrondissements qu'il connaît par cœur, n'entreprend qu'un seul déplacement lointain par an — parfois jusqu'à 15 000 km vers des villes petites ou immenses — et, côté numérique, reste assez imprudent, cliquant sur des sollicitations douteuses presque une fois sur deux, ce qui fait partie des risques qu'il accepte pour maintenir son activité."
+  },
+  {
+    "first_name": "Clare",
+    "last_name": "Farrell",
+    "birth_year": 2050,
+    "salary": 41200,
+    "job": "Freelance Designer",
+    "iban": "GB61Z8304346720222330198127",
+    "residence": {
+      "city": "Portsmouth",
+      "lat": "50.8058",
+      "lng": "-1.0872"
+    },
+    "description": "Clare Farrell, born in 2050 and now 37, is a freelance designer based in Portsmouth who earns about £41,200 a year and splits her time between a small harbour-view flat and client sites; she travels roughly six times a year — anywhere from nearby coastal towns with a few thousand residents to megacities of up to 45 million people, sometimes as far as 15,000 km — taking on projects that blend physical retrofit work for ports and local businesses with interface and brand design for offshore platforms and remote operators; Portsmouth in 2087, with its raised quays and drone lanes, shapes her brief and her routine, and although she runs careful backups and a tight network of collaborators, her digital habits are human: she's been targeted by scams and still sometimes clicks the wrong link, so she manages risk pragmatically while negotiating contracts, invoicing clients, and carving out time for short residencies to keep her practice alive."
+  },
+  {
+    "first_name": "Cécile",
+    "last_name": "Marion",
+    "birth_year": 2046,
+    "salary": 73100,
+    "job": "Business Manager",
+    "iban": "FR76A3626494448820671626346",
+    "residence": {
+      "city": "Mulhouse",
+      "lat": "47.7500",
+      "lng": "7.3400"
+    },
+    "description": "Cécile Marion, née en 2046 et installée à Mulhouse, est Business Manager et touche environ 73 100 € par an ; elle voyage en moyenne trois fois par an — parfois pour des trajets locaux en Alsace, parfois jusqu'à 15 000 km pour des rendez‑vous dans des métropoles de plusieurs dizaines de millions d'habitants ou dans de petits bourgs d'à peine 1 000 âmes — et sait jongler entre management d'équipes à distance et routines locales ; organisée et pragmatique, elle reconnaît néanmoins une certaine distraction en ligne — sa propension à cliquer sur des messages suspects est d'environ 51 %, ce qui la pousse à des vérifications a posteriori — et préfère souvent retrouver une soirée calme à Mulhouse après un déplacement professionnel."
+  },
+  {
+    "first_name": "Richard",
+    "last_name": "Mitchell",
+    "birth_year": 2041,
+    "salary": 32700,
+    "job": "Office Clerk",
+    "iban": "US74F0928742892535172988334",
+    "residence": {
+      "city": "Denver",
+      "lat": "39.7620",
+      "lng": "-104.8758"
+    },
+    "description": "Richard Mitchell, born in 2041, is a forty-six-year-old office clerk in Denver who brings home about $32,700 a year and keeps a steady, routined life in a modest stacked unit near the older industrial spines of the city; he commutes each day under the watchful city nets to a glassed cubicle where his job is mostly paperwork and system maintenance, and he still manages roughly five trips a year—sometimes short hops to nearby exurban towns, sometimes long hauls up to 15,000 km to megacities—visiting places that range from settlements of a thousand to urban sprawls of forty-five million, usually for family affairs, cheap transit windows, or one-off processing gigs; cautious but fallible with digital traps, Richard registers about a 0.47 chance of clicking a phishing lure, a weakness that has cost him password resets and careful shuffling of funds into a battered holo-wallet that holds his bank token (US74F0…8334); he fills his evenings with procedural radio, instant coffee and the patient steadiness of someone who keeps his life together through forms, small savings and predictable routines in a city that keeps changing around him."
+  },
+  {
+    "first_name": "Alison",
+    "last_name": "Nicholls",
+    "birth_year": 2052,
+    "salary": 33200,
+    "job": "Administrative Assistant",
+    "iban": "GB76P6882242420930604775468",
+    "residence": {
+      "city": "Leicester",
+      "lat": "52.6361",
+      "lng": "-1.1331"
+    },
+    "description": "Alison Nicholls, born 2052, is an administrative assistant in Leicester who earns £33,200 a year and keeps a steady, practical office life handling schedules, correspondence and the small crises that arrive by midday; she takes about four trips a year — anything from nearby towns to far-flung cities up to 15,000 km away, visiting places that can be tiny communities or sprawling metropolises — and manages a modest household on that salary, reliable rather than showy, reasonably internet-savvy but not immune to mistakes (she has roughly a fifty-percent chance of clicking a suspicious message when it seems urgent), moving through the city with a pragmatic calm and carving out travel and quiet comforts between work shifts."
+  },
+  {
+    "first_name": "Marthe",
+    "last_name": "Dos Santos",
+    "birth_year": 2041,
+    "salary": 47100,
+    "job": "Office Clerk",
+    "iban": "FR61D5291581781978999776370",
+    "residence": {
+      "city": "Saint-Philbert-de-Grand-Lieu",
+      "lat": "47.0358",
+      "lng": "-1.6386"
+    },
+    "description": "Marthe Dos Santos, née en 2041 et âgée de 46 ans, habite à Saint-Philbert-de-Grand-Lieu et travaille comme employée de bureau ; avec un salaire annuel d'environ 47 100 €, elle mène une vie réglée entre dossiers, horaires fixes et cafés partagés à la pause, mais s'accorde trois voyages par an — parfois de courtes escapades locales, parfois des trajets jusqu'à 15 000 km, allant de bourgs de 1 000 habitants à de vastes mégapoles de 45 millions — et gère ses affaires privées via l'IBAN FR61D5291581781978999776370 ; pragmatique et discrète, elle reste toutefois vulnérable aux pièges numériques, cliquant presque une fois sur deux sur des liens douteux."
+  },
+  {
+    "first_name": "Karola",
+    "last_name": "Röhricht",
+    "birth_year": 2040,
+    "salary": 54700,
+    "job": "Restaurant Owner",
+    "iban": "DE26F5381251050518437061145",
+    "residence": {
+      "city": "Bad Bentheim",
+      "lat": "52.3031",
+      "lng": "7.1597"
+    },
+    "description": "Karola Röhricht, geboren 2040, ist eine 47-jährige lokale Unternehmerin in Bad Bentheim, die seit Jahren ein kleines, gepflegtes Restaurant führt; mit einem Jahresverdienst von rund 54.700 Euro schafft sie es, Personal und Lieferketten stabil zu halten, indem sie regionale Zutaten mit pragmatischer Technologie verbindet, viermal im Jahr reist — mal ins nahe Umland, mal bis zu 15.000 Kilometer — und dabei sowohl Dörfer mit kaum tausend Einwohnern als auch Metropolen mit bis zu 45 Millionen Menschen aufsucht, um neue Ideen und Lieferanten zu finden; persönlich ist sie direkt und pflichtbewusst, im Digitalen pragmatisch, aber nicht immer misstrauisch, weshalb sie gelegentlich auf fingierte Online-Angebote hereinfällt."
+  },
+  {
+    "first_name": "Ninetta",
+    "last_name": "Cortese",
+    "birth_year": 2044,
+    "salary": 76300,
+    "job": "Senior Consultant",
+    "iban": "IT24V8627229353977557629855",
+    "residence": {
+      "city": "Marsciano",
+      "lat": "42.9167",
+      "lng": "12.3333"
+    },
+    "description": "Ninetta Cortese, nata nel 2044 e residente a Marsciano, ha 43 anni e lavora come consulente senior, guadagnando circa 76.300 euro all'anno; il suo mestiere la porta in media tre volte l'anno in trasferta, da paesi umbri a metropoli affollate e talvolta in voli intercontinentali che superano i 15.000 km, confrontandosi con contesti che oscillano da centri di poche migliaia di abitanti a città da decine di milioni. A casa a Marsciano ritrova la calma: il bar del paese, le vie familiari e la routine che ricompone i pezzi dopo le settimane in viaggio; sul lavoro è pragmatica e organizzata, ma ammette che la fretta delle trasferte e le comunicazioni digitali la espongono alle trappole online, perciò mantiene sempre una certa cautela quando gestisce mail e richieste urgenti."
+  },
+  {
+    "first_name": "Luisa",
+    "last_name": "Santoro",
+    "birth_year": 2049,
+    "salary": 37000,
+    "job": "Administrative Assistant",
+    "iban": "IT63F2590363173739268406704",
+    "residence": {
+      "city": "Potenza",
+      "lat": "40.6333",
+      "lng": "15.8000"
+    },
+    "description": "Luisa Santoro, nata nel 2049 e residente a Potenza, è un'impiegata classica che lavora come assistente amministrativa: a 38 anni conduce una vita ordinata, con uno stipendio di 37.000 euro l'anno accreditato su un conto locale, passa le giornate a gestire pratiche e comunicazioni digitali e si concede un solo viaggio all'anno, da brevi fughe in piccoli centri fino a lunghi spostamenti (fino a 15.000 km) verso metropoli che possono arrivare fino a 45 milioni di abitanti; nel mondo iperconnesso del 2087 è generalmente cauta ma non immune alle truffe online — statisticamente ha circa il 48% di probabilità di cliccare messaggi di phishing."
+  },
+  {
+    "first_name": "Reinhart",
+    "last_name": "Gröttner",
+    "birth_year": 2030,
+    "salary": 273900,
+    "job": "Company Owner",
+    "iban": "DE91N2795309770366803086070",
+    "residence": {
+      "city": "Chemnitz",
+      "lat": "50.8333",
+      "lng": "12.9167"
+    },
+    "description": "Reinhart Gröttner, 57 Jahre alt (geboren 2030), lebt in Chemnitz und führt als Firmeninhaber ein erfolgreiches Unternehmen mit einem Jahresgehalt von etwa 273.900 €, er ist ein pragmatischer, zielorientierter Unternehmer, der die nüchterne, industrielle Seite seiner Stadt schätzt und drei Mal im Jahr auf Geschäftsreisen geht — von kleinen Zulieferbetrieben in Kleinstädten bis in Megastädte, Strecken bis zu 15.000 km sind für ihn keine Seltenheit — im Büro legt er Wert auf Effizienz und klare Entscheidungen, privat ist er eher zurückhaltend, finanziell solide aufgestellt, aber bei digitalen Nachrichten bleibt eine leichte Verwundbarkeit: seine Neigung, auf Phishing-Links zu klicken, liegt schätzungsweise bei rund 51 %, weshalb seine IT-Sicherheitsteams regelmäßig eingreifen."
+  },
+  {
+    "first_name": "Elladio",
+    "last_name": "Tebaldi",
+    "birth_year": 2036,
+    "salary": 220200,
+    "job": "Investor",
+    "iban": "IT39D9719691921442367629197",
+    "residence": {
+      "city": "Piacenza",
+      "lat": "45.0500",
+      "lng": "9.7000"
+    },
+    "description": "Elladio Tebaldi, nato nel 2036 e oggi cinquantenne, vive a Piacenza ed è uno degli investitori più concreti del suo circuito: ha costruito la sua reputazione sulle analisi puntuali e sulle scelte misurate, con un reddito annuo intorno ai 220.200 euro che gli permette di muoversi tra progetti industriali e startup tecnologiche senza rinunciare a una certa praticità quotidiana. Viaggia circa quattro volte l'anno, a volte per brevi trasferte in province vicine, altre volte verso metropoli distanti fino a 15.000 km e mercati che contano da poche migliaia a decine di milioni di abitanti, e mantiene dal ritorno alla base a Piacenza un equilibrio fatto di incontri in caffè per chiudere accordi e passeggiate per ritrovare il ritmo della città. Non ama la retorica: preferisce numeri, contratti ben scritti e team che sappiano tradurre visione in risultati, e chi lo conosce sa che dietro l'apparente riservatezza c'è una disciplina fatta di orari rigorosi e una rete di rapporti costruita negli anni."
+  },
+  {
+    "first_name": "Paulette",
+    "last_name": "Bonneau",
+    "birth_year": 2058,
+    "salary": 0,
+    "job": "Student",
+    "iban": "FR96D1731772577274071607155",
+    "residence": {
+      "city": "Les Mureaux",
+      "lat": "48.9875",
+      "lng": "1.9172"
+    },
+    "description": "Paulette Bonneau, née en 2058 et âgée de 29 ans en 2087, est étudiante universitaire installée aux Mureaux; sans salaire, elle partage ses journées entre les cours, les petits emplois ponctuels et la vie de quartier, prend rarement la route mais effectue un voyage par an — parfois à quelques kilomètres, parfois jusqu'à 15 000 km, vers des bourgades d'à peine mille habitants ou de vastes mégapoles — et, malgré une méfiance de façade face au monde numérique, se laisse encore parfois piéger par des courriels ou des liens frauduleux, cherchant patiemment sa place à la périphérie de la grande métropole."
+  },
+  {
+    "first_name": "Zoé",
+    "last_name": "Olivier",
+    "birth_year": 2049,
+    "salary": 31100,
+    "job": "Administrative Assistant",
+    "iban": "FR45Q8040695145074249796441",
+    "residence": {
+      "city": "Merignac",
+      "lat": "44.8386",
+      "lng": "-0.6436"
+    },
+    "description": "Zoé Olivier, née en 2049 et installée à Mérignac, est assistante administrative pragmatique et organisée; elle gagne environ 31 100 € par an et mène une vie rythmée par un boulot de bureau bien cadré et trois voyages par an — parfois de courts séjours régionaux, parfois des déplacements lointains jusqu'à 15 000 km vers des villes de tailles très diverses —, elle maîtrise dossiers et procédures mais peut parfois se laisser piéger par des arnaques numériques, cliquant occasionnellement sur des liens douteux; à Mérignac, à deux pas de l'aéroport et de la vie bordelaise, elle préfère la stabilité d'un poste classique à l'agitation des nouvelles modes professionnelles."
+  },
+  {
+    "first_name": "Sylvie",
+    "last_name": "Hoarau",
+    "birth_year": 2008,
+    "salary": 25700,
+    "job": "Retired",
+    "iban": "FR30Q0555053070754546296497",
+    "residence": {
+      "city": "Paris",
+      "lat": "48.8567",
+      "lng": "2.3522"
+    },
+    "description": "Sylvie Hoarau, née en 2008 et retirée à 79 ans, vit à Paris où elle tient son foyer avec l'habitude et la minutie d'une ménagère qui a fait de la maison son activité principale; sa retraite modeste — 25 700 € par an — lui permet de garder son appartement, de fréquenter les marchés du quartier et de prendre un café en terrasse le matin tout en suivant la vie du quartier et des transports en commun, et deux fois par an elle s'offre un voyage, parfois une escapade proche dans une petite ville, parfois un long trajet jusqu'à 15 000 km vers une destination plus lointaine; prudente avec les écrans mais pas à l'abri des pièges, elle a une propension modérée à se laisser tromper par des messages frauduleux, ce qui la pousse à demander conseil à des voisins ou à sa famille quand un e-mail la met mal à l'aise, et malgré tout elle conserve une petite indépendance et un goût pour la routine simple de Paris."
+  }
+]

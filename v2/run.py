@@ -12,10 +12,10 @@ from datetime import datetime
 from dotenv import load_dotenv
 from langfuse import Langfuse, observe, propagate_attributes
 
+load_dotenv()  # must run before any module-level Langfuse/OpenRouter init
+
 import loader
 import agents
-
-load_dotenv()
 
 _lf = Langfuse(
     public_key = os.getenv("LANGFUSE_PUBLIC_KEY"),

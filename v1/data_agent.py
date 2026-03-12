@@ -88,10 +88,12 @@ class DataAgent:
 
         # Sender user profile
         sender = None
-        if self.users_df is not None and len(self.users_df) > 0:
-            rows = self.users_df[self.users_df["user_id"] == sender_id]
-            if len(rows) > 0:
-                sender = rows.iloc[0]
+        if self.users_df is not None and len(self.users_df) > 0 and "iban" in self.users_df.columns:
+            sender_iban = str(tx.get("SenderIBAN") or "")
+            if sender_iban:
+                rows = self.users_df[self.users_df["iban"] == sender_iban]
+                if len(rows) > 0:
+                    sender = rows.iloc[0]
 
         # Full transaction history for this sender (sorted ascending)
         tx_history = self.transactions_df[

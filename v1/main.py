@@ -47,9 +47,10 @@ MODELS = [
 
 class ChallengeSystem:
     """
-    Cooperative 2+1 agent system for fraud detection.
-      Fast path   (risk ≤ FAST_LOW or ≥ FAST_HIGH): 1 call
-      Coop path   (risk in uncertain zone):          2 independent calls + 1 decision
+    Three-tier dispatch for fraud detection:
+      Zero-LLM zone  (risk ≤ ZERO_LO or ≥ ZERO_HI):  pure heuristic, 0 API calls
+      Fast path      (risk ≤ FAST_LOW or ≥ FAST_HIGH): 1 LLM call
+      Coop path      (risk in uncertain zone):          2 independent calls + 1 decision
     """
 
     # Zero-LLM zone: pure heuristic, no API call at all (saves tokens)

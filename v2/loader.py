@@ -149,9 +149,11 @@ def get_tx_context(tid: str, data: dict) -> dict:
     ts   = row["Timestamp"]
 
     sender = None
-    if len(data["users"]) > 0:
-        m = data["users"][data["users"]["user_id"] == sid]
-        if len(m): sender = m.iloc[0]
+    if len(data["users"]) > 0 and "iban" in data["users"].columns:
+        sender_iban = str(row.get("SenderIBAN") or "")
+        if sender_iban:
+            m = data["users"][data["users"]["iban"] == sender_iban]
+            if len(m): sender = m.iloc[0]
 
     history = tx[tx["SenderID"] == sid].copy()
 

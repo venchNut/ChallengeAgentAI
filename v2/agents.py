@@ -22,11 +22,9 @@ MODELS = [
     "microsoft/phi-4",               # $0.06/M — last resort
 ]
 
-ZERO_LO  = 3   # pure heuristic 0 — no LLM
-ZERO_HI  = 16  # pure heuristic 1 — no LLM
-FAST_LO  = 6   # 1-call path
-FAST_HI  = 13  # 1-call path
-# cooperative zone: risk 7-12 only
+ZERO_LO  = 4   # pure heuristic 0 — no LLM
+ZERO_HI  = 15  # pure heuristic 1 — no LLM
+# everything else: exactly 1 LLM call — cooperative path eliminated
 
 
 def _llm(model: str) -> ChatOpenAI:
@@ -35,7 +33,7 @@ def _llm(model: str) -> ChatOpenAI:
         base_url = "https://openrouter.ai/api/v1",
         model    = model,
         temperature = 0.0,
-        max_tokens  = 200,   # short answers only — saves tokens
+        max_tokens  = 50,    # need only '0' or '1'
     )
 
 
@@ -106,29 +104,34 @@ def verdict(session_id: str, risk: int, reasoning: str, challenge: str) -> int:
 def fast_verdict(session_id: str, risk: int, features: dict) -> int:
     sys = (
         "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
-        "FN>>FP. When uncertain output 1. 0 only if clearly legit."
+        "FN>>FP. When uncertain → 1. 0 only if clearly legit."
     )
-    usr = f"Heuristic risk score: {risk}/20 (decisive case — use this as primary signal)\n\n{_features_block(features)}\nDecision (1 or 0):"
+    f = features
+    usr = (
+        f"risk={risk}/20 | "
+        f"type={f.get('tx_type','')} amt={f.get('amount',0):.0f} z={f.get('amount_zscore',0):.1f} "
+        f"bal={f.get('balance_after',0):.0f}(neg:{f.get('balance_negative',0)}) "
+        f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
+        f"gps={f.get('gps_match','?')} dist={f.get('gps_distance_km',0)}km "
+        f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
+        f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)} "
+        f"| 1 or 0:"
+    )
     raw = _run(session_id, sys, usr, "FastVerdict")
     for ch in raw.strip():
         if ch in ("1","0"):
             return int(ch)
-    return 1 if risk >= FAST_HI else 0
+    return 1 if risk > 9 else 0
 
 
 def assess(session_id: str, features: dict, risk: int, pop_ctx: str = "") -> int:
-    # Zero-LLM zone — saves tokens on obvious cases
+    # Zero-LLM zone — pure heuristic, 0 API calls
     if risk <= ZERO_LO:
         return 0
     if risk >= ZERO_HI:
         return 1
-    # 1-call fast zone
-    if risk <= FAST_LO or risk >= FAST_HI:
-        return fast_verdict(session_id, risk, features)
-    # 3-call cooperative zone
-    r = reasoner(session_id, features, pop_ctx)
-    c = sceptic(session_id, features, r)
-    return verdict(session_id, risk, r, c)
+    # Always 1 call — cooperative path eliminated (saves ~70% LLM budget)
+    return fast_verdict(session_id, risk, features)
 
 
 # ── Feature block formatter ───────────────────────────────────────────────────

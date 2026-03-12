@@ -54,12 +54,12 @@ class ChallengeSystem:
     """
 
     # Zero-LLM zone: pure heuristic, no API call at all (saves tokens)
-    ZERO_LO   = 3    # risk ≤ this  → definitely legit   → return 0 (no call)
-    ZERO_HI   = 16   # risk ≥ this  → definitely fraud   → return 1 (no call)
-    # Fast-LLM zone: 1 call
-    FAST_LOW  = 6    # risk ≤ this  → likely legit (1 call)
-    FAST_HIGH = 13   # risk ≥ this  → likely fraud (1 call)
-    # Cooperative zone: 3 calls — only risk 7-12 (truly ambiguous)
+    ZERO_LO   = 4    # risk ≤ this  → definitely legit   → return 0 (no call)
+    ZERO_HI   = 15   # risk ≥ this  → definitely fraud   → return 1 (no call)
+    # Everything else: exactly 1 LLM call — no cooperative path
+    # (3-call coop path eliminated: saves ~70% of LLM budget on ambiguous cases)
+    FAST_LOW  = 14   # effectively covers entire non-zero range
+    FAST_HIGH = 5    # effectively covers entire non-zero range
 
     def __init__(self):
         load_dotenv()
@@ -82,7 +82,7 @@ class ChallengeSystem:
             base_url   = self._base_url,
             model      = model_id,
             temperature= 0.0,
-            max_tokens = 200,   # short answers only — saves tokens
+            max_tokens = 50,    # we need only '0' or '1' + brief reasoning
         )
 
     @observe()
@@ -205,27 +205,31 @@ class ChallengeSystem:
         tx_analysis     : str = "",
         context_analysis: str = "",
         pop_context     : str = "",
+        features        : dict = None,
     ) -> int:
         """
         Final binary decision: 1 = fraudulent, 0 = legitimate.
-        Calibrated toward recall (FN more costly than FP per Rules).
+        Single call with all available signals. FN >> FP.
         """
         system = (
             "MirrorPay fraud adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
-            "FN >> FP in cost. Flag when uncertain. "
-            "0 only when clearly legit. Risk≥8 + any red flag → 1."
+            "FN >> FP. When uncertain → 1. 0 only when clearly legit."
         )
-        parts = []
+        f = features or {}
+        parts = [f"risk={risk_score}/20"]
         if pop_context:
             parts.append(pop_context)
-        if tx_analysis:
-            parts.append(f"Transaction analysis:\n{tx_analysis}")
-        if context_analysis:
-            parts.append(f"Contextual analysis:\n{context_analysis}")
-        parts.append(f"Heuristic risk score: {risk_score}/20")
-        parts.append("Decision (output only 1 or 0):")
-
-        user = "\n\n".join(parts)
+        if f:
+            parts.append(
+                f"type={f.get('tx_type','')} amt={f.get('amount',0):.0f} z={f.get('amount_zscore',0):.1f} "
+                f"bal={f.get('balance_after',0):.0f}(neg:{f.get('balance_negative',0)}) "
+                f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
+                f"gps={f.get('gps_match','?')} dist_km={f.get('gps_distance_km',0)} "
+                f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
+                f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)}"
+            )
+        parts.append("1 or 0:")
+        user = " | ".join(parts)
         raw  = self.call_with_fallback(session_id, system, user, "DecisionAgent")
 
         # Parse: first digit found wins
@@ -265,21 +269,11 @@ class ChallengeSystem:
         if risk_score >= self.ZERO_HI:
             return 1
 
-        # Fast path — 1 call
-        if risk_score <= self.FAST_LOW or risk_score >= self.FAST_HIGH:
-            return self.decision_agent(
-                session_id, risk_score, pop_context=pop_context
-            )
-
-        # Cooperative path — two independent analyses, then decision
-        tx_analysis      = self.transaction_agent(session_id, features, pop_stats)
-        context_analysis = self.context_agent(session_id, features)
-
+        # Single LLM call — all features in one shot, no cooperative path
         return self.decision_agent(
             session_id, risk_score,
-            tx_analysis      = tx_analysis,
-            context_analysis = context_analysis,
-            pop_context      = pop_context,
+            pop_context = pop_context,
+            features    = features,
         )
 
 

@@ -64,14 +64,10 @@ python solve.py 1 eval --llm
 - Geospatial: mobility ratio, daily moves, low mobility detection
 - Derived: erratic behavior, specialist consultations, interactions
 
-## Models (Free)
+## Models (Challenge)
 
-Da file `models`:
 ```
-stepfun/step-3.5-flash:free
-mistralai/mistral-small-3.1-24b-instruct:free
-qwen/qwen3-next-80b-a3b-instruct:free
-qwen/qwen3-4b:free
-liquid/lfm-2.5-1.2b-instruct:free
-google/gemma-3n-e4b-it:free
+qwen/qwen3-30b-a3b-thinking-2507
+qwen/qwen3-14b
+microsoft/phi-4
 ```

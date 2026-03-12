@@ -39,13 +39,9 @@ from langfuse.langchain import CallbackHandler
 # Model cascade — order matters: preferred → last resort
 # ---------------------------------------------------------------------------
 MODELS = [
-    "openrouter/hunter-alpha",                         # reliable — keep first
-    "nvidia/nemotron-nano-9b-v2:free",
-    "nvidia/nemotron-3-super-120b-a12b:free",
-    "qwen/qwen3-next-80b-a3b-instruct:free",
-    "mistralai/mistral-small-3.1-24b-instruct:free",
-    "qwen/qwen3-4b:free",
-    "liquid/lfm-2.5-1.2b-instruct:free",
+    "qwen/qwen3-30b-a3b-thinking-2507",   # primary — strongest reasoning
+    "qwen/qwen3-14b",                      # fallback — balanced size/quality
+    "microsoft/phi-4",                     # last resort — lightweight
 ]
 
 

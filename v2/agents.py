@@ -67,35 +67,95 @@ def _run(session_id: str, system: str, user: str, tag: str) -> str:
 
 # ── Agents ───────────────────────────────────────────────────────────────────
 
-def fast_verdict(session_id: str, risk: int, features: dict) -> int:
-    sys = (
-        "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
-        "FN>>FP. When uncertain → 1. 0 only if clearly legit."
-    )
+
+def _parse_decision(raw: str, fallback: int = 1) -> int:
+    """Parse the LLM response (favor recall on ambiguity)."""
+    for ch in raw.strip():
+        if ch in ("1", "0"):
+            return int(ch)
+
+    low = raw.lower()
+    if any(w in low for w in ("fraud", "suspicious", "flag", "yes", "malicious", "anomal")):
+        return 1
+    return fallback
+
+
+def _make_prompt(features: dict, risk: int, pop_context: str = "") -> str:
     f = features
-    usr = (
-        f"risk={risk}/20 | "
+    pop = f" | {pop_context}" if pop_context else ""
+    return (
+        f"risk={risk}/20{pop} | "
         f"type={f.get('tx_type','')} amt={f.get('amount',0):.0f} z={f.get('amount_zscore',0):.1f} "
         f"bal={f.get('balance_after',0):.0f}(neg:{f.get('balance_negative',0)}) "
         f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
         f"gps={f.get('gps_match','?')} dist={f.get('gps_distance_km',0)}km "
         f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
         f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)} "
-        f"| 1 or 0:"
     )
+
+
+def _reasoner_agent(session_id: str, features: dict, risk: int, pop_context: str = "") -> str:
+    sys = (
+        "ReasonerAgent — holistic analysis. Output ONLY '1' (fraud) or '0' (legit). "
+        "FN>>FP. When uncertain → 1. 0 only if clearly legit."
+    )
+    usr = _make_prompt(features, risk, pop_context) + "| Reasoner verdict (1 or 0):"
+    return _run(session_id, sys, usr, "ReasonerAgent")
+
+
+def _sceptic_agent(session_id: str, reasoner: str, features: dict, risk: int, pop_context: str = "") -> str:
+    sys = (
+        "ScepticAgent — play devil's advocate. Challenge the Reasoner output. "
+        "Output ONLY '1' (fraud) or '0' (legit)."
+    )
+    usr = (
+        f"Reasoner thinks: {reasoner.strip()}\n"
+        f"{_make_prompt(features, risk, pop_context)}| Sceptic verdict (1 or 0):"
+    )
+    return _run(session_id, sys, usr, "ScepticAgent")
+
+
+def _verdict_agent(
+    session_id: str,
+    reasoner: str,
+    sceptic: str,
+    features: dict,
+    risk: int,
+    pop_context: str = "",
+) -> int:
+    sys = (
+        "VerdictAgent — read both Reasoner and Sceptic, then choose 0 (legit) or 1 (fraud). "
+        "FN>>FP. When uncertain choose 1."
+    )
+    usr = (
+        f"Reasoner: {reasoner.strip()}\n"
+        f"Sceptic : {sceptic.strip()}\n"
+        f"{_make_prompt(features, risk, pop_context)}| Final verdict (1 or 0):"
+    )
+    raw = _run(session_id, sys, usr, "VerdictAgent")
+    return _parse_decision(raw, fallback=1)
+
+
+def fast_verdict(session_id: str, risk: int, features: dict, pop_context: str = "") -> int:
+    sys = (
+        "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
+        "FN>>FP. When uncertain → 1. 0 only if clearly legit."
+    )
+    usr = _make_prompt(features, risk, pop_context) + "| 1 or 0:"
     raw = _run(session_id, sys, usr, "FastVerdict")
-    for ch in raw.strip():
-        if ch in ("1","0"):
-            return int(ch)
-    return 1 if risk > 9 else 0
+    return _parse_decision(raw, fallback=1 if risk > 9 else 0)
 
 
-def assess(session_id: str, features: dict, risk: int) -> int:
+def assess(session_id: str, features: dict, risk: int, pop_context: str = "") -> int:
     if risk <= ZERO_LO:
         return 0
     if risk >= ZERO_HI:
         return 1
-    return fast_verdict(session_id, risk, features)
+
+    # Cooperative path (Reasoner + Sceptic + Verdict)
+    reasoner = _reasoner_agent(session_id, features, risk, pop_context)
+    sceptic = _sceptic_agent(session_id, reasoner, features, risk, pop_context)
+    return _verdict_agent(session_id, reasoner, sceptic, features, risk, pop_context)
 
 
 # ── Langfuse client (module-level) ────────────────────────────────────────────

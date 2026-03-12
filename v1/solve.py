@@ -94,6 +94,13 @@ def extract_features(tx_data: dict, profile: dict) -> dict:
     f["balance_ratio"] = f["amount"] / max(total_before, 1e-9) if total_before > 0 else 1.0
     f["payment_method"] = str(tx.get("PaymentMethod", ""))
     f["tx_location"]    = str(tx.get("Location", "") or "")
+
+    # Description field — free text like "Salary payment Jan", "Rent Q1"
+    desc = str(tx.get("Description", "") or "").lower()
+    _LEGIT_DESC = ("salary","rent","payroll","subscription","insurance",
+                   "utility","mortgage","refund","dividend","reimbursement")
+    f["desc_legit"] = 1 if any(k in desc for k in _LEGIT_DESC) else 0
+    f["desc_snippet"] = desc[:80]
     f["hour"]     = int(tx["_hour"])       if "_hour"    in tx.index and not pd.isna(tx["_hour"])    else 0
     f["is_night"] = int(tx["_is_night"])   if "_is_night"   in tx.index and not pd.isna(tx["_is_night"]) else 0
     f["is_weekend"] = int(tx["_is_weekend"]) if "_is_weekend" in tx.index and not pd.isna(tx["_is_weekend"]) else 0
@@ -238,6 +245,10 @@ def calculate_risk_score(features: dict) -> int:
     # First-time sender (could be legitimate or fraudulent account)
     if features.get("sender_tx_count", 0) <= 1:
         risk += 1
+
+    # Description signal: clearly legit descriptions reduce risk
+    if features.get("desc_legit", 0):
+        risk = max(0, risk - 2)
 
     return min(risk, 20)
 

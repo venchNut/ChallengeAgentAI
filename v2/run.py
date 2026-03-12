@@ -69,6 +69,13 @@ def features(ctx: dict, prof: dict) -> dict:
     f["wknd"]    = int(row["_we"]) if not pd.isna(row["_we"]) else 0
     f["method"]  = str(row.get("PaymentMethod",""))
 
+    # Description field — "Salary payment Jan", "Rent Q1" etc.
+    desc = str(row.get("Description","") or "").lower()
+    _LEGIT_DESC = ("salary","rent","payroll","subscription","insurance",
+                   "utility","mortgage","refund","dividend","reimbursement")
+    f["desc_legit"]   = 1 if any(k in desc for k in _LEGIT_DESC) else 0
+    f["desc_snippet"] = desc[:80]
+
     if p:
         f["amt_mean"]      = p["amt_mean"]
         f["amt_std"]       = p["amt_std"]
@@ -137,6 +144,10 @@ def risk(f: dict) -> int:
     if f.get("gps_match") == "NO":
         r += 2
         if f.get("gps_km",0) > 500: r += 1
+
+    # Description signal: legit keywords reduce risk
+    if f.get("desc_legit", 0):
+        r = max(0, r - 2)
 
     return min(r, 20)
 

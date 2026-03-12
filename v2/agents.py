@@ -17,15 +17,17 @@ from langfuse.langchain import CallbackHandler
 load_dotenv()
 
 MODELS = [
-    "qwen/qwen3-30b-a3b-thinking-2507",
-    "qwen/qwen3-14b",
-    "microsoft/phi-4",
+    "qwen/qwen3-14b",    
+    "microsoft/phi-4",                             # last resort
+    "mistralai/mistral-small-3.1-24b-instruct",   # ~$0.10/M — fallback
+    "google/gemma-3-12b-it",                       # ~$0.05/M — fallback 2
 ]
 
-ZERO_LO  = 1   # pure heuristic 0 — no LLM
-ZERO_HI  = 18  # pure heuristic 1 — no LLM
-FAST_LO  = 3   # 1-call path
-FAST_HI  = 15  # 1-call path
+ZERO_LO  = 3   # pure heuristic 0 — no LLM
+ZERO_HI  = 16  # pure heuristic 1 — no LLM
+FAST_LO  = 6   # 1-call path
+FAST_HI  = 13  # 1-call path
+# cooperative zone: risk 7-12 only
 
 
 def _llm(model: str) -> ChatOpenAI:
@@ -33,8 +35,8 @@ def _llm(model: str) -> ChatOpenAI:
         api_key  = os.getenv("OPENROUTER_API_KEY"),
         base_url = "https://openrouter.ai/api/v1",
         model    = model,
-        temperature = 0.1,
-        max_tokens  = 600,
+        temperature = 0.0,
+        max_tokens  = 200,   # short answers only — saves tokens
     )
 
 
@@ -69,41 +71,22 @@ def _run(session_id: str, system: str, user: str, tag: str) -> str:
 # ── Agents ───────────────────────────────────────────────────────────────────
 
 def reasoner(session_id: str, features: dict, pop_ctx: str = "") -> str:
-    sys = (
-        "You are a fraud intelligence analyst at MirrorPay (year 2087).\n"
-        "Given all available data about a transaction and its sender, write a "
-        "concise analysis (3–5 sentences) identifying ALL signals — both "
-        "suspicious and reassuring. Be quantitative and specific. "
-        "Do NOT give a final verdict."
-    )
-    ctx = (f"Population context: {pop_ctx}\n\n" if pop_ctx else "")
+    sys = "MirrorPay fraud analyst. 2 sentences max — all signals suspicious+legit. No verdict."
+    ctx = (f"Pop context: {pop_ctx}\n" if pop_ctx else "")
     usr = ctx + _features_block(features)
     return _run(session_id, sys, usr, "Reasoner")
 
 
 def sceptic(session_id: str, features: dict, reasoning: str) -> str:
-    sys = (
-        "You are a fraud detection sceptic at MirrorPay.\n"
-        "You have read a colleague's analysis. Your job is to challenge it: "
-        "identify any overlooked signals that CONTRADICT their conclusion, "
-        "or amplify signals they downplayed. Write 2–3 sentences. "
-        "Do NOT give a final verdict."
-    )
-    usr = f"Colleague's analysis:\n{reasoning}\n\nRaw data:\n{_features_block(features)}"
+    sys = "MirrorPay sceptic. 2 sentences: challenge or amplify colleague's analysis. No verdict."
+    usr = f"Analysis:\n{reasoning}\n\nData:\n{_features_block(features)}"
     return _run(session_id, sys, usr, "Sceptic")
 
 
 def verdict(session_id: str, risk: int, reasoning: str, challenge: str) -> int:
     sys = (
-        "You are the final fraud adjudicator at MirrorPay.\n"
-        "Output ONLY '1' (fraud) or '0' (legitimate). Nothing else.\n"
-        "Rules:\n"
-        "  • False negative (missed fraud) = large financial damage — avoid.\n"
-        "  • False positive (blocked legit) = reputational cost — acceptable.\n"
-        "  → Flag (1) whenever evidence is ambiguous or uncertain.\n"
-        "  → Output 0 ONLY when legitimacy is explicitly and clearly supported.\n"
-        "  → A risk score ≥ 8 with any red flag is sufficient to output 1.\n"
-        "  → Never flag ALL transactions."
+        "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
+        "FN>>FP. Flag when uncertain. 0 only if clearly legit. Risk≥8+red flag→1."
     )
     usr = (
         f"Heuristic risk score: {risk}/20\n\n"
@@ -123,10 +106,8 @@ def verdict(session_id: str, risk: int, reasoning: str, challenge: str) -> int:
 
 def fast_verdict(session_id: str, risk: int, features: dict) -> int:
     sys = (
-        "You are a fraud adjudicator at MirrorPay. "
-        "Output ONLY '1' (fraud) or '0' (legitimate). Nothing else.\n"
-        "False negatives (missed fraud) are far worse than false positives.\n"
-        "When uncertain, output 1. Output 0 only when clearly legit."
+        "MirrorPay adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
+        "FN>>FP. When uncertain output 1. 0 only if clearly legit."
     )
     usr = f"Heuristic risk score: {risk}/20 (decisive case — use this as primary signal)\n\n{_features_block(features)}\nDecision (1 or 0):"
     raw = _run(session_id, sys, usr, "FastVerdict")

@@ -36,12 +36,13 @@ from langfuse.langchain import CallbackHandler
 
 
 # ---------------------------------------------------------------------------
-# Model cascade — order matters: preferred → last resort
+# Model cascade — cheapest first; costs ~$0.05-0.15/M tokens
 # ---------------------------------------------------------------------------
 MODELS = [
-    "qwen/qwen3-30b-a3b-thinking-2507",   # primary — strongest reasoning
-    "qwen/qwen3-14b",                      # fallback — balanced size/quality
-    "microsoft/phi-4",                     # last resort — lightweight
+    "qwen/qwen3-14b",   
+    "microsoft/phi-4",
+    "mistralai/mistral-small-3.1-24b-instruct",   # ~$0.10/M — fallback
+    "google/gemma-3-12b-it",                       # ~$0.05/M — fallback 2
 ]
 
 
@@ -54,12 +55,12 @@ class ChallengeSystem:
     """
 
     # Zero-LLM zone: pure heuristic, no API call at all (saves tokens)
-    ZERO_LO   = 1    # risk ≤ this  → definitely legit   → return 0 (no call)
-    ZERO_HI   = 18   # risk ≥ this  → definitely fraud   → return 1 (no call)
+    ZERO_LO   = 3    # risk ≤ this  → definitely legit   → return 0 (no call)
+    ZERO_HI   = 16   # risk ≥ this  → definitely fraud   → return 1 (no call)
     # Fast-LLM zone: 1 call
-    FAST_LOW  = 3    # risk ≤ this  → likely legit
-    FAST_HIGH = 15   # risk ≥ this  → likely fraud
-    # Cooperative zone: 3 calls (best quality, for ambiguous cases)
+    FAST_LOW  = 6    # risk ≤ this  → likely legit (1 call)
+    FAST_HIGH = 13   # risk ≥ this  → likely fraud (1 call)
+    # Cooperative zone: 3 calls — only risk 7-12 (truly ambiguous)
 
     def __init__(self):
         load_dotenv()
@@ -81,8 +82,8 @@ class ChallengeSystem:
             api_key    = self._api_key,
             base_url   = self._base_url,
             model      = model_id,
-            temperature= 0.1,   # low temperature: more deterministic fraud decisions
-            max_tokens = 512,
+            temperature= 0.0,
+            max_tokens = 200,   # short answers only — saves tokens
         )
 
     @observe()
@@ -152,31 +153,19 @@ class ChallengeSystem:
                 f"night-transaction rate={pop_stats['night_rate']:.2%}.\n"
             )
         system = (
-            "You are a financial transaction anomaly analyst for MirrorPay.\n"
-            "Analyze the raw transaction metrics provided. Write 2–3 sentences identifying "
-            "any red flags: unusually large amounts, suspicious timing (late night, weekend), "
-            "negative balance after transaction, new / unknown recipient, or unusual payment method.\n"
-            "Be specific and quantitative. Do NOT make a final fraud decision."
+            "MirrorPay fraud analyst. Analyze ONLY the transaction metrics. "
+            "2 sentences max. Identify red flags (large amount, night/weekend, new recipient, negative balance). "
+            "No verdict."
         )
         user = (
             f"{pop_ctx}"
-            f"Transaction type : {features.get('tx_type', 'N/A')}\n"
-            f"Amount           : {features.get('amount', 0):.2f}\n"
-            f"Amount z-score vs sender history : {features.get('amount_zscore', 0):.2f}\n"
-            f"  (sender avg={features.get('sender_amount_mean', 0):.2f}, "
-            f"std={features.get('sender_amount_std', 0):.2f})\n"
-            f"Balance after tx : {features.get('balance_after', 0):.2f} "
-            f"(negative: {features.get('balance_negative', 0)})\n"
-            f"Balance spent pct: {features.get('balance_ratio', 0):.1%} of account\n"
-            f"Hour of day      : {features.get('hour', 0):02d}:xx  "
-            f"(night flag: {features.get('is_night', 0)}, "
-            f"weekend: {features.get('is_weekend', 0)})\n"
-            f"Payment method   : {features.get('payment_method', 'N/A')}\n"
-            f"Method is unusual for sender: {features.get('unusual_method', 0)}\n"
-            f"Recipient new (never seen before): {features.get('recipient_new', 0)}\n"
-            f"Sender tx count  : {features.get('sender_tx_count', 0)}\n"
-            f"Type is unusual for sender: {features.get('unusual_type', 0)}\n\n"
-            "Transaction anomaly assessment (2–3 sentences):"
+            f"type={features.get('tx_type','')} amt={features.get('amount',0):.0f} "
+            f"z={features.get('amount_zscore',0):.1f} "
+            f"(avg={features.get('sender_amount_mean',0):.0f}) "
+            f"bal={features.get('balance_after',0):.0f}(neg:{features.get('balance_negative',0)}) "
+            f"hour={features.get('hour',0)} night={features.get('is_night',0)} wknd={features.get('is_weekend',0)} "
+            f"method={features.get('payment_method','')} unusual_method={features.get('unusual_method',0)} "
+            f"new_rec={features.get('recipient_new',0)} tx_count={features.get('sender_tx_count',0)}"
         )
         return self.call_with_fallback(session_id, system, user, "TransactionAgent")
 
@@ -194,25 +183,15 @@ class ChallengeSystem:
         Does NOT see transaction amount or timing — fully independent lens.
         """
         system = (
-            "You are a behavioural and contextual fraud analyst for MirrorPay.\n"
-            "Analyze the sender's profile, geographic footprint, and communication patterns.\n"
-            "Write 2–3 sentences identifying red flags: age / risk profile, GPS location "
-            "inconsistency with transaction site, or phishing/social-engineering signals "
-            "in SMS or e-mail communications.\n"
-            "Be specific and factual. Do NOT make a final fraud decision."
+            "MirrorPay context analyst. Analyze sender profile + communications only. "
+            "2 sentences max. Flag GPS mismatches, phishing SMS/email, suspicious profile. No verdict."
         )
         user = (
-            f"Sender age              : {features.get('sender_age', 'N/A')}\n"
-            f"GPS match at tx time    : {features.get('gps_match', 'N/A')}  "
-            f"(distance km: {features.get('gps_distance_km', 'N/A')})\n"
-            f"Has GPS data near tx    : {features.get('has_gps_data', 0)}\n"
-            f"Sender known location   : {features.get('sender_city', 'N/A')}\n"
-            f"Transaction location    : {features.get('tx_location', 'N/A')}\n"
-            f"Phishing signals in SMS   : {features.get('phishing_sms', 0)}/3\n"
-            f"Phishing signals in email : {features.get('phishing_email', 0)}/3\n"
-            f"SMS snippet (first 300 chars): {features.get('sms_snippet', '')[:300]}\n"
-            f"Email snippet (first 300 chars): {features.get('email_snippet', '')[:300]}\n\n"
-            "Contextual risk assessment (2–3 sentences):"
+            f"age={features.get('sender_age','?')} city={features.get('sender_city','')} "
+            f"gps={features.get('gps_match','?')} dist_km={features.get('gps_distance_km',0)} "
+            f"phish_sms={features.get('phishing_sms',0)}/3 phish_email={features.get('phishing_email',0)}/3 "
+            f"sms={features.get('sms_snippet','')[:150]} "
+            f"email={features.get('email_snippet','')[:150]}"
         )
         return self.call_with_fallback(session_id, system, user, "ContextAgent")
 
@@ -233,17 +212,9 @@ class ChallengeSystem:
         Calibrated toward recall (FN more costly than FP per Rules).
         """
         system = (
-            "You are the final fraud decision agent for MirrorPay — Reply Mirror's financial system.\n"
-            "Output ONLY the digit '1' or '0' — absolutely nothing else.\n"
-            "  1 = this transaction is FRAUDULENT — flag it\n"
-            "  0 = this transaction is LEGITIMATE — allow it\n\n"
-            "Scoring context (from system rules):\n"
-            "  • Missing a real fraud (false negative) causes significant financial damage.\n"
-            "  • Blocking a legitimate transaction (false positive) causes reputational loss.\n"
-            "  → When evidence is ambiguous or uncertain, output 1 (flag it).\n"
-            "  → Output 0 ONLY when legitimacy is explicitly and clearly supported.\n"
-            "  → Never flag ALL transactions — only those with real evidence of fraud.\n"
-            "  → A risk score ≥ 8 combined with any red flag is sufficient to output 1."
+            "MirrorPay fraud adjudicator. Output ONLY '1' (fraud) or '0' (legit). "
+            "FN >> FP in cost. Flag when uncertain. "
+            "0 only when clearly legit. Risk≥8 + any red flag → 1."
         )
         parts = []
         if pop_context:

@@ -17,10 +17,9 @@ from langfuse.langchain import CallbackHandler
 load_dotenv()
 
 MODELS = [
-    "qwen/qwen3-14b",    
-    "microsoft/phi-4",                             # last resort
-    "mistralai/mistral-small-3.1-24b-instruct",   # ~$0.10/M — fallback
-    "google/gemma-3-12b-it",                       # ~$0.05/M — fallback 2
+    "qwen/qwen3-14b",                # $0.06/M — primary
+    "google/gemma-3-12b-it",         # $0.04/M — fallback
+    "microsoft/phi-4",               # $0.06/M — last resort
 ]
 
 ZERO_LO  = 3   # pure heuristic 0 — no LLM

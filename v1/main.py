@@ -39,10 +39,9 @@ from langfuse.langchain import CallbackHandler
 # Model cascade — cheapest first; costs ~$0.05-0.15/M tokens
 # ---------------------------------------------------------------------------
 MODELS = [
-    "qwen/qwen3-14b",   
-    "microsoft/phi-4",
-    "mistralai/mistral-small-3.1-24b-instruct",   # ~$0.10/M — fallback
-    "google/gemma-3-12b-it",                       # ~$0.05/M — fallback 2
+    "qwen/qwen3-14b",                # $0.06/M — primary
+    "google/gemma-3-12b-it",         # $0.04/M — fallback
+    "microsoft/phi-4",               # $0.06/M — last resort
 ]
 
 

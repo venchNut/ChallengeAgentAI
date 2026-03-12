@@ -466,30 +466,15 @@ _DATASET_MAP = {
 def _resolve_dataset_path(name: str, is_eval: bool) -> str:
     """
     Map a short dataset name to its actual folder path.
-
-    Old structure (levels 1-3) — nested double folder:
-      truman → The+Truman+Show_train/The Truman Show_train/public
-
-    New structure (levels 4-5) — flat single folder:
-      1984   → 1984_eval/public
-      blade  → Blade Runner_eval/public
+    All datasets use the same nested layout:
+      1984  → 1984_train/1984_train/public
+      blade → Blade+Runner_eval/Blade Runner_eval/public
     """
     key = name.lower()
     if key not in _DATASET_MAP:
         raise ValueError(f"Unknown dataset '{name}'. Choose: {', '.join(_DATASET_MAP)}")
     folder = _DATASET_MAP[key]
     suffix = "eval" if is_eval else "train"
-
-    # New-style flat layout: 1984, blade
-    if key in ("1984", "blade"):
-        folder_plain = folder.replace("+", " ")
-        flat = f"{folder_plain}_{suffix}/public"
-        if os.path.isdir(flat):
-            return flat
-        # Fallback: maybe extracted with + in name
-        return f"{folder}_{suffix}/public"
-
-    # Old-style nested layout: truman, deus, brave
     folder_plain = folder.replace("+", " ")
     return f"{folder}_{suffix}/{folder_plain}_{suffix}/public"
 

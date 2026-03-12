@@ -52,8 +52,13 @@ class ChallengeSystem:
       Coop path   (risk in uncertain zone):          2 independent calls + 1 decision
     """
 
-    FAST_LOW  = 2    # risk ≤ this  → certainly legitimate  → fast 0
-    FAST_HIGH = 14   # risk ≥ this  → certainly fraudulent  → fast 1
+    # Zero-LLM zone: pure heuristic, no API call at all (saves tokens)
+    ZERO_LO   = 1    # risk ≤ this  → definitely legit   → return 0 (no call)
+    ZERO_HI   = 18   # risk ≥ this  → definitely fraud   → return 1 (no call)
+    # Fast-LLM zone: 1 call
+    FAST_LOW  = 3    # risk ≤ this  → likely legit
+    FAST_HIGH = 15   # risk ≥ this  → likely fraud
+    # Cooperative zone: 3 calls (best quality, for ambiguous cases)
 
     def __init__(self):
         load_dotenv()
@@ -234,9 +239,10 @@ class ChallengeSystem:
             "Scoring context (from system rules):\n"
             "  • Missing a real fraud (false negative) causes significant financial damage.\n"
             "  • Blocking a legitimate transaction (false positive) causes reputational loss.\n"
-            "  → When evidence is ambiguous, lean toward flagging (output 1).\n"
-            "  → Output 0 only when the evidence clearly supports legitimacy.\n"
-            "  → Never flag ALL transactions — only those with real evidence of fraud."
+            "  → When evidence is ambiguous or uncertain, output 1 (flag it).\n"
+            "  → Output 0 ONLY when legitimacy is explicitly and clearly supported.\n"
+            "  → Never flag ALL transactions — only those with real evidence of fraud.\n"
+            "  → A risk score ≥ 8 combined with any red flag is sufficient to output 1."
         )
         parts = []
         if pop_context:
@@ -275,14 +281,21 @@ class ChallengeSystem:
     ) -> int:
         """
         Dispatch:
-          risk ≤ FAST_LOW  → fast path (clearly legit)  → 1 call
-          risk ≥ FAST_HIGH → fast path (clearly fraud)  → 1 call
-          otherwise        → cooperative path            → 3 calls
+          risk ≤ ZERO_LO   → return 0 immediately (no LLM call)
+          risk ≥ ZERO_HI   → return 1 immediately (no LLM call)
+          risk in fast zone → 1 LLM call
+          otherwise        → cooperative path (3 LLM calls)
 
         Returns 0 (legitimate) or 1 (fraudulent).
         """
+        # Zero-LLM zone — pure heuristic, saves tokens
+        if risk_score <= self.ZERO_LO:
+            return 0
+        if risk_score >= self.ZERO_HI:
+            return 1
+
+        # Fast path — 1 call
         if risk_score <= self.FAST_LOW or risk_score >= self.FAST_HIGH:
-            # Fast path — single decision call with full features for context
             return self.decision_agent(
                 session_id, risk_score, pop_context=pop_context
             )

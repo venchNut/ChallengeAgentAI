@@ -384,8 +384,8 @@ def predict(level: str, is_eval: bool = False) -> list:
         # ------------------------------------------------------------------
 
         # Guard 1: must not be empty
-        # Minimum floor: at least 2% of transactions, never 0
-        min_floor = max(1, int(0.02 * n_total))
+        # Minimum floor: at least 5% of transactions for recall safety
+        min_floor = max(1, int(0.05 * n_total))
         if len(fraud_ids) < min_floor:
             print(f"\n[GUARD] Only {len(fraud_ids)} fraud IDs — boosting to {min_floor} "
                   f"using top risk scores")

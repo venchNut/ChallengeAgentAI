@@ -23,32 +23,33 @@ pip install langchain langchain-openai
 ## Usage
 
 ```bash
-# 1. Training flow (test sul training dataset - ripetibile)
-python solve.py 1              # train + predict → output_level_1_train.txt
+# 1. Training flow (unlimited runs)
+python solve.py truman          # train → output_truman_train.txt
+python solve.py deus            # train → output_deus_train.txt
+python solve.py brave           # train → output_brave_train.txt
 
-# 2. Evaluation flow (submission FINALE - solo UNA volta!)
-python solve.py 1 eval         # predict → output_level_1.txt
+# 2. Evaluation flow (ONE SHOT — FINALE, irreversibile!)
+python solve.py truman eval     # eval → output_truman.txt
+python solve.py deus   eval
+python solve.py brave  eval
 
-# 3. Create submission ZIP (per eval dataset)
-python create_submission.py 1  # crea ZIP + mostra Session ID
-
-# Con LLM assist per casi borderline
-python solve.py 1 eval --llm
+# 3. Create submission ZIP
+python create_submission.py truman
 ```
 
 ## Submission Process
 
-**Per ogni livello ci sono DUE upload:**
+**Per ogni dataset ci sono DUE upload:**
 
-1. **Training submission** (unlimited submissions per testing)
-   - File: `output_level_X_train.txt`
-   - Session ID: da `session_level_X_TRAIN_PREDICT_YYYYMMDD.txt`
+1. **Training submission** (unlimited — per testare)
+   - File: `output_<dataset>_train.txt`
+   - Session ID: da `session_<dataset>_TRAIN_YYYYMMDD.txt`
    - No ZIP richiesto
-   
-2. **Evaluation submission** (ONE submission only - FINALE!)
-   - File: `submission_level_X_YYYYMMDD.zip` (contiene output + source code)
-   - Session ID: da `session_level_X_EVAL_YYYYMMDD.txt`
-   - ⚠️ ATTENZIONE: solo la prima submission sarà accettata!
+
+2. **Evaluation submission** (ONE submission only — FINALE!)
+   - File: `output_<dataset>.txt` + source code ZIP
+   - Session ID: da `session_<dataset>_EVAL_YYYYMMDD.txt`
+   - ⚠️ Solo la prima submission sarà accettata!
 
 ## Sistema
 

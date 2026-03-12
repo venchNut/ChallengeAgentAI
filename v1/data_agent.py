@@ -17,7 +17,9 @@ import json
 import re
 import pandas as pd
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, List, Optional
+
+from audio_agent import AudioAgent
 
 
 # Expected columns — the 11th slot ("Description") can be a label in training or a text description
@@ -46,6 +48,8 @@ class DataAgent:
         self.locations_df: Optional[pd.DataFrame] = None
         self.conversations: Dict[str, str] = {}   # user_id → SMS text
         self.messages: Dict[str, str] = {}        # user_id → email text
+        self.audio_features: Dict[str, dict] = {}  # iban → AudioAgent feature dict
+        self._users_raw: List[dict] = []           # raw user list (for AudioAgent)
         # Derived caches built lazily
         self._sender_profiles: Optional[Dict] = None
 
@@ -61,6 +65,7 @@ class DataAgent:
         self.locations_df    = self._load_locations()
         self.conversations   = self._load_conversations()
         self.messages        = self._load_messages()
+        self.audio_features  = self._load_audio()
         print("=== Data ready ===\n")
         return {
             "transactions": self.transactions_df,
@@ -68,6 +73,7 @@ class DataAgent:
             "locations":    self.locations_df,
             "conversations": self.conversations,
             "messages":     self.messages,
+            "audio":        self.audio_features,
         }
 
     def get_transaction_data(self, tx_id: str) -> Dict:
@@ -119,6 +125,7 @@ class DataAgent:
             "gps_near":    gps_near,
             "sms":         self.conversations.get(str(tx.get("SenderIBAN") or ""), ""),
             "email":       self.messages.get(str(tx.get("SenderIBAN") or ""), ""),
+            "audio":       self.audio_features.get(str(tx.get("SenderIBAN") or ""), {}),
         }
 
     def build_sender_profiles(self) -> Dict[str, Dict]:
@@ -143,7 +150,9 @@ class DataAgent:
             # look up communications by SenderIBAN (dicts are iban-keyed)
             iban_vals = grp["SenderIBAN"].dropna().replace("", None).dropna()
             iban_key  = str(iban_vals.iloc[0]) if len(iban_vals) > 0 else ""
-            combined_text = self.conversations.get(iban_key, "") + " " + self.messages.get(iban_key, "")
+            combined_text  = self.conversations.get(iban_key, "") + " " + self.messages.get(iban_key, "")
+            audio_feat     = self.audio_features.get(iban_key, {})
+            audio_phishing = audio_feat.get("phishing_score", 0)
             profiles[sender_id] = {
                 "tx_count":          len(grp),
                 "amount_mean":       float(amounts.mean()),
@@ -154,6 +163,8 @@ class DataAgent:
                 "night_rate":        float(night_mask.mean()),
                 "known_recipients":  set(grp["RecipientID"].dropna().unique()),
                 "phishing_score":    self._phishing_score(combined_text),
+                "audio_phishing":    audio_phishing,
+                "audio_call_count":  audio_feat.get("call_count", 0),
             }
 
         self._sender_profiles = profiles
@@ -325,6 +336,15 @@ class DataAgent:
     # ------------------------------------------------------------------
     # Helpers
     # ------------------------------------------------------------------
+
+    def _load_audio(self) -> Dict[str, dict]:
+        """Transcribe MP3 call recordings (if audio/ folder exists). Returns iban → features."""
+        if self.users_df is None or len(self.users_df) == 0:
+            return {}
+        # Rebuild raw user list for AudioAgent
+        users_raw = self.users_df.to_dict(orient="records")
+        aa = AudioAgent(str(self.data_dir), users_raw)
+        return aa.load()
 
     @staticmethod
     def _phishing_score(text: str) -> int:

@@ -9,3 +9,8 @@ env/
 venv/
 ENV/
 *.zip
+
+*.mp3
+*.json
+*.csv
+*.txt

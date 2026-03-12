@@ -9,7 +9,7 @@ import sys
 import os
 from create_submission import create_submission
 
-ALL_DATASETS = ["truman", "deus", "brave"]
+ALL_DATASETS = ["truman", "deus", "brave", "1984", "blade"]
 datasets = ALL_DATASETS if len(sys.argv) == 1 else [d.lower() for d in sys.argv[1:]]
 
 print("Creating submission packages …\n")

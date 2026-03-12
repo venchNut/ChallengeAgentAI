@@ -146,6 +146,7 @@ class ChallengeSystem:
             f"night={f.get('is_night',0)} wknd={f.get('is_weekend',0)} new_rec={f.get('recipient_new',0)} "
             f"gps={f.get('gps_match','?')} dist_km={f.get('gps_distance_km',0)} "
             f"phish_sms={f.get('phishing_sms',0)} phish_mail={f.get('phishing_email',0)} "
+            f"phish_audio={f.get('audio_phishing',0)} "
             f"age={f.get('sender_age','?')} desc_legit={f.get('desc_legit',0)} | 1 or 0:"
         )
         raw  = self.call_with_fallback(session_id, system, user, "DecisionAgent")

@@ -133,8 +133,12 @@ def extract_features(tx_data: dict, profile: dict) -> dict:
     # --- Communication snippets ---
     sms   = tx_data.get("sms", "")
     email = tx_data.get("email", "")
-    f["sms_snippet"]   = sms[:300]   if sms   else ""
-    f["email_snippet"] = email[:300] if email else ""
+    audio = tx_data.get("audio", {})
+    f["sms_snippet"]    = sms[:300]   if sms   else ""
+    f["email_snippet"]  = email[:300] if email else ""
+    f["audio_snippet"]  = audio.get("snippet", "")[:300]
+    f["audio_phishing"] = audio.get("phishing_score", 0)
+    f["audio_calls"]    = audio.get("call_count", 0)
     # Phishing email independent score
     if email:
         from data_agent import DataAgent as _DA
@@ -234,6 +238,15 @@ def calculate_risk_score(features: dict) -> int:
     elif phishing >= 2:
         risk += 2
     elif phishing >= 1:
+        risk += 1
+
+    # Audio call phishing signals (new for levels 4+)
+    audio_phish = features.get("audio_phishing", 0)
+    if audio_phish >= 3:
+        risk += 3
+    elif audio_phish >= 2:
+        risk += 2
+    elif audio_phish >= 1:
         risk += 1
 
     # GPS inconsistency
@@ -446,20 +459,37 @@ _DATASET_MAP = {
     "truman": "The+Truman+Show",
     "deus":   "Deus+Ex",
     "brave":  "Brave+New+World",
+    "1984":   "1984",
+    "blade":  "Blade+Runner",
 }
 
 def _resolve_dataset_path(name: str, is_eval: bool) -> str:
     """
     Map a short dataset name to its actual folder path.
+
+    Old structure (levels 1-3) — nested double folder:
       truman → The+Truman+Show_train/The Truman Show_train/public
-      deus   → Deus+Ex_train/Deus Ex_train/public
-      brave  → Brave+New+World_train/Brave New World_train/public
+
+    New structure (levels 4-5) — flat single folder:
+      1984   → 1984_eval/public
+      blade  → Blade Runner_eval/public
     """
     key = name.lower()
     if key not in _DATASET_MAP:
-        raise ValueError(f"Unknown dataset '{name}'. Choose: truman, deus, brave")
+        raise ValueError(f"Unknown dataset '{name}'. Choose: {', '.join(_DATASET_MAP)}")
     folder = _DATASET_MAP[key]
     suffix = "eval" if is_eval else "train"
+
+    # New-style flat layout: 1984, blade
+    if key in ("1984", "blade"):
+        folder_plain = folder.replace("+", " ")
+        flat = f"{folder_plain}_{suffix}/public"
+        if os.path.isdir(flat):
+            return flat
+        # Fallback: maybe extracted with + in name
+        return f"{folder}_{suffix}/public"
+
+    # Old-style nested layout: truman, deus, brave
     folder_plain = folder.replace("+", " ")
     return f"{folder}_{suffix}/{folder_plain}_{suffix}/public"
 

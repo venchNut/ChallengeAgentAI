@@ -59,6 +59,7 @@ def create_submission(dataset: str) -> str | None:
         "main.py",
         "solve.py",
         "data_agent.py",
+        "audio_agent.py",
         "requirements.txt",
         "README.md",
         output_file,

@@ -7,7 +7,7 @@ usage:
   python run.py brave
 """
 
-import sys, os, math, ulid
+import sys, os, math, ulid, pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
 from langfuse import Langfuse, observe, propagate_attributes
@@ -64,9 +64,9 @@ def features(ctx: dict, prof: dict) -> dict:
     f["amount"]  = amt
     f["balance"] = bal
     f["neg_bal"] = 1 if bal < 0 else 0
-    f["hour"]    = int(row["_h"])
-    f["night"]   = int(row["_ni"])
-    f["wknd"]    = int(row["_we"])
+    f["hour"]    = int(row["_h"])  if not pd.isna(row["_h"])  else 0
+    f["night"]   = int(row["_ni"]) if not pd.isna(row["_ni"]) else 0
+    f["wknd"]    = int(row["_we"]) if not pd.isna(row["_we"]) else 0
     f["method"]  = str(row.get("PaymentMethod",""))
 
     if p:

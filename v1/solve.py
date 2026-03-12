@@ -22,6 +22,7 @@ import sys
 import os
 import math
 import ulid
+import pandas as pd
 from dotenv import load_dotenv
 from langfuse import Langfuse, observe, propagate_attributes
 from datetime import datetime
@@ -93,9 +94,9 @@ def extract_features(tx_data: dict, profile: dict) -> dict:
     f["balance_ratio"] = f["amount"] / max(total_before, 1e-9) if total_before > 0 else 1.0
     f["payment_method"] = str(tx.get("PaymentMethod", ""))
     f["tx_location"]    = str(tx.get("Location", "") or "")
-    f["hour"]     = int(tx["_hour"])   if "_hour"    in tx.index else (tx["Timestamp"].hour if hasattr(tx["Timestamp"], "hour") else 0)
-    f["is_night"] = int(tx["_is_night"])   if "_is_night"   in tx.index else (1 if f["hour"] <= 5 else 0)
-    f["is_weekend"] = int(tx["_is_weekend"]) if "_is_weekend" in tx.index else 0
+    f["hour"]     = int(tx["_hour"])       if "_hour"    in tx.index and not pd.isna(tx["_hour"])    else 0
+    f["is_night"] = int(tx["_is_night"])   if "_is_night"   in tx.index and not pd.isna(tx["_is_night"]) else 0
+    f["is_weekend"] = int(tx["_is_weekend"]) if "_is_weekend" in tx.index and not pd.isna(tx["_is_weekend"]) else 0
 
     # --- Sender behavioural vs this transaction ---
     if profile:
